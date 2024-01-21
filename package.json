@@ -3,9 +3,9 @@
   "version": "0.3.0",
   "license": "MIT",
   "scripts": {
-    "bump-version:major": "npm version major --force && cd libs/core && npm version major --force",
-    "bump-version:minor": "npm version minor --force && cd libs/core && npm version minor --force",
-    "bump-version:patch": "npm version patch --force && cd libs/core && npm version patch --force",
+    "bump-version:major": "npm version major && cd libs/core && npm version major",
+    "bump-version:minor": "npm version minor && cd libs/core && npm version minor",
+    "bump-version:patch": "npm version patch && cd libs/core && npm version patch",
     "copy-readme": "copy .\\README.md .\\dist\\libs\\core",
     "copy-license": "copy .\\LICENSE .\\dist\\libs\\core",
     "copy-changelog": "copy .\\Changelog.md .\\dist\\libs\\core",
