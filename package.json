@@ -11,7 +11,7 @@
     "copy-changelog": "copy .\\Changelog.md .\\dist\\libs\\majoris-ui",
     "copy-files": "run-s copy-readme copy-license",
     "build:lib-pack": "nx build majoris-ui && npm run copy-files && cd dist/libs/majoris-ui && npm pack",
-    "commit-git": "git commit -m \"build: adds new release\" && git push origin && git push origin --tags",
+    "commit-git": "git add . &&git commit -m \"build: adds new release\" && git push origin && git push origin --tags",
     "pre-publish:minor": "run-s bump-version:minor build:lib-pack commit-git",
     "pre-publish:major": "run-s bump-version:major build:lib-pack commit-git",
     "pre-publish:patch": "run-s bump-version:patch build:lib-pack commit-git"
