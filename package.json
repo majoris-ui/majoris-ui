@@ -1,6 +1,6 @@
 {
   "name": "@majoris-org/source",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "scripts": {
     "bump-version:major": "npm version major && cd libs/majoris-ui && npm version major",
