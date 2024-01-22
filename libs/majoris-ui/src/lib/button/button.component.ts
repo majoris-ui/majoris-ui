@@ -1,5 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+
+export type Theme =
+  | 'primary'
+  | 'accent'
+  | 'highlight'
+  | 'success'
+  | 'warning'
+  | 'danger'
+  | 'info'
+  | 'dark'
+  | 'light';
 
 @Component({
   selector: 'mjs-button',
@@ -9,4 +20,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './button.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ButtonComponent {}
+export class ButtonComponent {
+  @Input() set theme(theme: Theme) {
+    this._theme = theme;
+  }
+
+  _theme: Theme = 'primary';
+}

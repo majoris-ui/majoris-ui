@@ -1,13 +1,26 @@
-import type { Meta, StoryObj } from '@storybook/angular';
+import type { Meta } from '@storybook/angular';
 import { ButtonComponent } from './button.component';
 
-const meta: Meta<ButtonComponent> = {
+export default {
+  title: 'Components/Button',
   component: ButtonComponent,
-  title: 'ButtonComponent',
-};
-export default meta;
-type Story = StoryObj<ButtonComponent>;
+  argTypes: {
+    text: { control: 'text', defaultValue: 'text' },
+    theme: {
+      control: 'select',
+      options: ['primary', 'accent', 'highlight', 'danger'],
+    },
+  },
+  parameters: {
+    controls: { expanded: true },
+  },
+} as Meta<ButtonComponent>;
 
-export const Primary: Story = {
-  args: {},
+export const Button = ({ ...args }) => {
+  return {
+    template: `<mjs-button theme="${args['theme']}">${
+      args['text'] ? args['text'] : ''
+    }</mjs-button>`,
+    props: { ...args },
+  };
 };
