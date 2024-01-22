@@ -5,7 +5,7 @@ export default {
   title: 'Components/Button',
   component: ButtonComponent,
   argTypes: {
-    text: { control: 'text', defaultValue: 'text' },
+    text: { control: 'text', defaultValue: 'Button' },
     theme: {
       control: 'select',
       options: ['primary', 'accent', 'highlight', 'danger'],
