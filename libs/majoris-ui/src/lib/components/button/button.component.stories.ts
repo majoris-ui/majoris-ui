@@ -5,11 +5,22 @@ export default {
   title: 'Components/Button',
   component: ButtonComponent,
   argTypes: {
-    text: { control: 'text', defaultValue: 'Button' },
+    text: {
+      control: 'text',
+    },
     theme: {
       control: 'select',
       options: ['primary', 'accent', 'highlight', 'danger'],
     },
+    rounded: {
+      control: 'select',
+      options: ['sm', 'md', 'lg', 'none'],
+    },
+  },
+  args: {
+    text: 'text',
+    theme: 'primary',
+    rounded: 'sm',
   },
   parameters: {
     controls: { expanded: true },
@@ -18,9 +29,9 @@ export default {
 
 export const Button = ({ ...args }) => {
   return {
-    template: `<mjs-button theme="${args['theme']}">${
-      args['text'] ? args['text'] : ''
-    }</mjs-button>`,
+    template: `<mjs-button rounded="${args['rounded']}" theme="${
+      args['theme']
+    }">${args['text'] ? args['text'] : ''}</mjs-button>`,
     props: { ...args },
   };
 };

@@ -1,6 +1,5 @@
 button {
   @apply border-none;
-  @apply rounded-sm;
   @apply px-4;
   @apply h-[32px];
 }
@@ -8,53 +7,44 @@ button {
 .primary {
   @apply bg-primary;
   @apply text-white;
-  @apply dark:text-dark;
 }
 
 .accent {
   @apply bg-accent;
   @apply text-white;
-  @apply dark:text-dark;
 }
 
 .highlight {
   @apply bg-highlight;
   @apply text-white;
-  @apply dark:text-dark;
 }
 
 .danger {
   @apply bg-danger;
   @apply text-white;
-  @apply dark:text-dark;
 }
 
 .info {
   @apply bg-info;
   @apply text-white;
-  @apply dark:text-dark;
 }
 
 .success {
   @apply bg-success;
   @apply text-white;
-  @apply dark:text-dark;
 }
 
 .warning {
   @apply bg-warning;
   @apply text-white;
-  @apply dark:text-dark;
 }
 
 .dark {
   @apply bg-dark;
   @apply text-white;
-  @apply dark:text-dark;
 }
 
 .light {
   @apply bg-white;
   @apply text-dark;
-  @apply dark:text-white;
 }

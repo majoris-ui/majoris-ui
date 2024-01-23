@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/angular';
+import path from 'path';
 
 const config: StorybookConfig = {
   stories: ['../**/*.stories.@(js|jsx|ts|tsx|mdx)'],
@@ -12,6 +13,15 @@ const config: StorybookConfig = {
       },
     },
   ],
+  webpackFinal: async (config, { configType }) => {
+    config.module?.rules?.push({
+      test: /\.scss$/,
+      use: ['sass-loader'],
+      include: path.resolve(__dirname, '../'),
+    });
+
+    return config;
+  },
   framework: {
     name: '@storybook/angular',
     options: {},

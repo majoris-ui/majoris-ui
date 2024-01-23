@@ -21,6 +21,8 @@ export type Theme =
   | 'dark'
   | 'light';
 
+export type Rounded = 'sm' | 'md' | 'lg';
+
 @Component({
   selector: 'mjs-button',
   standalone: true,
@@ -30,13 +32,15 @@ export type Theme =
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent implements AfterViewInit {
-  @Input() set theme(theme: Theme) {
-    this._theme = theme;
+  @Input() theme: Theme = 'primary';
+
+  @Input() set rounded(rounded: Rounded) {
+    this._rounded = `rounded-${rounded}`;
   }
 
   @ViewChild('button') button: ElementRef<HTMLButtonElement>;
 
-  _theme: Theme = 'primary';
+  _rounded = 'rounded-sm';
 
   ngAfterViewInit(): void {
     const computedStyle = getComputedStyle(this.button.nativeElement);

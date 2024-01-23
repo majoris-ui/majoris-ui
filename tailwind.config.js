@@ -20,6 +20,13 @@ module.exports = {
         'dark': '#000',
         'light': '#fff',
       },
+      borderRadius: {
+        sm: '4px',
+        md: '8px',
+        lg: '16px',
+        full: '9999px',
+        none: '0',
+      }
     },
   },
   plugins: [],
