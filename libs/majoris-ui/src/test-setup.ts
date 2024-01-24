@@ -5,4 +5,5 @@ globalThis.ngJest = {
     errorOnUnknownProperties: true,
   },
 };
+import 'chroma-js';
 import 'jest-preset-angular/setup-jest';

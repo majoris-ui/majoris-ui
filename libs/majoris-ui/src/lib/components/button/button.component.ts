@@ -7,7 +7,6 @@ import {
   Input,
   ViewChild,
 } from '@angular/core';
-import chroma from 'chroma-js';
 import { getContrastingTextColor } from '../../helpers';
 
 export type Theme =
@@ -43,10 +42,8 @@ export class ButtonComponent implements AfterViewInit {
   _rounded = 'rounded-sm';
 
   ngAfterViewInit(): void {
-    const computedStyle = getComputedStyle(this.button.nativeElement);
-    const backgroundColor = computedStyle.backgroundColor;
-    const hexadecimalColor = chroma(backgroundColor).hex();
-    this.button.nativeElement.style.color =
-      getContrastingTextColor(hexadecimalColor);
+    this.button.nativeElement.style.color = getContrastingTextColor(
+      this.button
+    );
   }
 }
