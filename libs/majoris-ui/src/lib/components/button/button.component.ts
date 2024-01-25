@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import {
-  AfterViewInit,
+  AfterViewChecked,
   ChangeDetectionStrategy,
   Component,
   ElementRef,
   Input,
+  Renderer2,
   ViewChild,
 } from '@angular/core';
 import { getContrastingTextColor } from '../../helpers';
@@ -20,7 +21,7 @@ export type Theme =
   | 'dark'
   | 'light';
 
-export type Rounded = 'sm' | 'md' | 'lg';
+export type Rounded = 'sm' | 'md' | 'lg' | 'full' | 'none';
 
 @Component({
   selector: 'mjs-button',
@@ -30,20 +31,42 @@ export type Rounded = 'sm' | 'md' | 'lg';
   styleUrl: './button.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ButtonComponent implements AfterViewInit {
-  @Input() theme: Theme = 'primary';
+export class ButtonComponent implements AfterViewChecked {
+  @Input() color: Theme = 'primary';
 
-  @Input() set rounded(rounded: Rounded) {
-    this._rounded = `rounded-${rounded}`;
-  }
+  @Input() rounded: Rounded = 'sm';
 
   @ViewChild('button') button: ElementRef<HTMLButtonElement>;
 
-  _rounded = 'rounded-sm';
+  constructor(private renderer: Renderer2) {}
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {}
+
+  ngAfterViewChecked(): void {
+    this.getContractColor();
+
+    this.renderer.setAttribute(
+      this.button.nativeElement,
+      'class',
+      this.classes.join(' ')
+    );
+  }
+
+  getContractColor(): void {
     this.button.nativeElement.style.color = getContrastingTextColor(
       this.button
     );
+  }
+
+  colorClasses(): string {
+    return this.color;
+  }
+
+  roundedClasses(): string {
+    return this.rounded;
+  }
+
+  get classes(): string[] {
+    return ['border-rounded-' + this.roundedClasses(), this.colorClasses()];
   }
 }

@@ -1,50 +1,60 @@
 button {
-  @apply border-none;
   @apply px-4;
   @apply h-[32px];
 }
 
 .primary {
   @apply bg-primary;
-  @apply text-white;
 }
 
 .accent {
   @apply bg-accent;
-  @apply text-white;
 }
 
 .highlight {
   @apply bg-highlight;
-  @apply text-white;
 }
 
 .danger {
   @apply bg-danger;
-  @apply text-white;
 }
 
 .info {
   @apply bg-info;
-  @apply text-white;
 }
 
 .success {
   @apply bg-success;
-  @apply text-white;
 }
 
 .warning {
   @apply bg-warning;
-  @apply text-white;
 }
 
 .dark {
   @apply bg-dark;
-  @apply text-white;
 }
 
 .light {
   @apply bg-white;
-  @apply text-dark;
+}
+
+.border-rounded-sm {
+  @apply rounded-sm;
+}
+
+.border-rounded-md {
+  @apply rounded-md;
+}
+
+.border-rounded-lg {
+  @apply rounded-lg;
+}
+
+.border-rounded-full {
+  @apply rounded-full;
+}
+
+.border-rounded-none {
+  @apply rounded-none;
 }

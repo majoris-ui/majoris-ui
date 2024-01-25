@@ -8,18 +8,18 @@ export default {
     text: {
       control: 'text',
     },
-    theme: {
+    color: {
       control: 'select',
       options: ['primary', 'accent', 'highlight', 'danger'],
     },
     rounded: {
       control: 'select',
-      options: ['sm', 'md', 'lg', 'none'],
+      options: ['sm', 'md', 'lg', 'full', 'none'],
     },
   },
   args: {
     text: 'text',
-    theme: 'primary',
+    color: 'primary',
     rounded: 'sm',
   },
   parameters: {
@@ -29,8 +29,8 @@ export default {
 
 export const Button = ({ ...args }) => {
   return {
-    template: `<mjs-button rounded="${args['rounded']}" theme="${
-      args['theme']
+    template: `<mjs-button rounded="${args['rounded']}" color="${
+      args['color']
     }">${args['text'] ? args['text'] : ''}</mjs-button>`,
     props: { ...args },
   };
