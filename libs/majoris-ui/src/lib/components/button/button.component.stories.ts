@@ -10,7 +10,17 @@ export default {
     },
     color: {
       control: 'select',
-      options: ['primary', 'accent', 'highlight', 'danger'],
+      options: [
+        'primary',
+        'accent',
+        'highlight',
+        'danger',
+        'success',
+        'warning',
+        'info',
+        'light',
+        'dark',
+      ],
     },
     rounded: {
       control: 'select',

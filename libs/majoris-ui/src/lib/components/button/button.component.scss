@@ -32,43 +32,49 @@ button {
   @apply opacity-50;
 }
 
-.button--fill {
-}
-
 .button--solid-primary {
   @apply bg-primary;
+  @apply text-primary;
 }
 
 .button--solid-accent {
   @apply bg-accent;
+  @apply text-accent;
 }
 
 .button--solid-highlight {
   @apply bg-highlight;
+  @apply text-highlight;
 }
 
 .button--solid-danger {
   @apply bg-danger;
+  @apply text-danger;
 }
 
 .button--solid-info {
   @apply bg-info;
+  @apply text-info;
 }
 
 .button--solid-success {
   @apply bg-success;
+  @apply text-success;
 }
 
 .button--solid-warning {
   @apply bg-warning;
+  @apply text-warning;
 }
 
 .button--solid-dark {
   @apply bg-dark;
+  @apply text-dark;
 }
 
 .button--solid-light {
-  @apply bg-white;
+  @apply bg-light;
+  @apply text-light;
 }
 
 .button--outline-primary {

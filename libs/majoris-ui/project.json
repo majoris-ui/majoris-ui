@@ -40,8 +40,7 @@
         "port": 4400,
         "configDir": "libs/majoris-ui/.storybook",
         "browserTarget": "majoris-ui:build-storybook",
-        "compodoc": false,
-         "styles": ["libs/majoris-ui/.storybook/tailwind-imports.css"]
+        "compodoc": false
       },
       "configurations": {
         "ci": {

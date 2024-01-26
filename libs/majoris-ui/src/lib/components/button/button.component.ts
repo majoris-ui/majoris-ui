@@ -52,8 +52,6 @@ export class ButtonComponent implements AfterViewInit {
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
-    this.getContractColor();
-
     this.renderer.setAttribute(
       this.button.nativeElement,
       'class',
