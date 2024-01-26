@@ -19,12 +19,17 @@ export default {
     disabled: {
       control: 'boolean',
     },
+    fill: {
+      control: 'select',
+      options: ['solid', 'outline', 'link'],
+    },
   },
   args: {
     text: 'text',
     color: 'primary',
     rounded: 'sm',
     disabled: false,
+    fill: 'solid',
   },
   parameters: {
     controls: { expanded: true },
@@ -35,6 +40,7 @@ export const Button = ({ ...args }) => {
   return {
     template: `
     <mjs-button
+      fill="${args['fill']}"
       [disabled]="${args['disabled']}"
       rounded="${args['rounded']}"
       color="${args['color']}">${

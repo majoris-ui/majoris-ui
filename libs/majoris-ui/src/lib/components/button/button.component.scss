@@ -8,62 +8,155 @@ button {
   transition: filter 0.3s ease-in-out;
 }
 
-.primary {
-  @apply bg-primary;
-}
-
-.accent {
-  @apply bg-accent;
-}
-
-.highlight {
-  @apply bg-highlight;
-}
-
-.danger {
-  @apply bg-danger;
-}
-
-.info {
-  @apply bg-info;
-}
-
-.success {
-  @apply bg-success;
-}
-
-.warning {
-  @apply bg-warning;
-}
-
-.dark {
-  @apply bg-dark;
-}
-
-.light {
-  @apply bg-white;
-}
-
-.border-rounded-sm {
+.border-rounded--sm {
   @apply rounded-sm;
 }
 
-.border-rounded-md {
+.border-rounded--md {
   @apply rounded-md;
 }
 
-.border-rounded-lg {
+.border-rounded--lg {
   @apply rounded-lg;
 }
 
-.border-rounded-full {
+.border-rounded--full {
   @apply rounded-full;
 }
 
-.border-rounded-none {
+.border-rounded--none {
   @apply rounded-none;
 }
 
 .button--disabled {
   @apply opacity-50;
+}
+
+.button--fill {
+}
+
+.button--solid-primary {
+  @apply bg-primary;
+}
+
+.button--solid-accent {
+  @apply bg-accent;
+}
+
+.button--solid-highlight {
+  @apply bg-highlight;
+}
+
+.button--solid-danger {
+  @apply bg-danger;
+}
+
+.button--solid-info {
+  @apply bg-info;
+}
+
+.button--solid-success {
+  @apply bg-success;
+}
+
+.button--solid-warning {
+  @apply bg-warning;
+}
+
+.button--solid-dark {
+  @apply bg-dark;
+}
+
+.button--solid-light {
+  @apply bg-white;
+}
+
+.button--outline-primary {
+  @apply border border-primary;
+  @apply bg-light;
+  @apply text-primary;
+}
+
+.button--outline-accent {
+  @apply border border-accent;
+  @apply bg-light;
+  @apply text-accent;
+}
+
+.button--outline-highlight {
+  @apply border border-highlight;
+  @apply bg-light;
+  @apply text-highlight;
+}
+
+.button--outline-danger {
+  @apply border border-danger;
+  @apply bg-light;
+  @apply text-danger;
+}
+
+.button--outline-info {
+  @apply border border-info;
+  @apply bg-light;
+  @apply text-info;
+}
+
+.button--outline-success {
+  @apply border border-success;
+  @apply bg-light;
+  @apply text-success;
+}
+
+.button--outline-warning {
+  @apply border border-warning;
+  @apply bg-light;
+  @apply text-warning;
+}
+
+.button--outline-dark {
+  @apply border border-dark;
+  @apply bg-light;
+  @apply text-dark;
+}
+
+.button--outline-light {
+  @apply border border-light;
+  @apply bg-light;
+  @apply text-light;
+}
+
+.button--link-primary {
+  @apply text-primary;
+}
+
+.button--link-accent {
+  @apply text-accent;
+}
+
+.button--link-highlight {
+  @apply text-highlight;
+}
+
+.button--link-danger {
+  @apply text-danger;
+}
+
+.button--link-info {
+  @apply text-info;
+}
+
+.button--link-success {
+  @apply text-success;
+}
+
+.button--link-warning {
+  @apply text-warning;
+}
+
+.button--link-dark {
+  @apply text-dark;
+}
+
+.button--link-light {
+  @apply text-light;
 }

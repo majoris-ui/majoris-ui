@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import {
-  AfterViewChecked,
+  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
   ElementRef,
@@ -22,6 +22,8 @@ export type Theme =
   | 'dark'
   | 'light';
 
+export type Style = 'solid' | 'outline' | 'link';
+
 export type Rounded = 'sm' | 'md' | 'lg' | 'full' | 'none';
 
 @Component({
@@ -32,10 +34,12 @@ export type Rounded = 'sm' | 'md' | 'lg' | 'full' | 'none';
   styleUrl: './button.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ButtonComponent implements AfterViewChecked {
+export class ButtonComponent implements AfterViewInit {
   @Input() color: Theme = 'primary';
 
   @Input() rounded: Rounded = 'sm';
+
+  @Input() fill: Style = 'solid';
 
   @Input({ transform: booleanAttribute })
   disabled: boolean;
@@ -47,7 +51,7 @@ export class ButtonComponent implements AfterViewChecked {
 
   ngOnInit(): void {}
 
-  ngAfterViewChecked(): void {
+  ngAfterViewInit(): void {
     this.getContractColor();
 
     this.renderer.setAttribute(
@@ -58,17 +62,16 @@ export class ButtonComponent implements AfterViewChecked {
   }
 
   getContractColor(): void {
-    this.button.nativeElement.style.color = getContrastingTextColor(
-      this.button
-    );
-  }
+    const computedStyle = getComputedStyle(this.button.nativeElement);
+    const backgroundColor = computedStyle.backgroundColor;
 
-  colorClass(): string {
-    return this.color;
+    this.fill === 'solid' &&
+      (this.button.nativeElement.style.color =
+        getContrastingTextColor(backgroundColor));
   }
 
   roundedClass(): string {
-    return this.rounded;
+    return `border-rounded--${this.rounded}`;
   }
 
   disabledClass(): string {
@@ -79,12 +82,16 @@ export class ButtonComponent implements AfterViewChecked {
     return this.disabled ? '' : 'button--hovered';
   }
 
+  styleClass(): string {
+    return `button--${this.fill}-${this.color}`;
+  }
+
   get classes(): string[] {
     return [
-      'border-rounded-' + this.roundedClass(),
-      this.colorClass(),
+      this.roundedClass(),
       this.disabledClass(),
       this.hoveredClass(),
+      this.styleClass(),
     ];
   }
 }
