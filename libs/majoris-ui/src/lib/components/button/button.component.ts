@@ -9,7 +9,6 @@ import {
   ViewChild,
   booleanAttribute,
 } from '@angular/core';
-import { getContrastingTextColor } from '../../helpers';
 
 export type Theme =
   | 'primary'
@@ -26,6 +25,10 @@ export type Style = 'solid' | 'outline' | 'link';
 
 export type Rounded = 'sm' | 'md' | 'lg' | 'full' | 'none';
 
+export type Height = 'sm' | 'md' | 'lg';
+
+export type BorderSize = 'sm' | 'md' | 'lg';
+
 @Component({
   selector: 'mjs-button',
   standalone: true,
@@ -41,8 +44,13 @@ export class ButtonComponent implements AfterViewInit {
 
   @Input() fill: Style = 'solid';
 
+  @Input() size: Height = 'sm';
+
   @Input({ transform: booleanAttribute })
-  disabled: boolean;
+  expand: boolean = false;
+
+  @Input({ transform: booleanAttribute })
+  disabled: boolean = false;
 
   @ViewChild('button')
   button: ElementRef<HTMLButtonElement>;
@@ -57,15 +65,6 @@ export class ButtonComponent implements AfterViewInit {
       'class',
       this.classes.join(' ')
     );
-  }
-
-  getContractColor(): void {
-    const computedStyle = getComputedStyle(this.button.nativeElement);
-    const backgroundColor = computedStyle.backgroundColor;
-
-    this.fill === 'solid' &&
-      (this.button.nativeElement.style.color =
-        getContrastingTextColor(backgroundColor));
   }
 
   roundedClass(): string {
@@ -84,12 +83,22 @@ export class ButtonComponent implements AfterViewInit {
     return `button--${this.fill}-${this.color}`;
   }
 
+  expandClass(): string {
+    return this.expand ? `button--expanded` : 'button--collapsed';
+  }
+
+  heightClass(): string {
+    return `button-size--${this.size}`;
+  }
+
   get classes(): string[] {
     return [
       this.roundedClass(),
       this.disabledClass(),
       this.hoveredClass(),
       this.styleClass(),
+      this.expandClass(),
+      this.heightClass(),
     ];
   }
 }

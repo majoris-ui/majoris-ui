@@ -1,5 +1,4 @@
 button {
-  @apply px-4;
   @apply h-[32px];
 }
 
@@ -35,134 +34,181 @@ button {
 .button--solid-primary {
   @apply bg-primary;
   @apply text-primary;
+  @apply border-primary;
 }
 
 .button--solid-accent {
   @apply bg-accent;
   @apply text-accent;
+  @apply border-accent;
 }
 
 .button--solid-highlight {
   @apply bg-highlight;
   @apply text-highlight;
+  @apply border-highlight;
 }
 
 .button--solid-danger {
   @apply bg-danger;
   @apply text-danger;
+  @apply border-danger;
 }
 
 .button--solid-info {
   @apply bg-info;
   @apply text-info;
+  @apply border-info;
 }
 
 .button--solid-success {
   @apply bg-success;
   @apply text-success;
+  @apply border-success;
 }
 
 .button--solid-warning {
   @apply bg-warning;
   @apply text-warning;
+  @apply border-warning;
 }
 
 .button--solid-dark {
   @apply bg-dark;
   @apply text-dark;
+  @apply border-dark;
 }
 
 .button--solid-light {
   @apply bg-light;
   @apply text-light;
+  @apply border-light;
 }
 
 .button--outline-primary {
   @apply border border-primary;
-  @apply bg-light;
-  @apply text-primary;
+  @apply text-primary-alt;
+  @apply border-primary;
 }
 
 .button--outline-accent {
   @apply border border-accent;
-  @apply bg-light;
-  @apply text-accent;
+  @apply text-accent-alt;
+  @apply border-accent;
 }
 
 .button--outline-highlight {
   @apply border border-highlight;
-  @apply bg-light;
-  @apply text-highlight;
+  @apply text-highlight-alt;
+  @apply border-highlight;
 }
 
 .button--outline-danger {
   @apply border border-danger;
-  @apply bg-light;
-  @apply text-danger;
+  @apply text-danger-alt;
+  @apply border-danger;
 }
 
 .button--outline-info {
   @apply border border-info;
-  @apply bg-light;
-  @apply text-info;
+  @apply text-info-alt;
+  @apply border-info;
 }
 
 .button--outline-success {
   @apply border border-success;
-  @apply bg-light;
-  @apply text-success;
+  @apply text-success-alt;
+  @apply border-success;
 }
 
 .button--outline-warning {
   @apply border border-warning;
-  @apply bg-light;
-  @apply text-warning;
+  @apply text-warning-alt;
+  @apply border-warning;
 }
 
 .button--outline-dark {
   @apply border border-dark;
-  @apply bg-light;
-  @apply text-dark;
+  @apply text-dark-alt;
+  @apply border-dark;
 }
 
 .button--outline-light {
   @apply border border-light;
-  @apply bg-light;
-  @apply text-light;
+  @apply text-light-alt;
+  @apply border-light;
 }
 
 .button--link-primary {
-  @apply text-primary;
+  @apply text-primary-alt;
+  @apply border-primary;
 }
 
 .button--link-accent {
-  @apply text-accent;
+  @apply text-accent-alt;
+  @apply border-accent;
 }
 
 .button--link-highlight {
-  @apply text-highlight;
+  @apply text-highlight-alt;
+  @apply border-highlight;
 }
 
 .button--link-danger {
-  @apply text-danger;
+  @apply text-danger-alt;
+  @apply border-danger;
 }
 
 .button--link-info {
-  @apply text-info;
+  @apply text-info-alt;
+  @apply border-info;
 }
 
 .button--link-success {
-  @apply text-success;
+  @apply text-success-alt;
+  @apply border-success;
 }
 
 .button--link-warning {
-  @apply text-warning;
+  @apply text-warning-alt;
+  @apply border-warning;
 }
 
 .button--link-dark {
-  @apply text-dark;
+  @apply text-dark-alt;
+  @apply border-dark;
 }
 
 .button--link-light {
-  @apply text-light;
+  @apply text-light-alt;
+  @apply border-light;
+}
+
+.button--expanded {
+  @apply w-full;
+}
+
+.button--collapsed {
+  @apply w-fit;
+}
+
+.button-size--sm {
+  @apply h-sm;
+  @apply px-sm;
+  @apply text-sm;
+  @apply font-bold;
+}
+
+.button-size--md {
+  @apply h-md;
+  @apply px-md;
+  @apply text-md;
+  @apply font-bold;
+}
+
+.button-size--lg {
+  @apply px-lg;
+  @apply h-lg;
+  @apply text-lg;
+  @apply font-bold;
 }

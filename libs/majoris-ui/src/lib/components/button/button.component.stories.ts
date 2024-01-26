@@ -8,6 +8,7 @@ export default {
     text: {
       control: 'text',
     },
+
     color: {
       control: 'select',
       options: [
@@ -33,6 +34,13 @@ export default {
       control: 'select',
       options: ['solid', 'outline', 'link'],
     },
+    expand: {
+      control: 'boolean',
+    },
+    size: {
+      control: 'select',
+      options: ['sm', 'md', 'lg'],
+    },
   },
   args: {
     text: 'text',
@@ -40,6 +48,8 @@ export default {
     rounded: 'sm',
     disabled: false,
     fill: 'solid',
+    expand: false,
+    size: 'md',
   },
   parameters: {
     controls: { expanded: true },
@@ -50,6 +60,8 @@ export const Button = ({ ...args }) => {
   return {
     template: `
     <mjs-button
+      size="${args['size']}"
+      [expand]="${args['expand']}"
       fill="${args['fill']}"
       [disabled]="${args['disabled']}"
       rounded="${args['rounded']}"
