@@ -3,6 +3,11 @@ button {
   @apply h-[32px];
 }
 
+.button--hovered {
+  @apply hover:brightness-110;
+  transition: filter 0.3s ease-in-out;
+}
+
 .primary {
   @apply bg-primary;
 }
@@ -57,4 +62,8 @@ button {
 
 .border-rounded-none {
   @apply rounded-none;
+}
+
+.button--disabled {
+  @apply opacity-50;
 }

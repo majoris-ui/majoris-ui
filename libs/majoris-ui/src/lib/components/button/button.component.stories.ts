@@ -16,11 +16,15 @@ export default {
       control: 'select',
       options: ['sm', 'md', 'lg', 'full', 'none'],
     },
+    disabled: {
+      control: 'boolean',
+    },
   },
   args: {
     text: 'text',
     color: 'primary',
     rounded: 'sm',
+    disabled: false,
   },
   parameters: {
     controls: { expanded: true },
@@ -29,9 +33,13 @@ export default {
 
 export const Button = ({ ...args }) => {
   return {
-    template: `<mjs-button rounded="${args['rounded']}" color="${
-      args['color']
-    }">${args['text'] ? args['text'] : ''}</mjs-button>`,
+    template: `
+    <mjs-button
+      [disabled]="${args['disabled']}"
+      rounded="${args['rounded']}"
+      color="${args['color']}">${
+      args['text'] ? args['text'] : ''
+    }</mjs-button>`,
     props: { ...args },
   };
 };

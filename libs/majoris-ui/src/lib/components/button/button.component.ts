@@ -7,6 +7,7 @@ import {
   Input,
   Renderer2,
   ViewChild,
+  booleanAttribute,
 } from '@angular/core';
 import { getContrastingTextColor } from '../../helpers';
 
@@ -36,7 +37,11 @@ export class ButtonComponent implements AfterViewChecked {
 
   @Input() rounded: Rounded = 'sm';
 
-  @ViewChild('button') button: ElementRef<HTMLButtonElement>;
+  @Input({ transform: booleanAttribute })
+  disabled: boolean;
+
+  @ViewChild('button')
+  button: ElementRef<HTMLButtonElement>;
 
   constructor(private renderer: Renderer2) {}
 
@@ -58,15 +63,28 @@ export class ButtonComponent implements AfterViewChecked {
     );
   }
 
-  colorClasses(): string {
+  colorClass(): string {
     return this.color;
   }
 
-  roundedClasses(): string {
+  roundedClass(): string {
     return this.rounded;
   }
 
+  disabledClass(): string {
+    return this.disabled ? 'button--disabled' : '';
+  }
+
+  hoveredClass(): string {
+    return this.disabled ? '' : 'button--hovered';
+  }
+
   get classes(): string[] {
-    return ['border-rounded-' + this.roundedClasses(), this.colorClasses()];
+    return [
+      'border-rounded-' + this.roundedClass(),
+      this.colorClass(),
+      this.disabledClass(),
+      this.hoveredClass(),
+    ];
   }
 }
