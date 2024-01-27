@@ -5,6 +5,7 @@ export default {
   title: 'Components/Button',
   component: ButtonComponent,
   argTypes: {
+    onClick: { action: 'clicked', description: 'Click event' },
     text: {
       control: 'text',
       description: 'Control the button text content',
