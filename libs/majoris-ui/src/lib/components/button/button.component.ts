@@ -4,7 +4,9 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
+  EventEmitter,
   Input,
+  Output,
   Renderer2,
   ViewChild,
   booleanAttribute,
@@ -46,11 +48,18 @@ export class ButtonComponent implements AfterViewInit {
 
   @Input() size: Height = 'sm';
 
+  loadingIcon: string = '';
+
+  @Input({ transform: booleanAttribute })
+  loading: boolean = false;
+
   @Input({ transform: booleanAttribute })
   expand: boolean = false;
 
   @Input({ transform: booleanAttribute })
   disabled: boolean = false;
+
+  @Output() click: EventEmitter<null> = new EventEmitter();
 
   @ViewChild('button')
   button: ElementRef<HTMLButtonElement>;
@@ -76,7 +85,7 @@ export class ButtonComponent implements AfterViewInit {
   }
 
   hoveredClass(): string {
-    return this.disabled ? '' : 'button--hovered';
+    return !this.disabled && !this.loading ? 'button--hovered' : '';
   }
 
   styleClass(): string {
@@ -91,6 +100,10 @@ export class ButtonComponent implements AfterViewInit {
     return `button-size--${this.size}`;
   }
 
+  loadingClass(): string {
+    return `${this.loading ? 'button--loading' : ''}`;
+  }
+
   get classes(): string[] {
     return [
       this.roundedClass(),
@@ -100,5 +113,9 @@ export class ButtonComponent implements AfterViewInit {
       this.expandClass(),
       this.heightClass(),
     ];
+  }
+
+  onClick(): void {
+    this.click.emit();
   }
 }

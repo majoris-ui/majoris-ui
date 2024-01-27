@@ -41,7 +41,7 @@
         "configDir": "libs/majoris-ui/.storybook",
         "browserTarget": "majoris-ui:build-storybook",
         "compodoc": false,
-        "styles": ["libs/majoris-ui/.storybook/tailwind-imports.css", "libs/majoris-ui/theme.css"]
+        "styles": ["libs/majoris-ui/.storybook/tailwind-imports.css", "libs/majoris-ui/theme.css", "libs/majoris-ui/libs.css"]
       },
       "configurations": {
         "ci": {
@@ -57,7 +57,7 @@
         "configDir": "libs/majoris-ui/.storybook",
         "browserTarget": "majoris-ui:build-storybook",
         "compodoc": false,
-         "styles": ["libs/majoris-ui/.storybook/tailwind-imports.css", "libs/majoris-ui/theme.css"]
+         "styles": ["libs/majoris-ui/.storybook/tailwind-imports.css", "libs/majoris-ui/theme.css", "libs/majoris-ui/libs.css"]
       },
       "configurations": {
         "ci": {

@@ -1,10 +1,15 @@
 button {
   @apply h-[32px];
+  @apply flex justify-center items-center;
 }
 
 .button--hovered {
-  @apply hover:brightness-110;
+  @apply hover:brightness-125;
   transition: filter 0.3s ease-in-out;
+}
+
+.button--loading {
+  @apply pointer-events-none;
 }
 
 .border-rounded--sm {
@@ -197,6 +202,10 @@ button {
   @apply px-sm;
   @apply text-sm;
   @apply font-bold;
+
+  .gg-spinner-alt {
+    --ggs: 0.7;
+  }
 }
 
 .button-size--md {
@@ -204,6 +213,10 @@ button {
   @apply px-md;
   @apply text-md;
   @apply font-bold;
+
+  .gg-spinner-alt {
+    --ggs: 0.9;
+  }
 }
 
 .button-size--lg {

@@ -100,7 +100,11 @@ module.exports = {
         xl: 'var(--font-size-xl)',
         '2xl': 'var(--font-size-2xl)'
       },
-
+      boxShadow: {
+        sm: 'var(--box-shadow-sm)',
+        md: 'var(--box-shadow-md)',
+        lg: 'var(--box-shadow-lg)',
+      }
     },
   },
   plugins: [],
