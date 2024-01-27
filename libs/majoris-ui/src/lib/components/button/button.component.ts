@@ -4,12 +4,13 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
+  EventEmitter,
   Input,
+  Output,
   Renderer2,
   ViewChild,
   booleanAttribute,
 } from '@angular/core';
-import { getContrastingTextColor } from '../../helpers';
 
 export type Theme =
   | 'primary'
@@ -26,6 +27,10 @@ export type Style = 'solid' | 'outline' | 'link';
 
 export type Rounded = 'sm' | 'md' | 'lg' | 'full' | 'none';
 
+export type Height = 'sm' | 'md' | 'lg';
+
+export type BorderSize = 'sm' | 'md' | 'lg';
+
 @Component({
   selector: 'mjs-button',
   standalone: true,
@@ -41,8 +46,20 @@ export class ButtonComponent implements AfterViewInit {
 
   @Input() fill: Style = 'solid';
 
+  @Input() size: Height = 'sm';
+
+  loadingIcon: string = '';
+
   @Input({ transform: booleanAttribute })
-  disabled: boolean;
+  loading: boolean = false;
+
+  @Input({ transform: booleanAttribute })
+  expand: boolean = false;
+
+  @Input({ transform: booleanAttribute })
+  disabled: boolean = false;
+
+  @Output() click: EventEmitter<null> = new EventEmitter();
 
   @ViewChild('button')
   button: ElementRef<HTMLButtonElement>;
@@ -59,15 +76,6 @@ export class ButtonComponent implements AfterViewInit {
     );
   }
 
-  getContractColor(): void {
-    const computedStyle = getComputedStyle(this.button.nativeElement);
-    const backgroundColor = computedStyle.backgroundColor;
-
-    this.fill === 'solid' &&
-      (this.button.nativeElement.style.color =
-        getContrastingTextColor(backgroundColor));
-  }
-
   roundedClass(): string {
     return `border-rounded--${this.rounded}`;
   }
@@ -77,11 +85,23 @@ export class ButtonComponent implements AfterViewInit {
   }
 
   hoveredClass(): string {
-    return this.disabled ? '' : 'button--hovered';
+    return !this.disabled && !this.loading ? 'button--hovered' : '';
   }
 
   styleClass(): string {
     return `button--${this.fill}-${this.color}`;
+  }
+
+  expandClass(): string {
+    return this.expand ? `button--expanded` : 'button--collapsed';
+  }
+
+  heightClass(): string {
+    return `button-size--${this.size}`;
+  }
+
+  loadingClass(): string {
+    return `${this.loading ? 'button--loading' : ''}`;
   }
 
   get classes(): string[] {
@@ -90,6 +110,12 @@ export class ButtonComponent implements AfterViewInit {
       this.disabledClass(),
       this.hoveredClass(),
       this.styleClass(),
+      this.expandClass(),
+      this.heightClass(),
     ];
+  }
+
+  onClick(): void {
+    this.click.emit();
   }
 }
