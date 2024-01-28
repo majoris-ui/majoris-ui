@@ -1,15 +1,59 @@
 button {
-  @apply h-[32px];
   @apply flex justify-center items-center;
 }
 
 .button--hovered {
-  @apply hover:brightness-125;
-  transition: filter 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+}
+
+.button--hovered-primary:hover {
+  @apply bg-primary-hover;
+  @apply border-primary-hover;
+}
+
+.button--hovered-accent:hover {
+  @apply bg-accent-hover;
+  @apply border-accent-hover;
+}
+
+.button--hovered-highlight:hover {
+  @apply bg-highlight-hover;
+  @apply border-highlight-hover;
+}
+
+.button--hovered-success:hover {
+  @apply bg-success-hover;
+  @apply border-success-hover;
+}
+
+.button--hovered-danger:hover {
+  @apply bg-danger-hover;
+  @apply border-danger-hover;
+}
+
+.button--hovered-warning:hover {
+  @apply bg-warning-hover;
+  @apply border-warning-hover;
+}
+
+.button--hovered-info:hover {
+  @apply bg-info-hover;
+  @apply border-info-hover;
+}
+
+.button--hovered-light:hover {
+  @apply bg-light-hover;
+  @apply border-light-hover;
+}
+
+.button--hovered-dark:hover {
+  @apply bg-dark-hover;
+  @apply border-dark-hover;
 }
 
 .button--loading {
   @apply pointer-events-none;
+  @apply cursor-wait;
 }
 
 .border-rounded--sm {
@@ -34,6 +78,8 @@ button {
 
 .button--disabled {
   @apply opacity-50;
+  @apply pointer-events-none;
+  @apply cursor-not-allowed;
 }
 
 .button--solid-primary {
