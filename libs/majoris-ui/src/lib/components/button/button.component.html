@@ -8,17 +8,14 @@
     <ng-content></ng-content>
   </div>
   <div *ngIf="loading">
-    <ng-container *ngTemplateOutlet="loadingRef"></ng-container>
+    <ng-container
+      *ngTemplateOutlet="loadingTemplate || defaultLoadingIconRef"
+    ></ng-container>
   </div>
 </button>
 
-<ng-template #loadingRef>
-  <ng-container *ngIf="loadingIcon; else defaultLoadingIconRef">
-    <span>loading...</span>
+<ng-template #defaultLoadingIconRef>
+  <ng-container>
+    <i class="gg-spinner-alt"></i>
   </ng-container>
-  <ng-template #defaultLoadingIconRef>
-    <ng-container>
-      <i class="gg-spinner-alt"></i>
-    </ng-container>
-  </ng-template>
 </ng-template>
