@@ -85,7 +85,9 @@ export class ButtonComponent implements AfterViewInit {
   }
 
   hoveredClass(): string {
-    return !this.disabled && !this.loading ? 'button--hovered' : '';
+    return !this.disabled && !this.loading
+      ? `button--hovered button--hovered-${this.color}`
+      : '';
   }
 
   styleClass(): string {
