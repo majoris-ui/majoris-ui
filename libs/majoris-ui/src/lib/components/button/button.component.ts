@@ -3,14 +3,17 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   Component,
+  ContentChild,
   ElementRef,
   EventEmitter,
   Input,
   Output,
   Renderer2,
+  TemplateRef,
   ViewChild,
   booleanAttribute,
 } from '@angular/core';
+import { ButtonLoadingTemplateDirective } from '../../directives/mjs-button-loading-template.directive';
 
 export type Theme =
   | 'primary'
@@ -63,6 +66,9 @@ export class ButtonComponent implements AfterViewInit {
 
   @ViewChild('button')
   button: ElementRef<HTMLButtonElement>;
+
+  @ContentChild(ButtonLoadingTemplateDirective, { read: TemplateRef })
+  loadingTemplate: TemplateRef<any>;
 
   constructor(private renderer: Renderer2) {}
 
