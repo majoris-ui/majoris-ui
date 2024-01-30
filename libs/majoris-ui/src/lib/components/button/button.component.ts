@@ -3,7 +3,6 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   Component,
-  ContentChild,
   ElementRef,
   EventEmitter,
   Input,
@@ -13,7 +12,7 @@ import {
   ViewChild,
   booleanAttribute,
 } from '@angular/core';
-import { ButtonLoadingTemplateDirective } from '../../directives/mjs-button-loading-template.directive';
+import { ButtonLoadingTemplateDirective } from '../../directives';
 
 export type Theme =
   | 'primary'
@@ -37,7 +36,7 @@ export type BorderSize = 'sm' | 'md' | 'lg';
 @Component({
   selector: 'mjs-button',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ButtonLoadingTemplateDirective],
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -50,8 +49,6 @@ export class ButtonComponent implements AfterViewInit {
   @Input() fill: Style = 'solid';
 
   @Input() size: Height = 'sm';
-
-  loadingIcon: string = '';
 
   @Input({ transform: booleanAttribute })
   loading: boolean = false;
@@ -67,7 +64,7 @@ export class ButtonComponent implements AfterViewInit {
   @ViewChild('button')
   button: ElementRef<HTMLButtonElement>;
 
-  @ContentChild(ButtonLoadingTemplateDirective, { read: TemplateRef })
+  @ViewChild(ButtonLoadingTemplateDirective, { read: TemplateRef })
   loadingTemplate: TemplateRef<any>;
 
   constructor(private renderer: Renderer2) {}

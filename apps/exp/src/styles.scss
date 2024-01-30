@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://css.gg/css');
+@import url('https://unpkg.com/css.gg/icons/icons.css');
+@import url('https://cdn.jsdelivr.net/npm/css.gg/icons/icons.css');
+
 :root {
   --primary: #3498db;
   --primary-active: #2980b9;

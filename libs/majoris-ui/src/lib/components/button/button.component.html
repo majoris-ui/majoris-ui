@@ -1,20 +1,21 @@
 <button
-  (click)="onClick()"
   class="flex justify-center items-center"
+  (click)="onClick()"
   [disabled]="disabled"
+  [ngSwitch]="loading"
   #button
 >
-  <div *ngIf="!loading">
+  <div *ngSwitchCase="false">
     <ng-content></ng-content>
   </div>
-  <div *ngIf="loading">
+  <div *ngSwitchCase="true">
     <ng-container
-      *ngTemplateOutlet="loadingTemplate || defaultLoadingIconRef"
+      *ngTemplateOutlet="loadingTemplate || defaultLoadingTemplate"
     ></ng-container>
   </div>
 </button>
 
-<ng-template #defaultLoadingIconRef>
+<ng-template #defaultLoadingTemplate>
   <ng-container>
     <i class="gg-spinner-alt"></i>
   </ng-container>
