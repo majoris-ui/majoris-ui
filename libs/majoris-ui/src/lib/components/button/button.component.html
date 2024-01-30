@@ -1,9 +1,9 @@
 <button
-  (click)="onClick()"
   class="flex justify-center items-center"
+  (click)="onClick()"
   [disabled]="disabled"
-  #button
   [ngSwitch]="loading"
+  #button
 >
   <div *ngSwitchCase="false">
     <ng-content></ng-content>
