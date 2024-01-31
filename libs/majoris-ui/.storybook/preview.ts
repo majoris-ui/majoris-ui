@@ -1,5 +1,9 @@
+import { themes } from '@storybook/theming';
+
 const preview = {
-  parameters: {},
+  parameters: {
+    docs: { theme: themes.dark },
+  },
 };
 
 export default preview;
