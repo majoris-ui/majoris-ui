@@ -30,6 +30,7 @@
     "@angular/ssr": "~17.0.0",
     "@module-federation/node": "~1.0.5",
     "@nx/angular": "17.2.8",
+    "@storybook/addon-docs": "^7.6.11",
     "chroma-js": "^2.4.2",
     "cors": "~2.8.5",
     "css.gg": "^2.1.1",
