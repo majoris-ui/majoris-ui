@@ -19,6 +19,8 @@ module.exports = {
         'info': 'var(--info-text)',
         'light': 'var(--light-text)',
         'dark': 'var(--dark-text)',
+        'gray': 'var(--gray-text)',
+        'gray-alt': 'var(--gray-text-alt)',
         'primary-alt': 'var(--primary-text-alt)',
         'accent-alt': 'var(--accent-text-alt)',
         'highlight-alt': 'var(--highlight-text-alt)',
@@ -75,6 +77,23 @@ module.exports = {
           active: 'var(--light-active)',
           hover: 'var(--light-hover)',
         },
+        'gray': {
+          DEFAULT: 'var(--gray)',
+          active: 'var(--gray-active)',
+          hover: 'var(--gray-hover)',
+        }
+      },
+      borderColor: {
+        'primary': 'var(--primary-border)',
+        'accent': 'var(--accent-border)',
+        'highlight': 'var(--highlight-border)',
+        'success': 'var(--success-border)',
+        'warning': 'var(--warning-border)',
+        'danger': 'var(--danger-border)',
+        'info': 'var(--info-border)',
+        'light': 'var(--light-border)',
+        'dark': 'var(--dark-border)',
+        'gray': 'var(--gray-border)'
       },
       borderRadius: {
         sm: 'var(--border-radius-sm)',

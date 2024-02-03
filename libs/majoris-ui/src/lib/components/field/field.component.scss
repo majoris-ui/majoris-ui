@@ -1,0 +1,33 @@
+div {
+  @apply w-full;
+  @apply px-md;
+
+  input {
+    @apply w-full;
+    @apply outline-none;
+  }
+}
+
+.field-height--sm {
+  @apply h-sm;
+
+  input {
+    @apply h-sm;
+  }
+}
+
+.field-height--md {
+  @apply h-md;
+
+  input {
+    @apply h-md;
+  }
+}
+
+.field-height--lg {
+  @apply h-lg;
+
+  input {
+    @apply h-lg;
+  }
+}
