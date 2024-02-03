@@ -1,1 +1,13 @@
-<p>field works!</p>
+<div #field>
+  <input
+    [ngModel]="text"
+    [readOnly]="readonly"
+    [disabled]="disabled"
+    [required]="required"
+    [placeholder]="placeholder"
+    [type]="type"
+    (blur)="onBlur()"
+    (change)="onChange()"
+    (input)="onChange()"
+  />
+</div>

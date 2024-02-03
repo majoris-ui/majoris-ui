@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Route, RouterModule } from '@angular/router';
 import { ButtonComponent, FieldComponent } from '@majoris-org/majoris-ui';
 import { ButtonLoadingTemplateDirective } from 'libs/majoris-ui/src/lib/directives/mjs-button-loading-template.directive';
@@ -15,6 +16,7 @@ const home: Route[] = [
 @NgModule({
   declarations: [HomeComponent],
   imports: [
+    FormsModule,
     CommonModule,
     ButtonComponent,
     FieldComponent,
