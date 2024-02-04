@@ -8,47 +8,47 @@ button {
 
 .button--hovered-primary:hover {
   @apply bg-primary-hover;
-  @apply border-primary-hover;
+  @apply border-primary;
 }
 
 .button--hovered-accent:hover {
   @apply bg-accent-hover;
-  @apply border-accent-hover;
+  @apply border-accent;
 }
 
 .button--hovered-highlight:hover {
   @apply bg-highlight-hover;
-  @apply border-highlight-hover;
+  @apply border-highlight;
 }
 
 .button--hovered-success:hover {
   @apply bg-success-hover;
-  @apply border-success-hover;
+  @apply border-success;
 }
 
 .button--hovered-danger:hover {
   @apply bg-danger-hover;
-  @apply border-danger-hover;
+  @apply border-danger;
 }
 
 .button--hovered-warning:hover {
   @apply bg-warning-hover;
-  @apply border-warning-hover;
+  @apply border-warning;
 }
 
 .button--hovered-info:hover {
   @apply bg-info-hover;
-  @apply border-info-hover;
+  @apply border-info;
 }
 
 .button--hovered-light:hover {
   @apply bg-light-hover;
-  @apply border-light-hover;
+  @apply border-light;
 }
 
 .button--hovered-dark:hover {
   @apply bg-dark-hover;
-  @apply border-dark-hover;
+  @apply border-dark;
 }
 
 .button--loading {
