@@ -40,7 +40,7 @@ export class FieldComponent implements ControlValueAccessor, AfterViewInit {
 
   @Input() placeholder: string = '';
 
-  @Input() height: Height = 'sm';
+  @Input() size: Height = 'sm';
 
   @Input() color: string = 'primary';
 
@@ -49,11 +49,11 @@ export class FieldComponent implements ControlValueAccessor, AfterViewInit {
   @ViewChild('field') field: ElementRef<HTMLDivElement>;
 
   get getHeight(): string {
-    return `field-height--${this.height}`;
+    return `field-height--${this.size}`;
   }
 
   get getTheme(): string {
-    return `field-height--${this.height}`;
+    return `field-height--${this.size}`;
   }
 
   get classes(): string[] {

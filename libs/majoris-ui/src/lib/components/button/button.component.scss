@@ -2,86 +2,6 @@ button {
   @apply flex justify-center items-center;
 }
 
-.button--hovered {
-  transition: background 0.3s ease-in-out;
-}
-
-.button--hovered-primary:hover {
-  @apply bg-primary-hover;
-  @apply border-primary;
-}
-
-.button--hovered-accent:hover {
-  @apply bg-accent-hover;
-  @apply border-accent;
-}
-
-.button--hovered-highlight:hover {
-  @apply bg-highlight-hover;
-  @apply border-highlight;
-}
-
-.button--hovered-success:hover {
-  @apply bg-success-hover;
-  @apply border-success;
-}
-
-.button--hovered-danger:hover {
-  @apply bg-danger-hover;
-  @apply border-danger;
-}
-
-.button--hovered-warning:hover {
-  @apply bg-warning-hover;
-  @apply border-warning;
-}
-
-.button--hovered-info:hover {
-  @apply bg-info-hover;
-  @apply border-info;
-}
-
-.button--hovered-light:hover {
-  @apply bg-light-hover;
-  @apply border-light;
-}
-
-.button--hovered-dark:hover {
-  @apply bg-dark-hover;
-  @apply border-dark;
-}
-
-.button--loading {
-  @apply pointer-events-none;
-  @apply cursor-wait;
-}
-
-.border-rounded--sm {
-  @apply rounded-sm;
-}
-
-.border-rounded--md {
-  @apply rounded-md;
-}
-
-.border-rounded--lg {
-  @apply rounded-lg;
-}
-
-.border-rounded--full {
-  @apply rounded-full;
-}
-
-.border-rounded--none {
-  @apply rounded-none;
-}
-
-.button--disabled {
-  @apply opacity-50;
-  @apply pointer-events-none;
-  @apply cursor-not-allowed;
-}
-
 .button--solid-primary {
   @apply bg-primary;
   @apply text-primary;
@@ -235,12 +155,24 @@ button {
   @apply border-light;
 }
 
-.button--expanded {
-  @apply w-full;
+.border-rounded--sm {
+  @apply rounded-sm;
 }
 
-.button--collapsed {
-  @apply w-fit;
+.border-rounded--md {
+  @apply rounded-md;
+}
+
+.border-rounded--lg {
+  @apply rounded-lg;
+}
+
+.border-rounded--full {
+  @apply rounded-full;
+}
+
+.border-rounded--none {
+  @apply rounded-none;
 }
 
 .button-size--sm {
@@ -270,4 +202,23 @@ button {
   @apply h-lg;
   @apply text-lg;
   @apply font-bold;
+}
+
+.button--loading {
+  @apply pointer-events-none;
+  @apply cursor-wait;
+}
+
+.button--disabled {
+  @apply opacity-50;
+  @apply pointer-events-none;
+  @apply cursor-not-allowed;
+}
+
+.button--expanded {
+  @apply w-full;
+}
+
+.button--collapsed {
+  @apply w-fit;
 }
