@@ -2,17 +2,16 @@
   class="flex justify-center items-center"
   (click)="onClick()"
   [disabled]="disabled"
-  [ngSwitch]="loading"
   #button
 >
-  <div *ngSwitchCase="false">
+  <span [ngStyle]="{ visibility: loading ? 'hidden' : 'visible' }">
     <ng-content></ng-content>
-  </div>
-  <div *ngSwitchCase="true">
+  </span>
+  <span class="button__loading" *ngIf="loading">
     <ng-container
       *ngTemplateOutlet="loadingTemplate || defaultLoadingTemplate"
     ></ng-container>
-  </div>
+  </span>
 </button>
 
 <ng-template #defaultLoadingTemplate>

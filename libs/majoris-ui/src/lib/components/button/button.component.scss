@@ -2,6 +2,10 @@ button {
   @apply flex justify-center items-center;
 }
 
+.button__loading {
+  position: absolute;
+}
+
 .button__background__solid--default {
   @apply bg-default;
 }
