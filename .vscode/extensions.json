@@ -4,5 +4,9 @@
     "esbenp.prettier-vscode",
     "firsttris.vscode-jest-runner",
     "dbaeumer.vscode-eslint"
-  ]
+  ],
+  "css.customData": [
+    ".vscode/tailwind.json"
+  ],
+  "scss.lint.unknownAtRules": "ignore"
 }

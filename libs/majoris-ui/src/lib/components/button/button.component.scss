@@ -150,30 +150,34 @@ button {
 .button-size--sm {
   @apply h-sm;
   @apply px-sm;
-  @apply text-sm;
+  @apply text-md;
   @apply font-bold;
 
   .gg-spinner-alt {
-    --ggs: 0.7;
+    --ggs: 0.8;
   }
 }
 
 .button-size--md {
   @apply h-md;
-  @apply px-md;
+  @apply px-sm;
   @apply text-md;
   @apply font-bold;
 
   .gg-spinner-alt {
-    --ggs: 0.9;
+    --ggs: 0.8;
   }
 }
 
 .button-size--lg {
-  @apply px-lg;
+  @apply px-sm;
   @apply h-lg;
-  @apply text-lg;
+  @apply text-md;
   @apply font-bold;
+
+  .gg-spinner-alt {
+    --ggs: 0.8;
+  }
 }
 
 .button--loading {

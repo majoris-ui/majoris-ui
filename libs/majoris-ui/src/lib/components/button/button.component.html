@@ -1,9 +1,4 @@
-<button
-  class="flex justify-center items-center"
-  (click)="onClick()"
-  [disabled]="disabled"
-  #button
->
+<button (click)="onClick()" [disabled]="disabled" #button>
   <span [ngStyle]="{ visibility: loading ? 'hidden' : 'visible' }">
     <ng-content></ng-content>
   </span>
