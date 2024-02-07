@@ -1,63 +1,43 @@
 :root {
-  --primary: #3498db;
-  --primary-active: #2980b9;
-  --primary-hover: #6cbbf0;
-  --primary-text: #ffffff;
-  --primary-text-alt: #3498db;
+  --default: #3498db;
+  --default-active: #2980b9;
+  --default-hover: #6cbbf0;
 
-  --accent: #2ecc71;
-  --accent-active: #27ae60;
-  --accent-hover: #3de082;
-  --accent-text: #ffffff;
-  --accent-text-alt: #2ecc71;
+  --alternative: #FBFFFE;
+  --alternative-active: #FBFFFE;
+  --alternative-hover: #FBFFFE;
 
   --highlight: #f39c12;
   --highlight-active: #d35400;
   --highlight-hover: #f7b143;
-  --highlight-text: #ffffff;
-  --highlight-text-alt: #f39c12;
 
   --success: #2ecc71;
   --success-active: #27ae60;
   --success-hover: #3de082;
-  --success-text: #ffffff;
-  --success-text-alt: #2ecc71;
 
   --danger: #e74c3c;
   --danger-active: #c0392b;
   --danger-hover: #f78377;
-  --danger-text: #ffffff;
-  --danger-text-alt: #e74c3c;
 
   --info: #3498db;
   --info-active: #2980b9;
   --info-hover:  #6cbbf0;
-  --info-text: #ffffff;
-  --info-text-alt: #3498db;
 
   --warning: #f39c12;
   --warning-active: #d35400;
   --warning-hover: #f7b143;
-  --warning-text: #ffffff;
-  --warning-text-alt: #f39c12;
 
   --light: #ecf0f1;
   --light-active: #bdc3c7;
   --light-hover: #f5f7f7;
-  --light-text: #000000;
-  --light-text-alt: #ecf0f1;
 
   --gray: #E5E7E6;
   --gray-active: #DEDEDE;
   --gray-hover: #FFFFFF;
-  --gray-text: #000000;
-  --gray-text-alt: #ecf0f1;
 
   --dark: #34495e;
   --dark-active: #2c3e50;
   --dark-hover: #4f6275;
-  --dark-text: #ffffff;
-  --dark-text-alt: #34495e;
 
   --border-radius-sm: 0.25rem;
   --border-radius-md: 0.35rem;

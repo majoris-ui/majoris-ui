@@ -2,157 +2,125 @@ button {
   @apply flex justify-center items-center;
 }
 
-.button--solid-primary {
-  @apply bg-primary;
-  @apply text-primary;
-  @apply border-primary;
+.button__background__solid--default {
+  @apply bg-default;
 }
 
-.button--solid-accent {
-  @apply bg-accent;
-  @apply text-accent;
-  @apply border-accent;
+.button__background__solid--alternative {
+  @apply bg-alternative;
 }
 
-.button--solid-highlight {
+.button__background__solid--highlight {
   @apply bg-highlight;
-  @apply text-highlight;
-  @apply border-highlight;
 }
 
-.button--solid-danger {
+.button__background__solid--danger {
   @apply bg-danger;
-  @apply text-danger;
-  @apply border-danger;
 }
 
-.button--solid-info {
+.button__background__solid--info {
   @apply bg-info;
-  @apply text-info;
-  @apply border-info;
 }
 
-.button--solid-success {
+.button__background__solid--success {
   @apply bg-success;
-  @apply text-success;
-  @apply border-success;
 }
 
-.button--solid-warning {
+.button__background__solid--warning {
   @apply bg-warning;
-  @apply text-warning;
-  @apply border-warning;
 }
 
-.button--solid-dark {
+.button__background__solid--dark {
   @apply bg-dark;
-  @apply text-dark;
-  @apply border-dark;
 }
 
-.button--solid-light {
+.button__background__solid--light {
   @apply bg-light;
-  @apply text-light;
-  @apply border-light;
 }
 
-.button--outline-primary {
-  @apply border border-primary;
-  @apply text-primary-alt;
-  @apply border-primary;
+.button__background__outline--default {
+  @apply border border-default;
+  @apply border-default;
 }
 
-.button--outline-accent {
-  @apply border border-accent;
-  @apply text-accent-alt;
-  @apply border-accent;
+.button__background__outline--alternative {
+  @apply border border-alternative;
+  @apply border-alternative;
 }
 
-.button--outline-highlight {
+.button__background__outline--highlight {
   @apply border border-highlight;
-  @apply text-highlight-alt;
   @apply border-highlight;
 }
 
-.button--outline-danger {
+.button__background__outline--danger {
   @apply border border-danger;
-  @apply text-danger-alt;
   @apply border-danger;
 }
 
-.button--outline-info {
+.button__background__outline--info {
   @apply border border-info;
-  @apply text-info-alt;
   @apply border-info;
 }
 
-.button--outline-success {
+.button__background__outline--success {
   @apply border border-success;
-  @apply text-success-alt;
   @apply border-success;
 }
 
-.button--outline-warning {
+.button__background__outline--warning {
   @apply border border-warning;
-  @apply text-warning-alt;
   @apply border-warning;
 }
 
-.button--outline-dark {
+.button__background__outline--dark {
   @apply border border-dark;
-  @apply text-dark-alt;
   @apply border-dark;
 }
 
-.button--outline-light {
+.button__background__outline--light {
   @apply border border-light;
-  @apply text-light-alt;
   @apply border-light;
 }
 
-.button--link-primary {
-  @apply text-primary-alt;
-  @apply border-primary;
+.button__color--default {
+  @apply text-default;
 }
 
-.button--link-accent {
-  @apply text-accent-alt;
-  @apply border-accent;
+.button__color--alternative {
+  @apply text-alternative;
 }
 
-.button--link-highlight {
-  @apply text-highlight-alt;
-  @apply border-highlight;
+.button__color--highlight {
+  @apply text-highlight;
 }
 
-.button--link-danger {
-  @apply text-danger-alt;
-  @apply border-danger;
+.button__color--danger {
+  @apply text-danger;
 }
 
-.button--link-info {
-  @apply text-info-alt;
-  @apply border-info;
+.button__color--info {
+  @apply text-info;
 }
 
-.button--link-success {
-  @apply text-success-alt;
-  @apply border-success;
+.button__color--success {
+  @apply text-success;
 }
 
-.button--link-warning {
-  @apply text-warning-alt;
-  @apply border-warning;
+.button__color--warning {
+  @apply text-warning;
 }
 
-.button--link-dark {
-  @apply text-dark-alt;
-  @apply border-dark;
+.button__color--dark {
+  @apply text-dark;
 }
 
-.button--link-light {
-  @apply text-light-alt;
-  @apply border-light;
+.button__color--light {
+  @apply text-light;
+}
+
+.button__color--gray {
+  @apply text-gray;
 }
 
 .border-rounded--sm {

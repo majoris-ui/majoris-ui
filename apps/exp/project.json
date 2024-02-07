@@ -37,7 +37,10 @@
               "maximumError": "4kb"
             }
           ],
-          "outputHashing": "all"
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/exp/webpack.prod.config.ts"
+          }
         },
         "development": {
           "buildOptimizer": false,

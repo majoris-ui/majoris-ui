@@ -15,8 +15,8 @@ import {
 import { ButtonLoadingTemplateDirective } from '../../directives';
 
 export type Theme =
-  | 'primary'
-  | 'accent'
+  | 'default'
+  | 'alternative'
   | 'highlight'
   | 'success'
   | 'warning'
@@ -42,7 +42,9 @@ export type BorderSize = 'sm' | 'md' | 'lg';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent implements AfterViewInit {
-  @Input() color: Theme = 'primary';
+  @Input() backgroundColor: Theme = 'default';
+
+  @Input() textColor: Theme = 'default';
 
   @Input() rounded: Rounded = 'sm';
 
@@ -79,22 +81,20 @@ export class ButtonComponent implements AfterViewInit {
     );
   }
 
+  backgroundClass(): string {
+    return `button__background__${this.fill}--${this.backgroundColor}`;
+  }
+
+  colorClass(): string {
+    return `button__color--${this.textColor}`;
+  }
+
   roundedClass(): string {
     return `border-rounded--${this.rounded}`;
   }
 
   disabledClass(): string {
     return this.disabled ? 'button--disabled' : '';
-  }
-
-  hoveredClass(): string {
-    return !this.disabled && !this.loading
-      ? `button--hovered button--hovered-${this.color}`
-      : '';
-  }
-
-  styleClass(): string {
-    return `button--${this.fill}-${this.color}`;
   }
 
   expandClass(): string {
@@ -113,10 +113,10 @@ export class ButtonComponent implements AfterViewInit {
     return [
       this.roundedClass(),
       this.disabledClass(),
-      this.hoveredClass(),
-      this.styleClass(),
       this.expandClass(),
       this.heightClass(),
+      this.backgroundClass(),
+      this.colorClass(),
     ];
   }
 

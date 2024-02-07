@@ -3,18 +3,13 @@ import {
   BrowserModule,
   provideClientHydration,
 } from '@angular/platform-browser';
-import { Route, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-
-export const appRoutes: Route[] = [
-  {
-    path: '',
-    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
-  },
-];
+import { appRoutes } from './app.routes';
+import { NxWelcomeComponent } from './nx-welcome.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NxWelcomeComponent],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],

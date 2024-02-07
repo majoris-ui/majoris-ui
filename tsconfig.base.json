@@ -17,7 +17,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@majoris-org/majoris-ui": ["libs/majoris-ui/src/index.ts"]
+      "@majoris-org/majoris-ui": ["libs/majoris-ui/src/index.ts"],
+      "ex/Routes": ["apps/ex/src/app/remote-entry/entry.routes.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

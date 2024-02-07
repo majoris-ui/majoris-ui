@@ -11,11 +11,11 @@ export default {
       control: 'text',
       description: 'Control the button text content',
     },
-    color: {
+    textColor: {
       control: 'select',
       options: [
-        'primary',
-        'accent',
+        'default',
+        'alternative',
         'highlight',
         'danger',
         'success',
@@ -23,6 +23,23 @@ export default {
         'info',
         'light',
         'dark',
+        'gray',
+      ],
+      description: 'Control the button text color theme',
+    },
+    backgroundColor: {
+      control: 'select',
+      options: [
+        'default',
+        'alternative',
+        'highlight',
+        'danger',
+        'success',
+        'warning',
+        'info',
+        'light',
+        'dark',
+        'gray',
       ],
       description: 'Control the button color theme',
     },
@@ -56,7 +73,8 @@ export default {
   },
   args: {
     text: 'text',
-    color: 'primary',
+    textColor: 'light',
+    backgroundColor: 'default',
     rounded: 'sm',
     disabled: false,
     fill: 'solid',
@@ -73,13 +91,14 @@ export const Button = ({ ...args }) => {
   return {
     template: `
     <mjs-button
+      textColor="${args['textColor']}"
       [loading]="${args['loading']}"
       size="${args['size']}"
       [expand]="${args['expand']}"
       fill="${args['fill']}"
       [disabled]="${args['disabled']}"
       rounded="${args['rounded']}"
-      color="${args['color']}">${
+      backgroundColor="${args['backgroundColor']}">${
       args['text'] ? args['text'] : ''
     }</mjs-button>`,
     props: { ...args },

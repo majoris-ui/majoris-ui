@@ -9,38 +9,16 @@ module.exports = {
   ],
   theme: {
     extend: {
-      textColor: {
-        'primary': 'var(--primary-text)',
-        'accent': 'var(--accent-text)',
-        'highlight': 'var(--highlight-text)',
-        'success': 'var(--success-text)',
-        'warning': 'var(--warning-text)',
-        'danger': 'var(--danger-text)',
-        'info': 'var(--info-text)',
-        'light': 'var(--light-text)',
-        'dark': 'var(--dark-text)',
-        'gray': 'var(--gray-text)',
-        'gray-alt': 'var(--gray-text-alt)',
-        'primary-alt': 'var(--primary-text-alt)',
-        'accent-alt': 'var(--accent-text-alt)',
-        'highlight-alt': 'var(--highlight-text-alt)',
-        'success-alt': 'var(--success-text-alt)',
-        'warning-alt': 'var(--warning-text-alt)',
-        'danger-alt': 'var(--danger-text-alt)',
-        'info-alt': 'var(--info-text-alt)',
-        'light-alt': 'var(--light-text-alt)',
-        'dark-alt': 'var(--dark-text-alt)',
-      },
       colors: {
-        'primary': {
-          DEFAULT: 'var(--primary)',
-          active: 'var(--primary-active)',
-          hover: 'var(--primary-hover)',
+        'default': {
+          DEFAULT: 'var(--default)',
+          active: 'var(--default-active)',
+          hover: 'var(--default-hover)',
         },
-        'accent': {
-          DEFAULT: 'var(--accent)',
-          active: 'var(--accent-active)',
-          hover: 'var(--accent-hover)',
+        'alternative': {
+          DEFAULT: 'var(--alternative)',
+          active: 'var(--alternative-active)',
+          hover: 'var(--alternative-hover)',
         },
         'highlight': {
           DEFAULT: 'var(--highlight)',
@@ -82,18 +60,6 @@ module.exports = {
           active: 'var(--gray-active)',
           hover: 'var(--gray-hover)',
         }
-      },
-      borderColor: {
-        'primary': 'var(--primary-border)',
-        'accent': 'var(--accent-border)',
-        'highlight': 'var(--highlight-border)',
-        'success': 'var(--success-border)',
-        'warning': 'var(--warning-border)',
-        'danger': 'var(--danger-border)',
-        'info': 'var(--info-border)',
-        'light': 'var(--light-border)',
-        'dark': 'var(--dark-border)',
-        'gray': 'var(--gray-border)'
       },
       borderRadius: {
         sm: 'var(--border-radius-sm)',
