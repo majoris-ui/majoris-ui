@@ -10,56 +10,31 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'default': {
-          DEFAULT: 'var(--default)',
-          active: 'var(--default-active)',
-          hover: 'var(--default-hover)',
+        main: {
+          base: 'var(--main-base)',
+          accent: 'var(--main-accent)',
+          highlight: 'var(--main-highlight)',
         },
-        'alternative': {
-          DEFAULT: 'var(--alternative)',
-          active: 'var(--alternative-active)',
-          hover: 'var(--alternative-hover)',
+        danger: {
+          base: 'var(--danger-base)',
+          accent: 'var(--danger-accent)',
+          highlight: 'var(--danger-highlight)',
         },
-        'highlight': {
-          DEFAULT: 'var(--highlight)',
-          active: 'var(--highlight-active)',
-          hover: 'var(--highlight-hover)',
+        success: {
+          base: 'var(--success-base)',
+          accent: 'var(--success-accent)',
+          highlight: 'var(--success-highlight)',
         },
-        'success': {
-          DEFAULT: 'var(--success)',
-          active: 'var(--success-active)',
-          hover: 'var(--success-hover)',
+        warning: {
+          base: 'var(--warning-base)',
+          accent: 'var(--warning-accent)',
+          highlight: 'var(--warning-highlight)',
         },
-        'warning': {
-          DEFAULT: 'var(--warning)',
-          active: 'var(--warning-active)',
-          hover: 'var(--warning-hover)',
+        info: {
+          base: 'var(--info-base)',
+          accent: 'var(--info-accent)',
+          highlight: 'var(--info-highlight)',
         },
-        'danger': {
-          DEFAULT: 'var(--danger)',
-          active: 'var(--danger-active)',
-          hover: 'var(--danger-hover)',
-        },
-        'info': {
-          DEFAULT: 'var(--info)',
-          active: 'var(--info-active)',
-          hover: 'var(--info-hover)',
-        },
-        'dark': {
-          DEFAULT: 'var(--dark)',
-          active: 'var(--dark-active)',
-          hover: 'var(--dark-hover)',
-        },
-        'light': {
-          DEFAULT: 'var(--light)',
-          active: 'var(--light-active)',
-          hover: 'var(--light-hover)',
-        },
-        'gray': {
-          DEFAULT: 'var(--gray)',
-          active: 'var(--gray-active)',
-          hover: 'var(--gray-hover)',
-        }
       },
       borderRadius: {
         sm: 'var(--border-radius-sm)',

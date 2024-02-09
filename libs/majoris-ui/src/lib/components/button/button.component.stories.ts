@@ -2,7 +2,7 @@ import type { Meta } from '@storybook/angular';
 import { ButtonComponent } from './button.component';
 
 export default {
-  title: 'Components/Button',
+  title: 'Forms/Button',
   component: ButtonComponent,
   tags: ['autodocs'],
   argTypes: {

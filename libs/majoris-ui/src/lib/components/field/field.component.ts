@@ -22,6 +22,12 @@ type Type = 'password' | 'text' | 'email' | 'number';
 
 type Height = 'sm' | 'md' | 'lg';
 
+export type Theme = 'main' | 'success' | 'warning' | 'danger' | 'info';
+
+export type Style = 'solid' | 'outline' | 'link';
+
+export type Rounded = 'sm' | 'md' | 'lg' | 'full' | 'none';
+
 @Component({
   selector: 'mjs-field',
   standalone: true,
@@ -38,26 +44,34 @@ export class FieldComponent implements ControlValueAccessor, AfterViewInit {
 
   @Input() type: Type = 'text';
 
+  @Input() rounded: Rounded = 'sm';
+
+  @Input() size: Height = 'md';
+
+  @Input() fill: Style = 'solid';
+
   @Input() placeholder: string = '';
 
-  @Input() size: Height = 'sm';
-
-  @Input() color: string = 'primary';
+  @Input() theme: Theme = 'main';
 
   @Output() blur: EventEmitter<boolean> = new EventEmitter();
 
   @ViewChild('field') field: ElementRef<HTMLDivElement>;
 
+  get roundedClass(): string {
+    return `field-border-rounded--${this.rounded}`;
+  }
+
+  get getThemeColorClass(): string {
+    return `color-theme--${this.fill}--${this.theme}`;
+  }
+
   get getHeight(): string {
     return `field-height--${this.size}`;
   }
 
-  get getTheme(): string {
-    return `field-height--${this.size}`;
-  }
-
   get classes(): string[] {
-    return [this.getHeight];
+    return [this.getHeight, this.getThemeColorClass, this.roundedClass];
   }
 
   text: string = '';

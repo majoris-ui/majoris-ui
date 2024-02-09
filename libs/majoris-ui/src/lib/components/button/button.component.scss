@@ -1,200 +1,200 @@
-button {
-  @apply flex justify-center items-center;
-}
+// button {
+//   @apply flex justify-center items-center;
+// }
 
-.button__loading {
-  position: absolute;
-}
+// .button__loading {
+//   position: absolute;
+// }
 
-.button__background__solid--default {
-  @apply bg-default;
-}
+// .button__background__solid--default {
+//   @apply bg-default;
+// }
 
-.button__background__solid--alternative {
-  @apply bg-alternative;
-}
+// .button__background__solid--alternative {
+//   @apply bg-alternative;
+// }
 
-.button__background__solid--highlight {
-  @apply bg-highlight;
-}
+// .button__background__solid--highlight {
+//   @apply bg-highlight;
+// }
 
-.button__background__solid--danger {
-  @apply bg-danger;
-}
+// .button__background__solid--danger {
+//   @apply bg-danger;
+// }
 
-.button__background__solid--info {
-  @apply bg-info;
-}
+// .button__background__solid--info {
+//   @apply bg-info;
+// }
 
-.button__background__solid--success {
-  @apply bg-success;
-}
+// .button__background__solid--success {
+//   @apply bg-success;
+// }
 
-.button__background__solid--warning {
-  @apply bg-warning;
-}
+// .button__background__solid--warning {
+//   @apply bg-warning;
+// }
 
-.button__background__solid--dark {
-  @apply bg-dark;
-}
+// .button__background__solid--dark {
+//   @apply bg-dark;
+// }
 
-.button__background__solid--light {
-  @apply bg-light;
-}
+// .button__background__solid--light {
+//   @apply bg-light;
+// }
 
-.button__background__outline--default {
-  @apply border border-default;
-  @apply border-default;
-}
+// .button__background__outline--default {
+//   @apply border border-default;
+//   @apply border-default;
+// }
 
-.button__background__outline--alternative {
-  @apply border border-alternative;
-  @apply border-alternative;
-}
+// .button__background__outline--alternative {
+//   @apply border border-alternative;
+//   @apply border-alternative;
+// }
 
-.button__background__outline--highlight {
-  @apply border border-highlight;
-  @apply border-highlight;
-}
+// .button__background__outline--highlight {
+//   @apply border border-highlight;
+//   @apply border-highlight;
+// }
 
-.button__background__outline--danger {
-  @apply border border-danger;
-  @apply border-danger;
-}
+// .button__background__outline--danger {
+//   @apply border border-danger;
+//   @apply border-danger;
+// }
 
-.button__background__outline--info {
-  @apply border border-info;
-  @apply border-info;
-}
+// .button__background__outline--info {
+//   @apply border border-info;
+//   @apply border-info;
+// }
 
-.button__background__outline--success {
-  @apply border border-success;
-  @apply border-success;
-}
+// .button__background__outline--success {
+//   @apply border border-success;
+//   @apply border-success;
+// }
 
-.button__background__outline--warning {
-  @apply border border-warning;
-  @apply border-warning;
-}
+// .button__background__outline--warning {
+//   @apply border border-warning;
+//   @apply border-warning;
+// }
 
-.button__background__outline--dark {
-  @apply border border-dark;
-  @apply border-dark;
-}
+// .button__background__outline--dark {
+//   @apply border border-dark;
+//   @apply border-dark;
+// }
 
-.button__background__outline--light {
-  @apply border border-light;
-  @apply border-light;
-}
+// .button__background__outline--light {
+//   @apply border border-light;
+//   @apply border-light;
+// }
 
-.button__color--default {
-  @apply text-default;
-}
+// .button__color--default {
+//   @apply text-default;
+// }
 
-.button__color--alternative {
-  @apply text-alternative;
-}
+// .button__color--alternative {
+//   @apply text-alternative;
+// }
 
-.button__color--highlight {
-  @apply text-highlight;
-}
+// .button__color--highlight {
+//   @apply text-highlight;
+// }
 
-.button__color--danger {
-  @apply text-danger;
-}
+// .button__color--danger {
+//   @apply text-danger;
+// }
 
-.button__color--info {
-  @apply text-info;
-}
+// .button__color--info {
+//   @apply text-info;
+// }
 
-.button__color--success {
-  @apply text-success;
-}
+// .button__color--success {
+//   @apply text-success;
+// }
 
-.button__color--warning {
-  @apply text-warning;
-}
+// .button__color--warning {
+//   @apply text-warning;
+// }
 
-.button__color--dark {
-  @apply text-dark;
-}
+// .button__color--dark {
+//   @apply text-dark;
+// }
 
-.button__color--light {
-  @apply text-light;
-}
+// .button__color--light {
+//   @apply text-light;
+// }
 
-.button__color--gray {
-  @apply text-gray;
-}
+// .button__color--gray {
+//   @apply text-gray;
+// }
 
-.border-rounded--sm {
-  @apply rounded-sm;
-}
+// .border-rounded--sm {
+//   @apply rounded-sm;
+// }
 
-.border-rounded--md {
-  @apply rounded-md;
-}
+// .border-rounded--md {
+//   @apply rounded-md;
+// }
 
-.border-rounded--lg {
-  @apply rounded-lg;
-}
+// .border-rounded--lg {
+//   @apply rounded-lg;
+// }
 
-.border-rounded--full {
-  @apply rounded-full;
-}
+// .border-rounded--full {
+//   @apply rounded-full;
+// }
 
-.border-rounded--none {
-  @apply rounded-none;
-}
+// .border-rounded--none {
+//   @apply rounded-none;
+// }
 
-.button-size--sm {
-  @apply h-sm;
-  @apply px-sm;
-  @apply text-md;
-  @apply font-bold;
+// .button-size--sm {
+//   @apply h-sm;
+//   @apply px-sm;
+//   @apply text-md;
+//   @apply font-bold;
 
-  .gg-spinner-alt {
-    --ggs: 0.8;
-  }
-}
+//   .gg-spinner-alt {
+//     --ggs: 0.8;
+//   }
+// }
 
-.button-size--md {
-  @apply h-md;
-  @apply px-sm;
-  @apply text-md;
-  @apply font-bold;
+// .button-size--md {
+//   @apply h-md;
+//   @apply px-sm;
+//   @apply text-md;
+//   @apply font-bold;
 
-  .gg-spinner-alt {
-    --ggs: 0.8;
-  }
-}
+//   .gg-spinner-alt {
+//     --ggs: 0.8;
+//   }
+// }
 
-.button-size--lg {
-  @apply px-sm;
-  @apply h-lg;
-  @apply text-md;
-  @apply font-bold;
+// .button-size--lg {
+//   @apply px-sm;
+//   @apply h-lg;
+//   @apply text-md;
+//   @apply font-bold;
 
-  .gg-spinner-alt {
-    --ggs: 0.8;
-  }
-}
+//   .gg-spinner-alt {
+//     --ggs: 0.8;
+//   }
+// }
 
-.button--loading {
-  @apply pointer-events-none;
-  @apply cursor-wait;
-}
+// .button--loading {
+//   @apply pointer-events-none;
+//   @apply cursor-wait;
+// }
 
-.button--disabled {
-  @apply opacity-50;
-  @apply pointer-events-none;
-  @apply cursor-not-allowed;
-}
+// .button--disabled {
+//   @apply opacity-50;
+//   @apply pointer-events-none;
+//   @apply cursor-not-allowed;
+// }
 
-.button--expanded {
-  @apply w-full;
-}
+// .button--expanded {
+//   @apply w-full;
+// }
 
-.button--collapsed {
-  @apply w-fit;
-}
+// .button--collapsed {
+//   @apply w-fit;
+// }

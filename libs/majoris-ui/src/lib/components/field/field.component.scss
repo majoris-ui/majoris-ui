@@ -5,9 +5,11 @@ div {
   input {
     @apply w-full;
     @apply outline-none;
+    @apply bg-transparent;
   }
 }
 
+// FIELD HEIGHTS
 .field-height--sm {
   @apply h-sm;
 
@@ -29,5 +31,37 @@ div {
 
   input {
     @apply h-lg;
+  }
+}
+
+// FIELD BORDER RADIUS
+.field-border-rounded--sm {
+  @apply rounded-sm;
+}
+
+.field-border-rounded--md {
+  @apply rounded-md;
+}
+
+.field-border-rounded--lg {
+  @apply rounded-lg;
+}
+
+.field-border-rounded--full {
+  @apply rounded-full;
+}
+
+.field-border-rounded--none {
+  @apply rounded-none;
+}
+
+// FIELD SOLID COLORS
+.color-theme--solid--main {
+  @apply bg-main-base;
+  @apply text-main-highlight;
+
+  input::placeholder {
+    @apply text-main-highlight;
+    @apply opacity-50;
   }
 }
