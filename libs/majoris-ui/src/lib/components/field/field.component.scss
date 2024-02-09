@@ -1,6 +1,6 @@
 div {
   @apply w-full;
-  @apply px-md;
+  @apply px-sm;
 
   input {
     @apply w-full;
@@ -56,7 +56,7 @@ div {
 }
 
 // FIELD SOLID COLORS
-.color-theme--solid--main {
+.color-theme {
   @apply bg-main-base;
   @apply text-main-highlight;
 
@@ -64,4 +64,19 @@ div {
     @apply text-main-highlight;
     @apply opacity-50;
   }
+
+  @apply border-2 border-main-accent;
+  @apply shadow-md;
+
+  &:focus-within {
+    @apply border-2 border-main-highlight;
+  }
+}
+
+.color-theme--invalid {
+  @apply border-2 border-danger-accent;
+}
+
+.color-theme--valid {
+  @apply border-2 border-success-accent;
 }

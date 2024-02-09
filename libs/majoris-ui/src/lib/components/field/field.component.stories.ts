@@ -1,4 +1,6 @@
-import { Meta } from '@storybook/angular';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { action } from '@storybook/addon-actions';
+import { Meta, moduleMetadata } from '@storybook/angular';
 import { FieldComponent } from './field.component';
 
 export default {
@@ -20,18 +22,22 @@ export default {
       control: 'text',
       description: 'Control the field placeholder',
     },
-    theme: {
-      control: 'select',
-      options: ['main', 'danger', 'success', 'warning', 'info'],
-      description: 'Control the field theme',
+    required: {
+      control: 'boolean',
+      description: 'Control the field required state',
     },
   },
   args: {
     size: 'md',
     rounded: 'sm',
-    placeholder: 'Text',
-    theme: 'main',
+    placeholder: 'type anything',
+    required: false,
   },
+  decorators: [
+    moduleMetadata({
+      imports: [FormsModule, ReactiveFormsModule],
+    }),
+  ],
   parameters: {
     controls: { expanded: true },
   },
@@ -40,10 +46,16 @@ export default {
 export const Field = ({ ...args }) => ({
   template: `
   <mjs-field
-    theme="${args['theme']}"
+    [required]="${args['required']}"
+    [ngModel]="${args['ngModel']}"
+    (ngModelChange)="${args['ngModelChange']}"
     placeholder="${args['placeholder']}"
     rounded="${args['rounded']}"
     size="${args['size']}">
   </mjs-field>`,
-  props: { ...args },
+  props: {
+    ...args,
+    ngModelChange: action('ngModelChange'),
+    ngModel: 'model',
+  },
 });

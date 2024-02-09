@@ -22,10 +22,6 @@ type Type = 'password' | 'text' | 'email' | 'number';
 
 type Height = 'sm' | 'md' | 'lg';
 
-export type Theme = 'main' | 'success' | 'warning' | 'danger' | 'info';
-
-export type Style = 'solid' | 'outline' | 'link';
-
 export type Rounded = 'sm' | 'md' | 'lg' | 'full' | 'none';
 
 @Component({
@@ -48,11 +44,7 @@ export class FieldComponent implements ControlValueAccessor, AfterViewInit {
 
   @Input() size: Height = 'md';
 
-  @Input() fill: Style = 'solid';
-
   @Input() placeholder: string = '';
-
-  @Input() theme: Theme = 'main';
 
   @Output() blur: EventEmitter<boolean> = new EventEmitter();
 
@@ -62,8 +54,14 @@ export class FieldComponent implements ControlValueAccessor, AfterViewInit {
     return `field-border-rounded--${this.rounded}`;
   }
 
-  get getThemeColorClass(): string {
-    return `color-theme--${this.fill}--${this.theme}`;
+  get validationClass(): string {
+    if (this.ngControl) {
+      return this.ngControl && this.ngControl?.invalid
+        ? 'color-theme--invalid'
+        : 'color-theme--valid';
+    }
+
+    return '';
   }
 
   get getHeight(): string {
@@ -71,7 +69,12 @@ export class FieldComponent implements ControlValueAccessor, AfterViewInit {
   }
 
   get classes(): string[] {
-    return [this.getHeight, this.getThemeColorClass, this.roundedClass];
+    return [
+      'color-theme',
+      this.getHeight,
+      this.roundedClass,
+      this.validationClass,
+    ];
   }
 
   text: string = '';
