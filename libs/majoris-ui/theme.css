@@ -1,7 +1,11 @@
 :root {
   --main-base: #FDFFFC;
-  --main-accent: #F3F3F3;
+  --main-accent: #808692;
   --main-highlight: #235789;
+
+  --dark-base: #235789;
+  --dark-accent: #FDFFFC;
+  --dark-highlight: #FFF;
 
   --danger-base: #ED1C24;
   --danger-accent: #C40E3B;

@@ -1,6 +1,8 @@
 div {
   @apply w-full;
   @apply px-sm;
+  @apply flex;
+  @apply items-center;
 
   input {
     @apply w-full;

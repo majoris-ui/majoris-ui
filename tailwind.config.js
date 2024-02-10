@@ -15,6 +15,11 @@ module.exports = {
           accent: 'var(--main-accent)',
           highlight: 'var(--main-highlight)',
         },
+        dark: {
+          base: 'var(--dark-base)',
+          accent: 'var(--dark-accent)',
+          highlight: 'var(--dark-highlight)',
+        },
         danger: {
           base: 'var(--danger-base)',
           accent: 'var(--danger-accent)',

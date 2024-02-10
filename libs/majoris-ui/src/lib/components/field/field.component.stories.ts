@@ -1,5 +1,4 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { action } from '@storybook/addon-actions';
 import { Meta, moduleMetadata } from '@storybook/angular';
 import { FieldComponent } from './field.component';
 
@@ -47,15 +46,11 @@ export const Field = ({ ...args }) => ({
   template: `
   <mjs-field
     [required]="${args['required']}"
-    [ngModel]="${args['ngModel']}"
-    (ngModelChange)="${args['ngModelChange']}"
     placeholder="${args['placeholder']}"
     rounded="${args['rounded']}"
     size="${args['size']}">
   </mjs-field>`,
   props: {
     ...args,
-    ngModelChange: action('ngModelChange'),
-    ngModel: 'model',
   },
 });

@@ -1,4 +1,16 @@
-<ul class="remote-menu">
-  <li><a routerLink="/">Home</a></li>
-</ul>
-<router-outlet></router-outlet>
+<div class="bg-main-base w-screen h-screen p-3">
+  <!-- <ul class="remote-menu">
+    <li><a routerLink="/">Home</a></li>
+  </ul> -->
+
+  <div>
+    <mjs-field
+      placeholder="type"
+      [required]="true"
+      [(ngModel)]="title"
+      name="title"
+    ></mjs-field>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>

@@ -22,7 +22,7 @@ type Type = 'password' | 'text' | 'email' | 'number';
 
 type Height = 'sm' | 'md' | 'lg';
 
-export type Rounded = 'sm' | 'md' | 'lg' | 'full' | 'none';
+type Rounded = 'sm' | 'md' | 'lg' | 'full' | 'none';
 
 @Component({
   selector: 'mjs-field',
@@ -54,27 +54,12 @@ export class FieldComponent implements ControlValueAccessor, AfterViewInit {
     return `field-border-rounded--${this.rounded}`;
   }
 
-  get validationClass(): string {
-    if (this.ngControl) {
-      return this.ngControl && this.ngControl?.invalid
-        ? 'color-theme--invalid'
-        : 'color-theme--valid';
-    }
-
-    return '';
-  }
-
   get getHeight(): string {
     return `field-height--${this.size}`;
   }
 
   get classes(): string[] {
-    return [
-      'color-theme',
-      this.getHeight,
-      this.roundedClass,
-      this.validationClass,
-    ];
+    return ['color-theme', this.getHeight, this.roundedClass];
   }
 
   text: string = '';
@@ -84,7 +69,9 @@ export class FieldComponent implements ControlValueAccessor, AfterViewInit {
   }
   ngAfterViewInit(): void {
     this.classes.forEach((c) => {
-      this.field.nativeElement.classList.add(c);
+      if (c) {
+        this.field.nativeElement.classList.add(c);
+      }
     });
   }
 

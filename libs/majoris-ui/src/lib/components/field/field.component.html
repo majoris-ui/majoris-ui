@@ -1,4 +1,15 @@
-<div #field>
+<div
+  #field
+  [ngClass]="{
+    'color-theme--invalid':
+      ngControl &&
+      ngControl.invalid &&
+      ngControl.touched &&
+      !disabled &&
+      !readonly,
+    'color-theme--valid': ngControl && ngControl.valid && !disabled && !readonly
+  }"
+>
   <input
     [(ngModel)]="text"
     [readOnly]="readonly"
