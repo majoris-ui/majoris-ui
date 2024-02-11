@@ -11,7 +11,6 @@ module.exports = {
     extend: {
       textColor: {
         main: 'var(--main-text)',
-        dark: 'var(--dark-text)',
         danger: 'var(--danger-text)',
         success: 'var(--success-text)',
         warning: 'var(--warning-text)',
@@ -22,11 +21,6 @@ module.exports = {
           base: 'var(--main-base)',
           accent: 'var(--main-accent)',
           highlight: 'var(--main-highlight)',
-        },
-        dark: {
-          base: 'var(--dark-base)',
-          accent: 'var(--dark-accent)',
-          highlight: 'var(--dark-highlight)',
         },
         danger: {
           base: 'var(--danger-base)',
