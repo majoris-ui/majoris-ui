@@ -9,6 +9,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      textColor: {
+        main: 'var(--main-text)',
+        dark: 'var(--dark-text)',
+        danger: 'var(--danger-text)',
+        success: 'var(--success-text)',
+        warning: 'var(--warning-text)',
+        info: 'var(--info-text)',
+      },
       colors: {
         main: {
           base: 'var(--main-base)',
@@ -66,9 +74,12 @@ module.exports = {
         '2xl': 'var(--font-size-2xl)'
       },
       boxShadow: {
-        sm: 'var(--box-shadow-sm)',
-        md: 'var(--box-shadow-md)',
-        lg: 'var(--box-shadow-lg)',
+        main: 'var(--main-box-shadow)',
+        dark: 'var(--dark-box-shadow)',
+        danger: 'var(--danger-box-shadow)',
+        success: 'var(--success-box-shadow)',
+        warning: 'var(--warning-box-shadow)',
+        info: 'var(--info-box-shadow)',
       }
     },
   },

@@ -38,6 +38,8 @@ export class FieldComponent implements ControlValueAccessor, AfterViewInit {
 
   @Input({ transform: booleanAttribute }) disabled = false;
 
+  @Input() label: string = '';
+
   @Input() type: Type = 'text';
 
   @Input() rounded: Rounded = 'sm';

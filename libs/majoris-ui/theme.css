@@ -1,27 +1,45 @@
 :root {
-  --main-base: #FDFFFC;
+  --main-base: #fdfffc;
   --main-accent: #808692;
   --main-highlight: #235789;
+  --main-text: #000;
+  --main-box-shadow: #808692 0px 0px 0px 2px,
+    rgba(0, 0, 0, 0.08) 0px 6px 24px 0px;
 
   --dark-base: #235789;
-  --dark-accent: #FDFFFC;
-  --dark-highlight: #FFF;
+  --dark-accent: #fdfffc;
+  --dark-highlight: #fff;
+  --dark-text: #fdfffc;
+  --dark-box-shadow: #fdfffc 0px 0px 0px 2px,
+    rgba(0, 0, 0, 0.08) 0px 6px 24px 0px;
 
-  --danger-base: #ED1C24;
-  --danger-accent: #C40E3B;
-  --danger-highlight: #FDFFFC;
+  --danger-base: #ed1c24;
+  --danger-accent: #c40e3b;
+  --danger-highlight: #fdfffc;
+  --danger-text: #fdfffc;
+  --danger-box-shadow: #c40e3b 0px 0px 0px 2px,
+    rgba(0, 0, 0, 0.08) 0px 6px 24px 0px;
 
-  --warning-base: #F9C22E;
-  --warning-accent: #F57505;
-  --warning-highlight: #FDFFFC;
+  --warning-base: #f9c22e;
+  --warning-accent: #f57505;
+  --warning-highlight: #fdfffc;
+  --warning-text: #fdfffc;
+  --warning-box-shadow: #f57505 0px 0px 0px 2px,
+    rgba(0, 0, 0, 0.08) 0px 6px 24px 0px;
 
-  --info-base: #23C9FF;
-  --info-accent: #006FD6;
-  --info-highlight: #FDFFFC;
+  --info-base: #23c9ff;
+  --info-accent: #006fd6;
+  --info-highlight: #fdfffc;
+  --info-text: #fdfffc;
+  --info-box-shadow: #006fd6 0px 0px 0px 2px,
+    rgba(0, 0, 0, 0.08) 0px 6px 24px 0px;
 
-  --success-base: #136F63;
-  --success-accent: #07453D;
-  --success-highlight: #FDFFFC;
+  --success-base: #136f63;
+  --success-accent: #07453d;
+  --success-highlight: #fdfffc;
+  --success-text: #fdfffc;
+  --success-box-shadow: #07453d 0px 0px 0px 2px,
+    rgba(0, 0, 0, 0.08) 0px 6px 24px 0px;
 
   --border-radius-sm: 0.25rem;
   --border-radius-md: 0.35rem;
@@ -42,8 +60,4 @@
   --font-size-lg: 1.25rem;
   --font-size-xl: 1.5rem;
   --font-size-2xl: 1.75rem;
-
-  --box-shadow-sm: box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px;
-  --box-shadow-md: box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  --box-shadow-lg: box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }

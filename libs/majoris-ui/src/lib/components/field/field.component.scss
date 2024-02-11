@@ -1,4 +1,4 @@
-div {
+.field {
   @apply w-full;
   @apply px-sm;
   @apply flex;
@@ -9,6 +9,8 @@ div {
     @apply outline-none;
     @apply bg-transparent;
   }
+
+  @apply transition-all ease-in-out delay-150 duration-100;
 }
 
 // FIELD HEIGHTS
@@ -60,25 +62,23 @@ div {
 // FIELD SOLID COLORS
 .color-theme {
   @apply bg-main-base;
-  @apply text-main-highlight;
+  @apply text-main;
+  @apply shadow-main;
 
   input::placeholder {
-    @apply text-main-highlight;
+    @apply text-main;
     @apply opacity-50;
   }
 
-  @apply border-2 border-main-accent;
-  @apply shadow-md;
-
   &:focus-within {
-    @apply border-2 border-main-highlight;
+    @apply shadow-main;
   }
 }
 
 .color-theme--invalid {
-  @apply border-2 border-danger-accent;
+  @apply shadow-danger;
 }
 
 .color-theme--valid {
-  @apply border-2 border-success-accent;
+  @apply shadow-success;
 }
