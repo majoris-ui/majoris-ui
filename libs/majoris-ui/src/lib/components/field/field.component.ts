@@ -56,7 +56,9 @@ export class FieldComponent implements ControlValueAccessor, AfterViewInit {
 
   @ViewChild('field') field: ElementRef<HTMLDivElement>;
 
-  @ViewChild('icon') iconRef: ElementRef<HTMLElement>;
+  @ViewChild('leftIcon') leftIconRef: ElementRef<any>;
+
+  @ViewChild('rightIcon') rightIconRef: ElementRef<any>;
 
   get roundedClass(): string {
     return `field-border-rounded--${this.rounded}`;

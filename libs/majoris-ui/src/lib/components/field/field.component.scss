@@ -2,6 +2,14 @@
   --ggs: 0.8;
 }
 
+.gg--invalid {
+  color: var(--danger-accent);
+}
+
+.gg--valid {
+  @apply text-success;
+}
+
 .field {
   @apply w-full;
   @apply flex;
