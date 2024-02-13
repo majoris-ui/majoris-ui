@@ -9,25 +9,25 @@
   --danger-accent: #c40e3b;
   --danger-highlight: #fdfffc;
   --danger-text: #fdfffc;
-  --danger-box-shadow: #c40e3b80 0px 0px 0px 1px, #c40e3b30 0px 0px 0px 6px;
+  --danger-box-shadow: #ed1c2480 0px 0px 0px 1px, #ed1c2430 0px 0px 0px 6px;
 
   --warning-base: #f9c22e;
   --warning-accent: #f57505;
   --warning-highlight: #fdfffc;
   --warning-text: #fdfffc;
-  --warning-box-shadow: #f5750580 0px 0px 0px 1px, #f5750530 0px 0px 0px 6px;
+  --warning-box-shadow: #f9c22e80 0px 0px 0px 1px, #f9c22e30 0px 0px 0px 6px;
 
   --info-base: #23c9ff;
   --info-accent: #006fd6;
   --info-highlight: #fdfffc;
   --info-text: #fdfffc;
-  --info-box-shadow: #006fd680 0px 0px 0px 1px, #006fd630 0px 0px 0px 6px;
+  --info-box-shadow: #23c9ff80 0px 0px 0px 1px, #23c9ff30 0px 0px 0px 6px;
 
-  --success-base: #1ae66f;
-  --success-accent: #14a751;
+  --success-base: #058c42;
+  --success-accent: #058c42;
   --success-highlight: #fdfffc;
   --success-text: #fdfffc;
-  --success-box-shadow: #14a75180 0px 0px 0px 1px, #14a75130 0px 0px 0px 6px;
+  --success-box-shadow: #058c4280 0px 0px 0px 1px, #058c4230 0px 0px 0px 6px;
 
   --border-radius-sm: 0.25rem;
   --border-radius-md: 0.35rem;
@@ -40,8 +40,8 @@
   --height-lg: 2.5rem;
 
   --padding-sm: 0.75rem;
-  --padding-md: 1.5rem;
-  --padding-lg: 1.75rem;
+  --padding-md: 1rem;
+  --padding-lg: 1.25rem;
 
   --font-size-sm: 0.875rem;
   --font-size-md: 1rem;

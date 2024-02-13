@@ -1,19 +1,9 @@
-<div
-  class="field"
-  [ngClass]="{
-    'color-theme--invalid':
-      ngControl &&
-      ngControl.invalid &&
-      ngControl.dirty &&
-      !disabled &&
-      !readonly,
-    'color-theme--valid':
-      ngControl && ngControl.valid && ngControl.dirty && !disabled && !readonly
-  }"
-  #field
->
+<div *ngIf="type === 'text'" [class]="classes.join(' ')" #field>
   <div *ngIf="leftIcon" class="field__icon">
-    <i class="gg" [class]="'gg-' + leftIcon"></i>
+    <i
+      [class]="'gg gg-' + leftIcon"
+      [ngClass]="[getInvalidIconStateClass, getValidIconStateClass]"
+    ></i>
   </div>
   <div class="field__input">
     <input
@@ -21,7 +11,7 @@
       [readOnly]="readonly"
       [disabled]="disabled"
       [required]="required"
-      [placeholder]="placeholder"
+      [placeholder]="!disabled ? placeholder : ''"
       [type]="type"
       [ngModelOptions]="{ standalone: true }"
       (blur)="onBlur()"
@@ -30,6 +20,6 @@
     />
   </div>
   <div *ngIf="rightIcon" class="field__icon">
-    <i class="gg" [class]="'gg-' + rightIcon"></i>
+    <i [class]="'gg gg-' + rightIcon"></i>
   </div>
 </div>

@@ -15,17 +15,20 @@ module.exports = {
         success: 'var(--success-text)',
         warning: 'var(--warning-text)',
         info: 'var(--info-text)',
+        'main-disabled': 'var(--main-disabled-text)'
       },
       colors: {
         main: {
           base: 'var(--main-base)',
           accent: 'var(--main-accent)',
           highlight: 'var(--main-highlight)',
+          disabled: 'var(--main-disabled)',
         },
         danger: {
           base: 'var(--danger-base)',
           accent: 'var(--danger-accent)',
           highlight: 'var(--danger-highlight)',
+          disabled: 'var(--danger-disabled)',
         },
         success: {
           base: 'var(--success-base)',

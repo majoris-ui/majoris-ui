@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import {
-  AfterViewInit,
   Component,
   ElementRef,
   EventEmitter,
@@ -31,7 +30,7 @@ type Rounded = 'sm' | 'md' | 'lg' | 'full' | 'none';
   templateUrl: './field.component.html',
   styleUrl: './field.component.scss',
 })
-export class FieldComponent implements ControlValueAccessor, AfterViewInit {
+export class FieldComponent implements ControlValueAccessor {
   @Input({ transform: booleanAttribute }) required = false;
 
   @Input({ transform: booleanAttribute }) readonly = false;
@@ -60,6 +59,8 @@ export class FieldComponent implements ControlValueAccessor, AfterViewInit {
 
   @ViewChild('rightIcon') rightIconRef: ElementRef<any>;
 
+  text: string = '';
+
   get roundedClass(): string {
     return `field-border-rounded--${this.rounded}`;
   }
@@ -68,21 +69,60 @@ export class FieldComponent implements ControlValueAccessor, AfterViewInit {
     return `field-height--${this.size}`;
   }
 
-  get classes(): string[] {
-    return ['color-theme', this.getHeight, this.roundedClass];
+  get disabledStatusClass(): string {
+    return this.disabled ? 'field--disabled' : '';
   }
 
-  text: string = '';
+  get isInvalidState(): boolean | null {
+    return (
+      this.ngControl &&
+      this.ngControl.invalid &&
+      this.ngControl.dirty &&
+      !this.disabled &&
+      !this.readonly
+    );
+  }
+
+  get isValidState(): boolean | null {
+    return (
+      this.ngControl &&
+      this.ngControl.valid &&
+      this.ngControl.dirty &&
+      !this.disabled &&
+      !this.readonly
+    );
+  }
+
+  get getInvalidIconStateClass(): string {
+    return this.isInvalidState ? 'color-theme-icon--invalid' : '';
+  }
+
+  get getValidIconStateClass(): string {
+    return this.isValidState ? 'color-theme-icon--valid' : '';
+  }
+
+  get getInvalidStateClass(): string {
+    return this.isInvalidState ? 'color-theme--invalid' : '';
+  }
+
+  get getValidStateClass(): string {
+    return this.isValidState ? 'color-theme--valid' : '';
+  }
+
+  get classes(): string[] {
+    return [
+      'field',
+      'color-theme',
+      this.getHeight,
+      this.roundedClass,
+      this.getInvalidStateClass,
+      this.getValidStateClass,
+      this.disabledStatusClass,
+    ];
+  }
 
   constructor(@Optional() @Self() public ngControl: NgControl) {
     this.ngControl && (this.ngControl.valueAccessor = this);
-  }
-  ngAfterViewInit(): void {
-    this.classes.forEach((c) => {
-      if (c) {
-        this.field.nativeElement.classList.add(c);
-      }
-    });
   }
 
   public onChangeFn = (_: any) => {};

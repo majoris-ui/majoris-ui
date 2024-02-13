@@ -3,9 +3,19 @@
     <li><a routerLink="/">Home</a></li>
   </ul> -->
 
-  <div class="w-52">
+  <div class="w-52 flex flex-col gap-2">
     <mjs-field
-      rightIcon="lock"
+      leftIcon="lock"
+      placeholder="type anything"
+      [required]="true"
+      disabled
+      size="lg"
+      [(ngModel)]="title"
+      rounded="lg"
+      name="title"
+    ></mjs-field>
+    <mjs-field
+      leftIcon="lock"
       placeholder="type anything"
       [required]="true"
       size="lg"
