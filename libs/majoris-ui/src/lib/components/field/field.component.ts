@@ -40,6 +40,8 @@ export class FieldComponent implements ControlValueAccessor, AfterViewInit {
 
   @Input() label: string = '';
 
+  @Input() icon: string = '';
+
   @Input() type: Type = 'text';
 
   @Input() rounded: Rounded = 'sm';
@@ -51,6 +53,8 @@ export class FieldComponent implements ControlValueAccessor, AfterViewInit {
   @Output() blur: EventEmitter<boolean> = new EventEmitter();
 
   @ViewChild('field') field: ElementRef<HTMLDivElement>;
+
+  @ViewChild('icon') iconRef: ElementRef<HTMLElement>;
 
   get roundedClass(): string {
     return `field-border-rounded--${this.rounded}`;

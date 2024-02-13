@@ -1,6 +1,5 @@
 <div
   class="field"
-  #field
   [ngClass]="{
     'color-theme--invalid':
       ngControl &&
@@ -11,16 +10,23 @@
     'color-theme--valid':
       ngControl && ngControl.valid && ngControl.dirty && !disabled && !readonly
   }"
+  #field
 >
-  <input
-    [(ngModel)]="text"
-    [readOnly]="readonly"
-    [disabled]="disabled"
-    [required]="required"
-    [placeholder]="placeholder"
-    [type]="type"
-    (blur)="onBlur()"
-    (change)="onChange()"
-    (input)="onChange()"
-  />
+  <div class="field__icon">
+    <i [class]="'gg-' + icon"></i>
+  </div>
+  <div class="field__input">
+    <input
+      [(ngModel)]="text"
+      [readOnly]="readonly"
+      [disabled]="disabled"
+      [required]="required"
+      [placeholder]="placeholder"
+      [type]="type"
+      [ngModelOptions]="{ standalone: true }"
+      (blur)="onBlur()"
+      (change)="onChange()"
+      (input)="onChange()"
+    />
+  </div>
 </div>
