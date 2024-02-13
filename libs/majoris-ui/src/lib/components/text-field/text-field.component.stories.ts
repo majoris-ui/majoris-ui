@@ -1,11 +1,11 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Meta, moduleMetadata } from '@storybook/angular';
-import { FieldComponent } from './field.component';
+import { TextFieldComponent } from './text-field.component';
 
 export default {
   title: 'Forms/Field',
   tags: ['autodocs'],
-  component: FieldComponent,
+  component: TextFieldComponent,
   argTypes: {
     size: {
       control: 'select',
@@ -40,7 +40,7 @@ export default {
   parameters: {
     controls: { expanded: true },
   },
-} as Meta<FieldComponent>;
+} as Meta<TextFieldComponent>;
 
 export const Field = ({ ...args }) => ({
   template: `

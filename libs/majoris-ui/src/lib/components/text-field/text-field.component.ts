@@ -24,13 +24,13 @@ type Height = 'sm' | 'md' | 'lg';
 type Rounded = 'sm' | 'md' | 'lg' | 'full' | 'none';
 
 @Component({
-  selector: 'mjs-field',
+  selector: 'mjs-text-field',
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
-  templateUrl: './field.component.html',
-  styleUrl: './field.component.scss',
+  templateUrl: './text-field.component.html',
+  styleUrl: './text-field.component.scss',
 })
-export class FieldComponent implements ControlValueAccessor {
+export class TextFieldComponent implements ControlValueAccessor {
   @Input({ transform: booleanAttribute }) required = false;
 
   @Input({ transform: booleanAttribute }) readonly = false;

@@ -32,7 +32,7 @@
   }
 }
 
-// FIELD HEIGHTS
+// FIELD HEIGHTS SCHEMA
 .field-height--sm {
   @apply h-sm;
 
@@ -57,7 +57,7 @@
   }
 }
 
-// FIELD BORDER RADIUS
+// FIELD BORDER SCHEMA
 .field-border-rounded--sm {
   @apply rounded-sm;
 }
@@ -78,7 +78,7 @@
   @apply rounded-none;
 }
 
-// FIELD SOLID COLORS
+// FIELD COLORS SCHEMA
 .color-theme {
   @apply bg-main-base;
   @apply text-main;
@@ -110,6 +110,7 @@
   @apply shadow-success;
 }
 
+// FIELD DISABLED SCHEMA
 .field--disabled {
   @apply bg-main-disabled;
   @apply text-main-disabled;
