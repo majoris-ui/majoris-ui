@@ -40,7 +40,9 @@ export class FieldComponent implements ControlValueAccessor, AfterViewInit {
 
   @Input() label: string = '';
 
-  @Input() icon: string = '';
+  @Input() leftIcon: string = '';
+
+  @Input() rightIcon: string = '';
 
   @Input() type: Type = 'text';
 

@@ -1,9 +1,17 @@
+.gg {
+  --ggs: 0.8;
+}
+
 .field {
   @apply w-full;
   @apply flex;
   @apply items-center;
   @apply px-md;
-  @apply gap-4;
+  @apply gap-2;
+
+  .field__icon {
+    @apply opacity-80;
+  }
 
   .field__input {
     input {
