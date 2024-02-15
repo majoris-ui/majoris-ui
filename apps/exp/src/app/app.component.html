@@ -4,8 +4,10 @@
   </ul> -->
 
   <div class="w-52 flex flex-col gap-2">
-    <mjs-button>Button</mjs-button>
-    <mjs-text-field
+    <mjs-button size="sm" fill="outline" rounded="full" theme="info"
+      >Button</mjs-button
+    >
+    <!-- <mjs-text-field
       leftIcon="lock"
       placeholder="type anything"
       [required]="true"
@@ -23,7 +25,7 @@
       [(ngModel)]="title"
       rounded="lg"
       name="title"
-    ></mjs-text-field>
+    ></mjs-text-field> -->
   </div>
 
   <router-outlet></router-outlet>

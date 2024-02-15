@@ -10,51 +10,17 @@ module.exports = {
   theme: {
     extend: {
       textColor: {
-        main: 'var(--main-text)',
-        danger: 'var(--danger-text)',
-        success: 'var(--success-text)',
-        warning: 'var(--warning-text)',
-        info: 'var(--info-text)',
-        'main-disabled': 'var(--main-disabled-text)',
-        'danger-disabled': 'var(--danger-disabled-text)',
-        'warning-disabled': 'var(--warning-disabled-text)',
-        'info-disabled': 'var(--info-disabled-text)',
-        'success-disabled': 'var(--success-disabled-text)',
-        'main-highlight': 'var(--main-highlight-text)',
-        'main-accent': 'var(--main-accent-text)',
-        'main-base': 'var(--main-base-text)',
+        default: 'var(--text)',
+        alt: 'var(--text-alt)',
       },
       colors: {
-        main: {
-          base: 'var(--main-base)',
-          accent: 'var(--main-accent)',
-          highlight: 'var(--main-highlight)',
-          disabled: 'var(--main-disabled)',
-        },
-        danger: {
-          base: 'var(--danger-base)',
-          accent: 'var(--danger-accent)',
-          highlight: 'var(--danger-highlight)',
-          disabled: 'var(--danger-disabled)',
-        },
-        success: {
-          base: 'var(--success-base)',
-          accent: 'var(--success-accent)',
-          highlight: 'var(--success-highlight)',
-          disabled: 'var(--success-disabled)',
-        },
-        warning: {
-          base: 'var(--warning-base)',
-          accent: 'var(--warning-accent)',
-          highlight: 'var(--warning-highlight)',
-          disabled: 'var(--warning-disabled)',
-        },
-        info: {
-          base: 'var(--info-base)',
-          accent: 'var(--info-accent)',
-          highlight: 'var(--info-highlight)',
-          disabled: 'var(--info-disabled)',
-        },
+        base: 'var(--base)',
+        accent: 'var(--accent)',
+        highlight: 'var(--highlight)',
+        danger: 'var(--danger)',
+        warning: 'var(--warning)',
+        info: 'var(--info)',
+        success: 'var(--success)',
       },
       borderRadius: {
         sm: 'var(--border-radius-sm)',
@@ -81,12 +47,11 @@ module.exports = {
         '2xl': 'var(--font-size-2xl)'
       },
       boxShadow: {
-        main: 'var(--main-box-shadow)',
-        dark: 'var(--dark-box-shadow)',
-        danger: 'var(--danger-box-shadow)',
-        success: 'var(--success-box-shadow)',
-        warning: 'var(--warning-box-shadow)',
-        info: 'var(--info-box-shadow)',
+        default: 'var(--shadow)',
+        danger: 'var(--danger-shadow)',
+        warning: 'var(--warning-shadow)',
+        info: 'var(--info-shadow)',
+        success: 'var(--success-shadow)',
       }
     },
   },

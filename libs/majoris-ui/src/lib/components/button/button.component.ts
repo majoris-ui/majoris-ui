@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import { ButtonLoadingTemplateDirective } from '../../directives';
 
-export type Theme = 'main' | 'success' | 'warning' | 'danger' | 'info';
+export type Theme = 'default' | 'success' | 'warning' | 'danger' | 'info';
 
 export type Style = 'solid' | 'outline' | 'link';
 
@@ -29,7 +29,7 @@ export type BorderSize = 'sm' | 'md' | 'lg';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
-  @Input() theme: Theme = 'main';
+  @Input() theme: Theme = 'default';
 
   @Input() rounded: Rounded = 'sm';
 
@@ -57,11 +57,7 @@ export class ButtonComponent {
   ngOnInit(): void {}
 
   get getThemeClass(): string {
-    return `button__theme--${this.theme}`;
-  }
-
-  get getStyleClass(): string {
-    return `button__style--${this.fill}`;
+    return `button__theme--${this.fill}--${this.theme}`;
   }
 
   get getRoundedClass(): string {
@@ -87,7 +83,6 @@ export class ButtonComponent {
   get classes(): string[] {
     return [
       this.getThemeClass,
-      this.getStyleClass,
       this.getRoundedClass,
       this.getDisabledClass,
       this.getExpandClass,
