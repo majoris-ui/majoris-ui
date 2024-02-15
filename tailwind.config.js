@@ -15,7 +15,11 @@ module.exports = {
         success: 'var(--success-text)',
         warning: 'var(--warning-text)',
         info: 'var(--info-text)',
-        'main-disabled': 'var(--main-disabled-text)'
+        'main-disabled': 'var(--main-disabled-text)',
+        'danger-disabled': 'var(--danger-disabled-text)',
+        'warning-disabled': 'var(--warning-disabled-text)',
+        'info-disabled': 'var(--info-disabled-text)',
+        'success-disabled': 'var(--success-disabled-text)',
       },
       colors: {
         main: {
@@ -34,16 +38,19 @@ module.exports = {
           base: 'var(--success-base)',
           accent: 'var(--success-accent)',
           highlight: 'var(--success-highlight)',
+          disabled: 'var(--success-disabled)',
         },
         warning: {
           base: 'var(--warning-base)',
           accent: 'var(--warning-accent)',
           highlight: 'var(--warning-highlight)',
+          disabled: 'var(--warning-disabled)',
         },
         info: {
           base: 'var(--info-base)',
           accent: 'var(--info-accent)',
           highlight: 'var(--info-highlight)',
+          disabled: 'var(--info-disabled)',
         },
       },
       borderRadius: {
