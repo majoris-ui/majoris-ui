@@ -20,6 +20,9 @@ module.exports = {
         'warning-disabled': 'var(--warning-disabled-text)',
         'info-disabled': 'var(--info-disabled-text)',
         'success-disabled': 'var(--success-disabled-text)',
+        'main-highlight': 'var(--main-highlight-text)',
+        'main-accent': 'var(--main-accent-text)',
+        'main-base': 'var(--main-base-text)',
       },
       colors: {
         main: {

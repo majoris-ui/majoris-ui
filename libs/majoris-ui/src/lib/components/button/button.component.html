@@ -1,4 +1,9 @@
-<button (click)="onClick()" [disabled]="disabled" #button>
+<button
+  class="button__default"
+  [class]="classes.join(' ')"
+  [disabled]="disabled"
+  #button
+>
   <span [ngStyle]="{ visibility: loading ? 'hidden' : 'visible' }">
     <ng-content></ng-content>
   </span>

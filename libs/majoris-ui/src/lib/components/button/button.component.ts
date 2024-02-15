@@ -1,29 +1,16 @@
 import { CommonModule } from '@angular/common';
 import {
-  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
   ElementRef,
-  EventEmitter,
   Input,
-  Output,
-  Renderer2,
   TemplateRef,
   ViewChild,
   booleanAttribute,
 } from '@angular/core';
 import { ButtonLoadingTemplateDirective } from '../../directives';
 
-export type Theme =
-  | 'default'
-  | 'alternative'
-  | 'highlight'
-  | 'success'
-  | 'warning'
-  | 'danger'
-  | 'info'
-  | 'dark'
-  | 'light';
+export type Theme = 'main' | 'success' | 'warning' | 'danger' | 'info';
 
 export type Style = 'solid' | 'outline' | 'link';
 
@@ -41,10 +28,8 @@ export type BorderSize = 'sm' | 'md' | 'lg';
   styleUrl: './button.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ButtonComponent implements AfterViewInit {
-  @Input() backgroundColor: Theme = 'default';
-
-  @Input() textColor: Theme = 'default';
+export class ButtonComponent {
+  @Input() theme: Theme = 'main';
 
   @Input() rounded: Rounded = 'sm';
 
@@ -61,66 +46,53 @@ export class ButtonComponent implements AfterViewInit {
   @Input({ transform: booleanAttribute })
   disabled: boolean = false;
 
-  @Output() click: EventEmitter<null> = new EventEmitter();
-
   @ViewChild('button')
   button: ElementRef<HTMLButtonElement>;
 
   @ViewChild(ButtonLoadingTemplateDirective, { read: TemplateRef })
   loadingTemplate: TemplateRef<any>;
 
-  constructor(private renderer: Renderer2) {}
+  constructor() {}
 
   ngOnInit(): void {}
 
-  ngAfterViewInit(): void {
-    this.renderer.setAttribute(
-      this.button.nativeElement,
-      'class',
-      this.classes.join(' ')
-    );
+  get getThemeClass(): string {
+    return `button__theme--${this.theme}`;
   }
 
-  backgroundClass(): string {
-    return `button__background__${this.fill}--${this.backgroundColor}`;
+  get getStyleClass(): string {
+    return `button__style--${this.fill}`;
   }
 
-  colorClass(): string {
-    return `button__color--${this.textColor}`;
-  }
-
-  roundedClass(): string {
+  get getRoundedClass(): string {
     return `border-rounded--${this.rounded}`;
   }
 
-  disabledClass(): string {
+  get getDisabledClass(): string {
     return this.disabled ? 'button--disabled' : '';
   }
 
-  expandClass(): string {
+  get getExpandClass(): string {
     return this.expand ? `button--expanded` : 'button--collapsed';
   }
 
-  heightClass(): string {
+  get getHeightClass(): string {
     return `button-size--${this.size}`;
   }
 
-  loadingClass(): string {
+  get getLoadingClass(): string {
     return `${this.loading ? 'button--loading' : ''}`;
   }
 
   get classes(): string[] {
     return [
-      this.roundedClass(),
-      this.disabledClass(),
-      this.expandClass(),
-      this.heightClass(),
-      this.backgroundClass(),
-      this.colorClass(),
+      this.getThemeClass,
+      this.getStyleClass,
+      this.getRoundedClass,
+      this.getDisabledClass,
+      this.getExpandClass,
+      this.getHeightClass,
+      this.getLoadingClass,
     ];
-  }
-
-  onClick(): void {
-    this.click.emit();
   }
 }

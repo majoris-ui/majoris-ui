@@ -2,6 +2,36 @@
 //   @apply flex justify-center items-center;
 // }
 
+.button__default {
+  @apply px-sm;
+  @apply h-md;
+  @apply rounded-lg;
+}
+
+.button__style--fill {
+  @apply outline-none;
+  @apply border-none;
+}
+
+.button__style--outline {
+  @apply bg-transparent;
+}
+
+.button__style--link {
+  @apply outline-none;
+  @apply border-none;
+  @apply bg-transparent;
+}
+
+.button__theme--main {
+  @apply bg-main-highlight;
+  @apply text-main-highlight;
+
+  &:focus-within {
+    @apply shadow-main;
+  }
+}
+
 // .button__loading {
 //   position: absolute;
 // }

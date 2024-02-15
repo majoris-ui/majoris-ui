@@ -1,8 +1,10 @@
 :root {
   --main-base: #fdfffc;
+  --main-base-text: #000;
   --main-accent: #e5e7e3;
+  --main-base-text: #000;
   --main-highlight: #235789;
-  --main-text: #000;
+  --main-highlight-text: #fdfffc;
   --main-disabled: #ebe9e9;
   --main-disabled-text: #b9b9b9;
   --main-box-shadow: #23578980 0px 0px 0px 1px, #23578930 0px 0px 0px 6px;

@@ -5,7 +5,7 @@ import {
   provideClientHydration,
 } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { TextFieldComponent } from '@majoris-org/majoris-ui';
+import { ButtonComponent, TextFieldComponent } from '@majoris-org/majoris-ui';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 
@@ -14,6 +14,7 @@ import { appRoutes } from './app.routes';
   imports: [
     BrowserModule,
     TextFieldComponent,
+    ButtonComponent,
     RouterModule.forRoot(appRoutes),
     FormsModule,
   ],
