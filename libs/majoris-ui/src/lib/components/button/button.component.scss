@@ -129,94 +129,99 @@
   }
 }
 
-.button__default {
+/* BUTTON DEFAULT SCHEMA */
+
+.button-default {
   @apply px-sm;
   @apply h-md;
   @apply rounded-lg;
   @apply flex;
   @apply items-center;
   @apply justify-center;
+  @apply relative;
+
+  @apply transition-all ease-in-out duration-300;
 }
 
-// BUTTON THEMES
+/* BUTTON THEMES */
 
-.button__theme--solid--main {
+.button-theme--solid--main {
   @include colorTheme('main', 'solid');
 }
 
-.button__theme--outline--main {
+.button-theme--outline--main {
   @include colorTheme('main', 'outline');
 }
 
-.button__theme--link--main {
+.button-theme--link--main {
   @include colorTheme('main', 'link');
 }
 
-.button__theme--solid--danger {
+.button-theme--solid--danger {
   @include colorTheme('danger', 'solid');
 }
 
-.button__theme--outline--danger {
+.button-theme--outline--danger {
   @include colorTheme('danger', 'outline');
 }
 
-.button__theme--link--danger {
+.button-theme--link--danger {
   @include colorTheme('danger', 'link');
 }
 
-.button__theme--solid--success {
+.button-theme--solid--success {
   @include colorTheme('success', 'solid');
 }
 
-.button__theme--outline--success {
+.button-theme--outline--success {
   @include colorTheme('success', 'outline');
 }
 
-.button__theme--link--success {
+.button-theme--link--success {
   @include colorTheme('success', 'link');
 }
 
-.button__theme--solid--info {
+.button-theme--solid--info {
   @include colorTheme('info', 'solid');
 }
 
-.button__theme--outline--info {
+.button-theme--outline--info {
   @include colorTheme('info', 'outline');
 }
 
-.button__theme--link--info {
+.button-theme--link--info {
   @include colorTheme('info', 'link');
 }
 
-.button__theme--solid--warning {
+.button-theme--solid--warning {
   @include colorTheme('warning', 'solid');
 }
 
-.button__theme--outline--warning {
+.button-theme--outline--warning {
   @include colorTheme('warning', 'outline');
 }
 
-.button__theme--link--warning {
+.button-theme--link--warning {
   @include colorTheme('warning', 'link');
 }
 
-// BUTTON SIZE
+/* BUTTON SIZE */
 
-.button__size--sm {
+.button-size--sm {
   @apply h-sm;
 }
 
-.button__size--md {
+.button-size--md {
   @apply h-md;
 }
 
-.button__size--lg {
+.button-size--lg {
   @apply h-lg;
 }
 
-// BUTTON ROUNDED
+/* BUTTON ROUNDED */
 
-.border-rounded--sm {
+.button-rounded--sm {
   @apply rounded-sm;
 }
 
@@ -234,4 +239,40 @@
 
 .button-rounded--none {
   @apply rounded-none;
+}
+
+/* BUTTON EXPAND */
+
+.button--expanded {
+  @apply w-full;
+}
+
+.button--collapsed {
+  @apply w-fit;
+}
+
+/*  BUTTON LOADING */
+
+.button--loading {
+  @apply absolute;
+}
+
+/* BUTTON STYLE */
+
+.button-theme--solid {
+  &:hover {
+    @apply brightness-110;
+  }
+}
+
+.button-theme--outline {
+  &:hover {
+    @apply brightness-110;
+  }
+}
+
+.button-theme--link {
+  &:hover {
+    @apply brightness-110;
+  }
 }

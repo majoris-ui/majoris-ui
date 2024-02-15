@@ -56,12 +56,15 @@ export class ButtonComponent {
 
   ngOnInit(): void {}
 
-  get getThemeClass(): string {
-    return `button__theme--${this.fill}--${this.theme}`;
+  get getThemeClass(): string[] {
+    return [
+      `button-theme--${this.fill}--${this.theme}`,
+      `button-theme--${this.fill}`,
+    ];
   }
 
   get getRoundedClass(): string {
-    return `border-rounded--${this.rounded}`;
+    return `button-rounded--${this.rounded}`;
   }
 
   get getDisabledClass(): string {
@@ -82,12 +85,11 @@ export class ButtonComponent {
 
   get classes(): string[] {
     return [
-      this.getThemeClass,
       this.getRoundedClass,
       this.getDisabledClass,
       this.getExpandClass,
       this.getHeightClass,
-      this.getLoadingClass,
+      ...this.getThemeClass,
     ];
   }
 }

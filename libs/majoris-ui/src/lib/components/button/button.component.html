@@ -1,13 +1,17 @@
 <button
-  class="button__default"
+  class="button-default"
   [class]="classes.join(' ')"
   [disabled]="disabled"
   #button
 >
-  <span [ngStyle]="{ visibility: loading ? 'hidden' : 'visible' }">
+  <span
+    [ngStyle]="{
+      visibility: loading ? 'hidden' : 'visible',
+    }"
+  >
     <ng-content></ng-content>
   </span>
-  <span class="button__loading" *ngIf="loading">
+  <span class="button--loading" *ngIf="loading">
     <ng-container
       *ngTemplateOutlet="loadingTemplate || defaultLoadingTemplate"
     ></ng-container>
