@@ -29,14 +29,6 @@ export type BorderSize = 'sm' | 'md' | 'lg';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
-  @Input() theme: Theme = 'default';
-
-  @Input() rounded: Rounded = 'sm';
-
-  @Input() fill: Style = 'solid';
-
-  @Input() size: Height = 'sm';
-
   @Input({ transform: booleanAttribute })
   loading: boolean = false;
 
@@ -45,6 +37,14 @@ export class ButtonComponent {
 
   @Input({ transform: booleanAttribute })
   disabled: boolean = false;
+
+  @Input() theme: Theme = 'default';
+
+  @Input() rounded: Rounded = 'sm';
+
+  @Input() fill: Style = 'solid';
+
+  @Input() size: Height = 'sm';
 
   @ViewChild('button')
   button: ElementRef<HTMLButtonElement>;
@@ -56,11 +56,8 @@ export class ButtonComponent {
 
   ngOnInit(): void {}
 
-  get getThemeClass(): string[] {
-    return [
-      `button-theme--${this.fill}--${this.theme}`,
-      `button-theme--${this.fill}`,
-    ];
+  get getThemeClass(): string {
+    return `button-theme--${this.fill}--${this.theme}`;
   }
 
   get getRoundedClass(): string {
@@ -80,7 +77,11 @@ export class ButtonComponent {
   }
 
   get getLoadingClass(): string {
-    return `${this.loading ? 'button--loading' : ''}`;
+    return `${!this.disabled && this.loading ? 'button--loading' : ''}`;
+  }
+
+  get getHoverClass(): string {
+    return `${!this.disabled ? `button-theme-hover--${this.fill}` : ''}`;
   }
 
   get classes(): string[] {
@@ -89,7 +90,8 @@ export class ButtonComponent {
       this.getDisabledClass,
       this.getExpandClass,
       this.getHeightClass,
-      ...this.getThemeClass,
+      this.getThemeClass,
+      this.getHoverClass,
     ];
   }
 }

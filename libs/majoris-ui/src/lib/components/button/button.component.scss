@@ -259,20 +259,26 @@
 
 /* BUTTON STYLE */
 
-.button-theme--solid {
+.button-theme-hover--solid {
   &:hover {
     @apply brightness-110;
   }
 }
 
-.button-theme--outline {
+.button-theme-hover--outline {
   &:hover {
     @apply brightness-110;
   }
 }
 
-.button-theme--link {
+.button-theme-hover--link {
   &:hover {
     @apply brightness-110;
   }
+}
+
+/* BUTTON DISABLED */
+
+.button--disabled {
+  @apply opacity-50;
 }

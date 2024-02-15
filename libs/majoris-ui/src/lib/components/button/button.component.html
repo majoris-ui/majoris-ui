@@ -6,12 +6,12 @@
 >
   <span
     [ngStyle]="{
-      visibility: loading ? 'hidden' : 'visible',
+      visibility: !disabled && loading ? 'hidden' : 'visible',
     }"
   >
     <ng-content></ng-content>
   </span>
-  <span class="button--loading" *ngIf="loading">
+  <span class="button--loading" *ngIf="!disabled && loading">
     <ng-container
       *ngTemplateOutlet="loadingTemplate || defaultLoadingTemplate"
     ></ng-container>
