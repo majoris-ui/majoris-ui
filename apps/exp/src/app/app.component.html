@@ -4,18 +4,19 @@
   </ul> -->
 
   <div class="w-[400px] border border-green-100 flex flex-col gap-2">
-    <mjs-button expanded theme="danger">
-      Button Button Button Button Button Button Button Button
-    </mjs-button>
+    <mjs-button expanded theme="danger"> Me clica </mjs-button>
 
     <mjs-text-field
+      labelStacked
       leftIcon="lock"
-      placeholder="type anything"
+      placeholder="digite o seu nome"
       [required]="true"
       [(ngModel)]="title"
       name="title"
-      label="Title"
+      label="nome"
     ></mjs-text-field>
+
+    <mjs-icon fontSet="round" icon="lock" size="lg" theme="danger" />
   </div>
 
   <router-outlet></router-outlet>

@@ -39,12 +39,17 @@ module.exports = {
         md: 'var(--padding-md)',
         lg: 'var(--padding-lg)',
       },
+
       fontSize: {
+
         sm: 'var(--font-size-sm)',
         md: 'var(--font-size-md)',
         lg: 'var(--font-size-lg)',
         xl: 'var(--font-size-xl)',
-        '2xl': 'var(--font-size-2xl)'
+        '2xl': 'var(--font-size-2xl)',
+        'icon-sm': 'var(--icon-size-sm)',
+        'icon-md': 'var(--icon-size-md)',
+        'icon-lg': 'var(--icon-size-lg)',
       },
       boxShadow: {
         default: 'var(--shadow)',

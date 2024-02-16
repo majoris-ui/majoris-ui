@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import {
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   EventEmitter,
@@ -27,6 +28,7 @@ type Rounded = 'sm' | 'md' | 'lg' | 'full' | 'none';
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './text-field.component.html',
   styleUrl: './text-field.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TextFieldComponent implements ControlValueAccessor {
   @Input({ transform: booleanAttribute }) required = false;
@@ -34,6 +36,8 @@ export class TextFieldComponent implements ControlValueAccessor {
   @Input({ transform: booleanAttribute }) readonly = false;
 
   @Input({ transform: booleanAttribute }) disabled = false;
+
+  @Input({ transform: booleanAttribute }) labelStacked: boolean = false;
 
   @Input() label: string = '';
 
@@ -46,8 +50,6 @@ export class TextFieldComponent implements ControlValueAccessor {
   @Input() size: Height = 'md';
 
   @Input() placeholder: string = '';
-
-  @Input() labelStacked: boolean = false;
 
   @Output() blur: EventEmitter<boolean> = new EventEmitter();
 
