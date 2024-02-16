@@ -1,35 +1,58 @@
-.gg {
-  --ggs: 0.8;
-  @apply transition-all ease-in-out duration-200;
-}
-
-.color-theme-icon--invalid {
-  color: var(--danger-base);
-}
-
-.color-theme-icon--valid {
-  color: var(--success-base);
-}
-
-.field {
+// FIELD COLORS SCHEMA
+.color-theme {
   @apply w-full;
   @apply flex;
   @apply items-center;
-  @apply px-md;
-  @apply gap-2;
-  @apply transition-all ease-in-out duration-200;
+  @apply px-lg;
+  @apply gap-4;
+  @apply bg-base;
+  @apply text-alt;
+  @apply text-sm;
+  @apply transition-all ease-in-out duration-300;
 
-  .field__icon {
-    @apply opacity-80;
+  .gg {
+    @apply text-alt;
+    @apply transition-all ease-in-out duration-300;
   }
 
   .field__input {
+    @apply w-full;
+
     input {
       @apply w-full;
       @apply outline-none;
       @apply bg-transparent;
     }
   }
+
+  input::placeholder {
+    @apply text-alt;
+    @apply opacity-20;
+  }
+
+  &:focus-within {
+    @apply shadow-default;
+
+    .gg {
+      @apply text-highlight;
+    }
+  }
+}
+
+.color-theme--invalid {
+  @apply shadow-danger;
+}
+
+.color-theme--valid {
+  @apply shadow-success;
+}
+
+.color-theme-icon--invalid {
+  color: var(--danger);
+}
+
+.color-theme-icon--valid {
+  color: var(--success);
 }
 
 // FIELD HEIGHTS SCHEMA
@@ -58,69 +81,32 @@
 }
 
 // FIELD BORDER SCHEMA
-.field-border-rounded--sm {
+.field-round--sm {
   @apply rounded-sm;
 }
 
-.field-border-rounded--md {
+.field-round--md {
   @apply rounded-md;
 }
 
-.field-border-rounded--lg {
+.field-round--lg {
   @apply rounded-lg;
 }
 
-.field-border-rounded--full {
+.field-round--full {
   @apply rounded-full;
 }
 
-.field-border-rounded--none {
+.field-round--none {
   @apply rounded-none;
-}
-
-// FIELD COLORS SCHEMA
-.color-theme {
-  @apply bg-main-base;
-  @apply text-main;
-  @apply text-sm;
-
-  input::placeholder {
-    @apply text-main;
-    @apply opacity-20;
-  }
-
-  .gg {
-    @apply text-base;
-  }
-
-  &:focus-within {
-    @apply shadow-main;
-
-    .gg {
-      color: var(--main-highlight);
-    }
-  }
-}
-
-.color-theme--invalid {
-  @apply shadow-danger;
-}
-
-.color-theme--valid {
-  @apply shadow-success;
 }
 
 // FIELD DISABLED SCHEMA
 .field--disabled {
-  @apply bg-main-disabled;
-  @apply text-main-disabled;
-
-  input::placeholder {
-    @apply text-main-disabled;
-    @apply opacity-100;
-  }
+  @apply opacity-50;
+  @apply brightness-75;
 
   .gg {
-    @apply text-main-disabled;
+    @apply opacity-50;
   }
 }

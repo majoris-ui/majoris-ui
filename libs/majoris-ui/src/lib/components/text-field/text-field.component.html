@@ -1,8 +1,13 @@
-<div *ngIf="type === 'text'" [class]="classes.join(' ')" #field>
+<div [class]="classes.join(' ')" #field>
   <div *ngIf="leftIcon" class="field__icon">
     <i
-      [class]="'gg gg-' + leftIcon"
-      [ngClass]="[getInvalidIconStateClass, getValidIconStateClass]"
+      [class]="
+        [
+          getInvalidIconStateClass,
+          getValidIconStateClass,
+          'gg gg-' + leftIcon
+        ].join(' ')
+      "
     ></i>
   </div>
   <div class="field__input">
@@ -12,14 +17,22 @@
       [disabled]="disabled"
       [required]="required"
       [placeholder]="!disabled ? placeholder : ''"
-      [type]="type"
       [ngModelOptions]="{ standalone: true }"
       (blur)="onBlur()"
       (change)="onChange()"
       (input)="onChange()"
+      type="text"
     />
   </div>
   <div *ngIf="rightIcon" class="field__icon">
-    <i [class]="'gg gg-' + rightIcon"></i>
+    <i
+      [class]="
+        [
+          getInvalidIconStateClass,
+          getValidIconStateClass,
+          'gg gg-' + rightIcon
+        ].join(' ')
+      "
+    ></i>
   </div>
 </div>

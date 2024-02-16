@@ -17,8 +17,6 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 
-type Type = 'password' | 'text' | 'email' | 'number';
-
 type Height = 'sm' | 'md' | 'lg';
 
 type Rounded = 'sm' | 'md' | 'lg' | 'full' | 'none';
@@ -43,8 +41,6 @@ export class TextFieldComponent implements ControlValueAccessor {
 
   @Input() rightIcon: string = '';
 
-  @Input() type: Type = 'text';
-
   @Input() rounded: Rounded = 'sm';
 
   @Input() size: Height = 'md';
@@ -62,7 +58,7 @@ export class TextFieldComponent implements ControlValueAccessor {
   text: string = '';
 
   get roundedClass(): string {
-    return `field-border-rounded--${this.rounded}`;
+    return `field-round--${this.rounded}`;
   }
 
   get getHeight(): string {
