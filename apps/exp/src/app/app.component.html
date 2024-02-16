@@ -3,8 +3,10 @@
     <li><a routerLink="/">Home</a></li>
   </ul> -->
 
-  <div class="w-52 flex flex-col gap-2">
-    <mjs-button theme="danger"> Button Button </mjs-button>
+  <div class="w-[400px] border border-green-100 flex flex-col gap-2">
+    <mjs-button expanded theme="danger">
+      Button Button Button Button Button Button Button Button
+    </mjs-button>
 
     <mjs-text-field
       leftIcon="lock"
@@ -12,7 +14,7 @@
       [required]="true"
       [(ngModel)]="title"
       name="title"
-      label="Title "
+      label="Title"
     ></mjs-text-field>
   </div>
 

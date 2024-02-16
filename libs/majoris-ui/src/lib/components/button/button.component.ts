@@ -33,7 +33,7 @@ export class ButtonComponent {
   loading: boolean = false;
 
   @Input({ transform: booleanAttribute })
-  expand: boolean = false;
+  expanded: boolean = false;
 
   @Input({ transform: booleanAttribute })
   disabled: boolean = false;
@@ -69,7 +69,7 @@ export class ButtonComponent {
   }
 
   get getExpandClass(): string {
-    return this.expand ? `button--expanded` : 'button--collapsed';
+    return this.expanded ? `button--expanded` : 'button--collapsed';
   }
 
   get getHeightClass(): string {
