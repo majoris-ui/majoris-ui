@@ -132,13 +132,14 @@
 /* BUTTON DEFAULT SCHEMA */
 
 .button-default {
-  @apply px-sm;
+  @apply px-md;
   @apply h-md;
   @apply rounded-lg;
   @apply flex;
   @apply items-center;
   @apply justify-center;
   @apply relative;
+  @apply truncate;
 
   @apply transition-all ease-in-out duration-300;
 }

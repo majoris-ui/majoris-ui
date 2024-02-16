@@ -3,8 +3,8 @@
   @apply w-full;
   @apply flex;
   @apply items-center;
-  @apply px-lg;
-  @apply gap-4;
+  @apply px-md;
+  @apply gap-[12px];
   @apply bg-base;
   @apply text-alt;
   @apply text-sm;
@@ -27,6 +27,10 @@
     }
   }
 
+  .field__icon {
+    @apply transition-all ease-in-out duration-300;
+  }
+
   input::placeholder {
     @apply text-alt;
     @apply opacity-20;
@@ -38,6 +42,14 @@
       @apply text-highlight;
     }
   }
+}
+
+.field-label {
+  @apply w-full;
+  @apply text-sm;
+  @apply mb-1;
+  @apply font-bold;
+  @apply truncate;
 }
 
 .color-theme--invalid {

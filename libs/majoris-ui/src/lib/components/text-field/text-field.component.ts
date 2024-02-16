@@ -47,6 +47,8 @@ export class TextFieldComponent implements ControlValueAccessor {
 
   @Input() placeholder: string = '';
 
+  @Input() labelStacked: boolean = false;
+
   @Output() blur: EventEmitter<boolean> = new EventEmitter();
 
   @ViewChild('field') field: ElementRef<HTMLDivElement>;

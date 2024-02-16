@@ -40,11 +40,11 @@ export class ButtonComponent {
 
   @Input() theme: Theme = 'default';
 
-  @Input() rounded: Rounded = 'sm';
+  @Input() rounded: Rounded = 'md';
 
   @Input() fill: Style = 'solid';
 
-  @Input() size: Height = 'sm';
+  @Input() size: Height = 'md';
 
   @ViewChild('button')
   button: ElementRef<HTMLButtonElement>;
