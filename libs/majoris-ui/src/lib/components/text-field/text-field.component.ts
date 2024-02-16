@@ -41,7 +41,7 @@ export class TextFieldComponent implements ControlValueAccessor {
 
   @Input() rightIcon: string = '';
 
-  @Input() rounded: Rounded = 'sm';
+  @Input() rounded: Rounded = 'md';
 
   @Input() size: Height = 'md';
 

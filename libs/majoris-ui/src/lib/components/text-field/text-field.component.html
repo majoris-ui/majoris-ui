@@ -1,17 +1,14 @@
 <div [class]="classes.join(' ')" #field>
-  <div *ngIf="leftIcon" class="field__icon">
-    <i
-      [class]="
-        [
-          getInvalidIconStateClass,
-          getValidIconStateClass,
-          'gg gg-' + leftIcon
-        ].join(' ')
-      "
-    ></i>
-  </div>
+  <span
+    *ngIf="leftIcon"
+    [class]="[getInvalidIconStateClass, getValidIconStateClass].join(' ')"
+    class="material-icons field__icon"
+    >{{ leftIcon }}</span
+  >
   <div class="field__input">
+    <label for="field-input"> {{ label }} </label>
     <input
+      id="field-input"
       [(ngModel)]="text"
       [readOnly]="readonly"
       [disabled]="disabled"

@@ -10,18 +10,20 @@
   @apply text-sm;
   @apply transition-all ease-in-out duration-300;
 
-  .gg {
-    @apply text-alt;
-    @apply transition-all ease-in-out duration-300;
-  }
-
   .field__input {
     @apply w-full;
+    @apply flex flex-col justify-center;
+
+    label {
+      @apply text-[12px];
+      @apply opacity-50;
+    }
 
     input {
       @apply w-full;
       @apply outline-none;
       @apply bg-transparent;
+      @apply h-fit;
     }
   }
 
@@ -32,8 +34,7 @@
 
   &:focus-within {
     @apply shadow-default;
-
-    .gg {
+    .field__icon {
       @apply text-highlight;
     }
   }
@@ -48,11 +49,11 @@
 }
 
 .color-theme-icon--invalid {
-  color: var(--danger);
+  @apply text-danger;
 }
 
 .color-theme-icon--valid {
-  color: var(--success);
+  @apply text-success;
 }
 
 // FIELD HEIGHTS SCHEMA

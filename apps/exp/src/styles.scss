@@ -1,6 +1,4 @@
-@import url('https://css.gg/css');
-@import url('https://unpkg.com/css.gg/icons/icons.css');
-@import url('https://cdn.jsdelivr.net/npm/css.gg/icons/icons.css');
+@import 'material-icons/iconfont/material-icons.css';
 
 @tailwind base;
 @tailwind components;
@@ -31,9 +29,9 @@
   --border-radius-none: 0;
 
   // height
-  --height-sm: 1.975rem;
-  --height-md: 2.25rem;
-  --height-lg: 2.5rem;
+  --height-sm: 2.75rem;
+  --height-md: 3rem;
+  --height-lg: 3.25rem;
 
   // padding
   --padding-sm: 0.75rem;
