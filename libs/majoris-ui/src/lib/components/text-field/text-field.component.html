@@ -18,15 +18,16 @@
       [readOnly]="readonly"
       [disabled]="disabled"
       [required]="required"
-      [placeholder]="!disabled ? placeholder : ''"
+      [placeholder]="placeholder"
       [ngModelOptions]="{ standalone: true }"
       (blur)="onBlur()"
       (change)="onChange()"
       (input)="onChange()"
       type="text"
+      #input
     />
   </div>
-  <div *ngIf="rightIcon" class="field__icon">
+  <!-- <div *ngIf="rightIcon" class="field__icon">
     <i
       [class]="
         [
@@ -36,5 +37,5 @@
         ].join(' ')
       "
     ></i>
-  </div>
+  </div> -->
 </div>

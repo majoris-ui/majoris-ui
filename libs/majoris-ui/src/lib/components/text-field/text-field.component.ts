@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import {
+  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
   ElementRef,
@@ -17,6 +18,7 @@ import {
   NgControl,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { getContrastingTextColor } from '../../helpers';
 
 type Height = 'sm' | 'md' | 'lg';
 
@@ -30,7 +32,7 @@ type Rounded = 'sm' | 'md' | 'lg' | 'full' | 'none';
   styleUrl: './text-field.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TextFieldComponent implements ControlValueAccessor {
+export class TextFieldComponent implements ControlValueAccessor, AfterViewInit {
   @Input({ transform: booleanAttribute }) required = false;
 
   @Input({ transform: booleanAttribute }) readonly = false;
@@ -54,6 +56,8 @@ export class TextFieldComponent implements ControlValueAccessor {
   @Output() blur: EventEmitter<boolean> = new EventEmitter();
 
   @ViewChild('field') field: ElementRef<HTMLDivElement>;
+
+  @ViewChild('input') input: ElementRef<HTMLInputElement>;
 
   @ViewChild('leftIcon') leftIconRef: ElementRef<any>;
 
@@ -123,6 +127,27 @@ export class TextFieldComponent implements ControlValueAccessor {
 
   constructor(@Optional() @Self() public ngControl: NgControl) {
     this.ngControl && (this.ngControl.valueAccessor = this);
+  }
+
+  ngAfterViewInit(): void {
+    const fieldTextColor = this.getComputedTextClass(this.field.nativeElement);
+
+    this.field.nativeElement.classList.add(
+      this.getFieldTextColor(fieldTextColor)
+    );
+    this.input.nativeElement.classList.add(
+      this.getFieldTextColor(fieldTextColor)
+    );
+  }
+
+  getFieldTextColor(color: string): string {
+    return `text-color--${color}`;
+  }
+
+  getComputedTextClass(element: Element): 'light' | 'dark' {
+    const elementStyle = getComputedStyle(element);
+    const brackgroundColor = elementStyle.backgroundColor;
+    return getContrastingTextColor(brackgroundColor);
   }
 
   public onChangeFn = (_: any) => {};

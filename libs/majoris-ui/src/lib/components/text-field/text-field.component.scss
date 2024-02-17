@@ -6,7 +6,6 @@
   @apply px-md;
   @apply gap-[12px];
   @apply bg-base;
-  @apply text-alt;
   @apply text-sm;
   @apply transition-all ease-in-out duration-300;
 
@@ -29,11 +28,6 @@
 
   .field__icon {
     @apply transition-all ease-in-out duration-300;
-  }
-
-  input::placeholder {
-    @apply text-alt;
-    @apply opacity-20;
   }
 
   &:focus-within {
@@ -121,5 +115,23 @@
 
   .gg {
     @apply opacity-50;
+  }
+}
+
+/* TEXT COLOR SCHEMA */
+
+.text-color--default {
+  @apply text-default;
+
+  input::placeholder {
+    @apply text-danger;
+  }
+}
+
+.text-color--alt {
+  @apply text-alt;
+
+  input::placeholder {
+    @apply text-danger;
   }
 }
