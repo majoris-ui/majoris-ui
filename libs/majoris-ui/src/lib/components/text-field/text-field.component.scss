@@ -1,4 +1,4 @@
-// FIELD COLORS SCHEMA
+/* FIELD COLORS SCHEMA */
 .color-theme {
   @apply w-full;
   @apply flex;
@@ -62,7 +62,7 @@
   @apply text-success;
 }
 
-// FIELD HEIGHTS SCHEMA
+/* FIELD HEIGHT SCHEMA  */
 .field-height--sm {
   @apply h-sm;
 
@@ -87,7 +87,7 @@
   }
 }
 
-// FIELD BORDER SCHEMA
+/* FIELD BORDER SCHEMA */
 .field-round--sm {
   @apply rounded-sm;
 }
@@ -108,13 +108,17 @@
   @apply rounded-none;
 }
 
-// FIELD DISABLED SCHEMA
+/* FIELD DISABLED SCHEMA */
 .field--disabled {
   @apply opacity-50;
   @apply brightness-75;
 
-  .gg {
-    @apply opacity-50;
+  &:focus-within {
+    @apply shadow-none;
+
+    .field__icon {
+      @apply text-alt;
+    }
   }
 }
 

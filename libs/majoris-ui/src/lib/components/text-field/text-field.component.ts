@@ -74,7 +74,7 @@ export class TextFieldComponent implements ControlValueAccessor, AfterViewInit {
   }
 
   get disabledStatusClass(): string {
-    return this.disabled ? 'field--disabled' : '';
+    return this.disabled || this.readonly ? 'field--disabled' : '';
   }
 
   get isInvalidState(): boolean | null {
