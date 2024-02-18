@@ -3,8 +3,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 type FontSet = 'outlined' | 'round' | 'sharp';
 
-type Color = 'default' | 'danger' | 'success' | 'warning' | 'info';
-
 type Size = 'sm' | 'md' | 'lg';
 
 @Component({
