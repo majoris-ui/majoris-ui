@@ -15,7 +15,7 @@
 
     label {
       @apply text-[12px];
-      @apply opacity-50;
+      @apply opacity-70;
     }
 
     input {
@@ -28,6 +28,10 @@
 
   .field__icon {
     @apply transition-all ease-in-out duration-300;
+
+    &:empty {
+      @apply hidden;
+    }
   }
 
   &:focus-within {
@@ -48,18 +52,16 @@
 
 .color-theme--invalid {
   @apply shadow-danger;
+  .field__icon {
+    @apply text-danger;
+  }
 }
 
 .color-theme--valid {
   @apply shadow-success;
-}
-
-.color-theme-icon--invalid {
-  @apply text-danger;
-}
-
-.color-theme-icon--valid {
-  @apply text-success;
+  .field__icon {
+    @apply text-success;
+  }
 }
 
 /* FIELD HEIGHT SCHEMA  */
@@ -124,18 +126,24 @@
 
 /* TEXT COLOR SCHEMA */
 
-.text-color--default {
+.text-color--light {
   @apply text-default;
 
-  input::placeholder {
-    @apply text-danger;
+  input {
+    &::placeholder {
+      @apply text-default;
+      @apply opacity-50;
+    }
   }
 }
 
-.text-color--alt {
+.text-color--dark {
   @apply text-alt;
 
-  input::placeholder {
-    @apply text-danger;
+  input {
+    &::placeholder {
+      @apply text-alt;
+      @apply opacity-50;
+    }
   }
 }

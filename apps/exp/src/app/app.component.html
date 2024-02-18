@@ -7,15 +7,15 @@
     <mjs-button expanded theme="danger"> Me clica </mjs-button>
 
     <mjs-text-field
-      labelStacked
       leftIcon="lock"
-      readonly
       placeholder="digite o seu nome"
       [required]="true"
       [(ngModel)]="title"
       name="title"
       label="nome"
-    ></mjs-text-field>
+    >
+      <mjs-icon leftIcon fontSet="round" icon="lock" />
+    </mjs-text-field>
 
     <mjs-icon fontSet="round" icon="lock" size="lg" theme="danger" />
   </div>

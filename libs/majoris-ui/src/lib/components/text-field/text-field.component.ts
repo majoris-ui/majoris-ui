@@ -39,13 +39,7 @@ export class TextFieldComponent implements ControlValueAccessor, AfterViewInit {
 
   @Input({ transform: booleanAttribute }) disabled = false;
 
-  @Input({ transform: booleanAttribute }) labelStacked: boolean = false;
-
   @Input() label: string = '';
-
-  @Input() leftIcon: string = '';
-
-  @Input() rightIcon: string = '';
 
   @Input() rounded: Rounded = 'md';
 
@@ -59,11 +53,7 @@ export class TextFieldComponent implements ControlValueAccessor, AfterViewInit {
 
   @ViewChild('input') input: ElementRef<HTMLInputElement>;
 
-  @ViewChild('leftIcon') leftIconRef: ElementRef<any>;
-
-  @ViewChild('rightIcon') rightIconRef: ElementRef<any>;
-
-  text: string = '';
+  value: string = '';
 
   get roundedClass(): string {
     return `field-round--${this.rounded}`;
@@ -97,14 +87,6 @@ export class TextFieldComponent implements ControlValueAccessor, AfterViewInit {
     );
   }
 
-  get getInvalidIconStateClass(): string {
-    return this.isInvalidState ? 'color-theme-icon--invalid' : '';
-  }
-
-  get getValidIconStateClass(): string {
-    return this.isValidState ? 'color-theme-icon--valid' : '';
-  }
-
   get getInvalidStateClass(): string {
     return this.isInvalidState ? 'color-theme--invalid' : '';
   }
@@ -119,9 +101,9 @@ export class TextFieldComponent implements ControlValueAccessor, AfterViewInit {
       'color-theme',
       this.getHeight,
       this.roundedClass,
+      this.disabledStatusClass,
       this.getInvalidStateClass,
       this.getValidStateClass,
-      this.disabledStatusClass,
     ];
   }
 
@@ -133,9 +115,6 @@ export class TextFieldComponent implements ControlValueAccessor, AfterViewInit {
     const fieldTextColor = this.getComputedTextClass(this.field.nativeElement);
 
     this.field.nativeElement.classList.add(
-      this.getFieldTextColor(fieldTextColor)
-    );
-    this.input.nativeElement.classList.add(
       this.getFieldTextColor(fieldTextColor)
     );
   }
@@ -155,7 +134,7 @@ export class TextFieldComponent implements ControlValueAccessor, AfterViewInit {
   public onTouchedFn = () => {};
 
   writeValue(text: string): void {
-    this.text = text;
+    this.value = text;
   }
 
   public registerOnChange(fn: any): void {
@@ -167,7 +146,7 @@ export class TextFieldComponent implements ControlValueAccessor, AfterViewInit {
   }
 
   public onChange() {
-    this.onChangeFn(this.text);
+    this.onChangeFn(this.value);
   }
 
   public onBlur() {

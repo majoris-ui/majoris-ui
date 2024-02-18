@@ -1,4 +1,4 @@
-import type { Meta } from '@storybook/angular';
+import { type Meta } from '@storybook/angular';
 import { ButtonComponent } from './button.component';
 
 export default {
@@ -82,6 +82,7 @@ export default {
     size: 'md',
     loading: false,
   },
+
   parameters: {
     controls: { expanded: true },
   },

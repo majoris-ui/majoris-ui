@@ -1,20 +1,12 @@
-<div class="field-label">
-  <label *ngIf="!labelStacked" for="field-input">
-    {{ label }}
-  </label>
-</div>
 <div [class]="classes.join(' ')" #field>
-  <span
-    *ngIf="leftIcon"
-    [class]="[getInvalidIconStateClass, getValidIconStateClass].join(' ')"
-    class="material-icons field__icon"
-    >{{ leftIcon }}</span
-  >
+  <div class="field__icon">
+    <ng-content select="[leftIcon]"></ng-content>
+  </div>
   <div class="field__input">
-    <label *ngIf="labelStacked" for="field-input"> {{ label }} </label>
+    <label for="field-input"> {{ label }} </label>
     <input
       id="field-input"
-      [(ngModel)]="text"
+      [(ngModel)]="value"
       [readOnly]="readonly"
       [disabled]="disabled"
       [required]="required"
@@ -27,15 +19,7 @@
       #input
     />
   </div>
-  <div *ngIf="rightIcon" class="field__icon">
-    <i
-      [class]="
-        [
-          getInvalidIconStateClass,
-          getValidIconStateClass,
-          'gg gg-' + rightIcon
-        ].join(' ')
-      "
-    ></i>
+  <div class="field__icon">
+    <ng-content select="[leftIcon]"></ng-content>
   </div>
 </div>

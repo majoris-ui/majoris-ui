@@ -1,5 +1,6 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Meta, moduleMetadata } from '@storybook/angular';
+import { IconComponent } from '../icon/icon.component';
 import { TextFieldComponent } from './text-field.component';
 
 export default {
@@ -7,6 +8,14 @@ export default {
   tags: ['autodocs'],
   component: TextFieldComponent,
   argTypes: {
+    label: {
+      control: 'text',
+      description: 'Control the field label',
+    },
+    placeholder: {
+      control: 'text',
+      description: 'Control the field placeholder',
+    },
     size: {
       control: 'select',
       options: ['sm', 'md', 'lg'],
@@ -17,24 +26,31 @@ export default {
       options: ['sm', 'md', 'lg', 'full', 'none'],
       description: 'Control the field border radius',
     },
-    placeholder: {
-      control: 'text',
-      description: 'Control the field placeholder',
+    disabled: {
+      control: 'boolean',
+      description: 'Control the field disabled state',
     },
     required: {
       control: 'boolean',
       description: 'Control the field required state',
     },
+    readonly: {
+      control: 'boolean',
+      description: 'Control the field readonly state',
+    },
   },
   args: {
+    label: 'name',
+    placeholder: 'digite o nome de usuario',
     size: 'md',
-    rounded: 'sm',
-    placeholder: 'type anything',
+    rounded: 'md',
     required: false,
+    readonly: false,
+    disabled: false,
   },
   decorators: [
     moduleMetadata({
-      imports: [FormsModule, ReactiveFormsModule],
+      imports: [FormsModule, ReactiveFormsModule, IconComponent],
     }),
   ],
   parameters: {
@@ -44,12 +60,19 @@ export default {
 
 export const Field = ({ ...args }) => ({
   template: `
-  <mjs-field
-    [required]="${args['required']}"
+  <mjs-text-field
+    label="${args['label']}"
+    leftIcon="${args['leftIcon']}"
+    rightIcon="${args['rightIcon']}"
     placeholder="${args['placeholder']}"
     rounded="${args['rounded']}"
-    size="${args['size']}">
-  </mjs-field>`,
+    size="${args['size']}"
+    [labelStacked]="${args['labelStacked']}"
+    [readonly]="${args['readonly']}"
+    [disabled]="${args['disabled']}"
+    [required]="${args['required']}">
+    <mjs-icon #leftIcon icon="lock" />
+  </mjs-text-field>`,
   props: {
     ...args,
   },

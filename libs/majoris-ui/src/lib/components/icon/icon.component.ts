@@ -20,16 +20,10 @@ export class IconComponent {
 
   @Input() icon: string = '';
 
-  @Input() theme: Color = 'default';
-
   @Input() size: Size = 'md';
 
   get getFontSetClass(): string {
     return this.fontSet ? `material-icons-${this.fontSet}` : 'material-icons';
-  }
-
-  get colorClass(): string {
-    return `icon-theme--${this.theme}`;
   }
 
   get sizeClass(): string {
@@ -37,6 +31,6 @@ export class IconComponent {
   }
 
   get classes(): string[] {
-    return [this.getFontSetClass, this.colorClass, this.sizeClass];
+    return [this.getFontSetClass, this.sizeClass];
   }
 }

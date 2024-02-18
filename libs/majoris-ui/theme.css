@@ -1,43 +1,18 @@
 :root {
-  --main-base: #fdfffc;
-  --main-accent: #f5f6fa;
-  --main-highlight: #ff7a00;
-  --main-disabled: #ebe9e9;
-  --main-disabled-text: #b9b9b9;
-  --main-box-shadow: #23578980 0px 0px 0px 1px, #23578930 0px 0px 0px 6px;
-
-  --danger-base: #ed1c24;
-  --danger-accent: #c40e3b;
-  --danger-disabled: #c43f44;
-  --danger-highlight: #fdfffc;
-  --danger-text: #fdfffc;
-  --danger-disabled: #ed1c24;
-  --danger-disabled-text: #fdfffc;
-  --danger-box-shadow: #ed1c2480 0px 0px 0px 1px, #ed1c2430 0px 0px 0px 6px;
-
-  --warning-base: #f9c22e;
-  --warning-accent: #f57505;
-  --warning-highlight: #fdfffc;
-  --warning-text: #fdfffc;
-  --warning-disabled: #f9c22e;
-  --warning-disabled-text: #fdfffc;
-  --warning-box-shadow: #f9c22e80 0px 0px 0px 1px, #f9c22e30 0px 0px 0px 6px;
-
-  --info-base: #23c9ff;
-  --info-accent: #006fd6;
-  --info-highlight: #fdfffc;
-  --info-text: #fdfffc;
-  --info-disabled: #23c9ff;
-  --info-disabled-text: #fdfffc;
-  --info-box-shadow: #23c9ff80 0px 0px 0px 1px, #23c9ff30 0px 0px 0px 6px;
-
-  --success-base: #058c42;
-  --success-accent: #058c42;
-  --success-highlight: #fdfffc;
-  --success-text: #fdfffc;
-  --success-disabled: #058c42;
-  --success-disabled-text: #fdfffc;
-  --success-box-shadow: #058c4280 0px 0px 0px 1px, #058c4230 0px 0px 0px 6px;
+  --base: #fdfffc;
+  --accent: #f5f6fa;
+  --highlight: #ff7a00;
+  --text: #fdfffc;
+  --text-alt: #000;
+  --shadow: #ff7a0080 0px 0px 0px 1px, #ff7a0030 0px 0px 0px 6px;
+  --danger: #ed1c24;
+  --danger-shadow: #ed1c2480 0px 0px 0px 1px, #ed1c2430 0px 0px 0px 6px;
+  --warning: #f9c22e;
+  --warning-shadow: #f9c22e80 0px 0px 0px 1px, #f9c22e30 0px 0px 0px 6px;
+  --info: #23c9ff;
+  --info-shadow: #23c9ff80 0px 0px 0px 1px, #23c9ff30 0px 0px 0px 6px;
+  --success: #058c42;
+  --success-shadow: #058c4280 0px 0px 0px 1px, #058c4230 0px 0px 0px 6px;
 
   --border-radius-sm: 0.25rem;
   --border-radius-md: 0.35rem;
@@ -45,9 +20,9 @@
   --border-radius-full: 999rem;
   --border-radius-none: 0;
 
-  --height-sm: 1.975rem;
-  --height-md: 2.25rem;
-  --height-lg: 2.5rem;
+  --height-sm: 2.75rem;
+  --height-md: 3rem;
+  --height-lg: 3.25rem;
 
   --padding-sm: 0.75rem;
   --padding-md: 1rem;
@@ -58,4 +33,8 @@
   --font-size-lg: 1.25rem;
   --font-size-xl: 1.5rem;
   --font-size-2xl: 1.75rem;
+
+  --icon-size-sm: 1.25rem;
+  --icon-size-md: 1.5rem;
+  --icon-size-lg: 1.75rem;
 }
