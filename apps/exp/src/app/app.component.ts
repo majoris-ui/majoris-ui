@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'exp-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title: string;
+  data = this.fb.group({
+    title: '',
+    checked: false,
+  });
+
+  constructor(private fb: FormBuilder) {}
 }

@@ -1,10 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Optional,
+  Output,
+  Self,
+} from '@angular/core';
 import {
   ControlValueAccessor,
   FormsModule,
+  NgControl,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { IconComponent } from '../icon/icon.component';
 
 type Theme = 'default' | 'success' | 'warning' | 'danger' | 'info';
 
@@ -15,15 +25,12 @@ type Size = 'sm' | 'md' | 'lg';
 @Component({
   selector: 'mjs-checkbox',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, IconComponent],
   templateUrl: './mjs-checkbox.component.html',
   styleUrl: './mjs-checkbox.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MjsCheckboxComponent implements ControlValueAccessor {
-  /**
-   * Label for the checkbox
-   */
   @Input() label: string = '';
 
   @Input() name: string = '';
@@ -42,18 +49,50 @@ export class MjsCheckboxComponent implements ControlValueAccessor {
 
   @Input() size: Size = 'md';
 
-  constructor() {}
+  @Output() blur: EventEmitter<boolean> = new EventEmitter();
+
+  onChangeFn = (_: any) => {};
+
+  onTouchedFn = () => {};
+
+  constructor(@Optional() @Self() public ngControl: NgControl) {
+    this.ngControl && (this.ngControl.valueAccessor = this);
+  }
+
+  get themeClass(): string {
+    return `mjs-checkbox-theme`;
+  }
+
+  get heightClass(): string {
+    return `mjs-checkbox-height--${this.size}`;
+  }
+
+  get classes(): string[] {
+    return [this.themeClass, this.heightClass];
+  }
 
   writeValue(value: boolean): void {
     this.checked = value;
   }
-  registerOnChange(fn: any): void {
-    throw new Error('Method not implemented.');
-  }
-  registerOnTouched(fn: any): void {
-    throw new Error('Method not implemented.');
-  }
+
   setDisabledState?(isDisabled: boolean): void {
     this.disabled = isDisabled;
+  }
+
+  public registerOnChange(fn: any): void {
+    this.onChangeFn = fn;
+  }
+
+  public registerOnTouched(fn: any): void {
+    this.onTouchedFn = fn;
+  }
+
+  public onChange() {
+    this.onChangeFn(this.checked);
+  }
+
+  public onBlur() {
+    this.onTouchedFn();
+    this.blur.emit();
   }
 }

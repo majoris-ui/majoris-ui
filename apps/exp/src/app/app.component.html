@@ -1,23 +1,28 @@
-<div class="bg-[#f3f3f3] w-screen h-screen p-3">
+<div class="bg-base w-screen h-screen p-3">
   <!-- <ul class="remote-menu">
     <li><a routerLink="/">Home</a></li>
   </ul> -->
 
-  <div class="w-[400px] border border-green-100 flex flex-col gap-2">
+  <div [formGroup]="data" class="w-[400px] flex flex-col gap-2">
     <mjs-button expanded theme="danger"> Me clica </mjs-button>
 
     <mjs-text-field
       leftIcon="lock"
       placeholder="digite o seu nome"
       [required]="true"
-      [(ngModel)]="title"
+      formControlName="title"
       name="title"
       label="nome"
     >
       <mjs-icon leftIcon fontSet="round" icon="lock" />
     </mjs-text-field>
 
-    <mjs-checkbox></mjs-checkbox>
+    <mjs-checkbox
+      name="checkbox"
+      size="lg"
+      label="checkbox"
+      formControlName="checked"
+    ></mjs-checkbox>
 
     <mjs-icon fontSet="round" icon="lock" size="lg" theme="danger" />
   </div>

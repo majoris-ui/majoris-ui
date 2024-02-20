@@ -1,1 +1,78 @@
+label {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  width: fit;
+  align-items: center;
+  @apply bg-highlight;
+  @apply px-md;
+  @apply gap-2;
 
+  & input {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    cursor: pointer;
+    position: absolute;
+  }
+
+  & .checkmark {
+    height: 26px;
+    width: 26px;
+    background-color: #eee;
+  }
+
+  & span {
+    @apply text-sm;
+  }
+}
+
+.mjs-checkbox-theme .checkmark {
+  @apply bg-base;
+  @apply border border-accent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mjs-checkbox-theme .checkmark mjs-icon {
+  display: none;
+}
+
+.mjs-checkbox-theme:hover input ~ .checkmark {
+  @apply border border-highlight;
+}
+
+.mjs-checkbox-theme input:checked ~ .checkmark {
+  @apply bg-highlight;
+
+  & mjs-icon {
+    display: block;
+    @apply text-base;
+  }
+}
+
+/* FIELD HEIGHT SCHEMA  */
+.mjs-checkbox-height--sm {
+  @apply h-sm;
+
+  input {
+    @apply h-sm;
+  }
+}
+
+.mjs-checkbox-height--md {
+  @apply h-md;
+
+  input {
+    @apply h-md;
+  }
+}
+
+.mjs-checkbox-height--lg {
+  @apply h-lg;
+
+  input {
+    @apply h-lg;
+  }
+}
