@@ -1,3 +1,7 @@
+:host {
+  @apply w-full;
+}
+
 /* FIELD COLORS SCHEMA */
 .color-theme {
   @apply w-full;
@@ -54,6 +58,7 @@
 
 .color-theme--invalid {
   @apply shadow-danger;
+  @apply border-none;
   .field__icon {
     @apply text-danger;
   }
@@ -61,6 +66,7 @@
 
 .color-theme--valid {
   @apply shadow-success;
+  @apply border-none;
   .field__icon {
     @apply text-success;
   }

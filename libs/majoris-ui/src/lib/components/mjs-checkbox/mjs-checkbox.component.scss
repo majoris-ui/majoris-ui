@@ -4,6 +4,7 @@ label {
   display: inline-flex;
   cursor: pointer;
   align-items: center;
+  @apply px-md;
 
   & input {
     opacity: 0;
@@ -99,4 +100,10 @@ label {
 
 .mjs-checkbox-round--none {
   @apply rounded-none;
+}
+
+/* FIELD DISABLED SCHEMA */
+.mjs-checkbox--disabled {
+  @apply opacity-50;
+  pointer-events: none;
 }

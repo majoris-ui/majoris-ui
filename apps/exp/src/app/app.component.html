@@ -3,24 +3,24 @@
     <li><a routerLink="/">Home</a></li>
   </ul> -->
 
-  <div [formGroup]="data" class="w-[720px] flex gap-4">
-    <div>
-      <mjs-text-field
-        leftIcon="lock"
-        placeholder="digite o seu nome"
-        [required]="true"
-        formControlName="title"
-        name="title"
-        label="nome"
-      >
-        <mjs-icon leftIcon fontSet="round" icon="lock" />
-      </mjs-text-field>
-    </div>
+  <div [formGroup]="data" class="w-[1200px] flex gap-4">
+    <mjs-text-field
+      leftIcon="lock"
+      placeholder="digite o seu nome"
+      [required]="true"
+      formControlName="title"
+      name="title"
+      label="nome"
+    >
+      <mjs-icon leftIcon fontSet="round" icon="lock" />
+    </mjs-text-field>
     <div>
       <mjs-checkbox
         name="checked"
         label="something"
         round="full"
+        formControlName="checked"
+        (clickEvent)="a()"
       ></mjs-checkbox>
     </div>
     <div>
@@ -28,6 +28,7 @@
         name="checked2"
         label="checkbox"
         round="full"
+        formControlName="checked2"
       ></mjs-checkbox>
     </div>
   </div>

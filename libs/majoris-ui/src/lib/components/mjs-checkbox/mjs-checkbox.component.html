@@ -1,14 +1,15 @@
-<label [class]="classes.join(' ')" [for]="name">
+<label [class]="classes.join(' ')" [for]="id || name">
   <input
     [(ngModel)]="checked"
     [disabled]="disabled"
+    [readonly]="readonly"
     [required]="required"
     [checked]="checked"
     [name]="name"
-    [id]="name"
-    (change)="onChange()"
-    (input)="onChange()"
+    [id]="id || name"
+    (change)="onChangeEvent()"
     (blur)="onBlur()"
+    (click)="onClickEvent()"
     type="checkbox"
   />
   <div [ngClass]="[this.getRoundClass]" class="checkmark">

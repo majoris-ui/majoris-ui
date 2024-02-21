@@ -17,13 +17,15 @@ import {
 } from '@angular/forms';
 import { IconComponent } from '../icon/icon.component';
 
-type Theme = 'default' | 'success' | 'warning' | 'danger' | 'info';
-
 type Position = 'left' | 'right' | 'top' | 'bottom';
 
 type Size = 'sm' | 'md' | 'lg';
 
 type Round = 'sm' | 'md' | 'lg' | 'full' | 'none';
+
+interface CheckboxEvent {
+  checked: boolean;
+}
 
 @Component({
   selector: 'mjs-checkbox',
@@ -34,7 +36,16 @@ type Round = 'sm' | 'md' | 'lg' | 'full' | 'none';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MjsCheckboxComponent implements ControlValueAccessor {
-  @Input({ transform: booleanAttribute }) required: boolean = false;
+  @Input({ transform: booleanAttribute })
+  required: boolean = false;
+
+  @Input({ transform: booleanAttribute })
+  disabled: boolean = false;
+
+  @Input({ transform: booleanAttribute })
+  readonly: boolean = false;
+
+  @Input() id: string = '';
 
   @Input() label: string = '';
 
@@ -42,15 +53,17 @@ export class MjsCheckboxComponent implements ControlValueAccessor {
 
   @Input() checked: boolean = false;
 
-  @Input() disabled: boolean = false;
-
   @Input() labelPosition: Position = 'left';
 
   @Input() size: Size = 'md';
 
   @Input() round: Round = 'md';
 
-  @Output() blur: EventEmitter<boolean> = new EventEmitter();
+  @Output() blurEvent: EventEmitter<null> = new EventEmitter();
+
+  @Output() clickEvent: EventEmitter<null> = new EventEmitter();
+
+  @Output() changeEvent: EventEmitter<CheckboxEvent> = new EventEmitter();
 
   onChangeFn = (_: any) => {};
 
@@ -64,6 +77,10 @@ export class MjsCheckboxComponent implements ControlValueAccessor {
     return `mjs-checkbox-theme`;
   }
 
+  get getDisabledClass(): string {
+    return this.disabled || this.readonly ? 'mjs-checkbox--disabled' : '';
+  }
+
   get getRoundClass(): string {
     return `mjs-checkbox-round--${this.round}`;
   }
@@ -73,7 +90,7 @@ export class MjsCheckboxComponent implements ControlValueAccessor {
   }
 
   get classes(): string[] {
-    return [this.themeClass, this.heightClass];
+    return [this.themeClass, this.heightClass, this.getDisabledClass];
   }
 
   writeValue(value: boolean): void {
@@ -92,12 +109,21 @@ export class MjsCheckboxComponent implements ControlValueAccessor {
     this.onTouchedFn = fn;
   }
 
-  public onChange() {
+  public onChangeEvent() {
     this.onChangeFn(this.checked);
+    this.changeEvent.emit({
+      checked: this.checked,
+    });
   }
 
   public onBlur() {
     this.onTouchedFn();
-    this.blur.emit();
+    this.blurEvent.emit();
+  }
+
+  public onClickEvent() {
+    if (!this.disabled && !this.readonly) {
+      this.clickEvent.emit();
+    }
   }
 }
