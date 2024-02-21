@@ -9,7 +9,8 @@ import { FormBuilder } from '@angular/forms';
 export class AppComponent {
   data = this.fb.group({
     title: '',
-    checked: false,
+    checked: true,
+    checked2: true,
   });
 
   constructor(private fb: FormBuilder) {}

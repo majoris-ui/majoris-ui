@@ -18,17 +18,13 @@ export class IconComponent {
 
   @Input() icon: string = '';
 
-  @Input() size: Size = 'md';
+  @Input() class: string = '';
 
   get getFontSetClass(): string {
     return this.fontSet ? `material-icons-${this.fontSet}` : 'material-icons';
   }
 
-  get sizeClass(): string {
-    return `icon-size--${this.size}`;
-  }
-
   get classes(): string[] {
-    return [this.getFontSetClass, this.sizeClass];
+    return [this.getFontSetClass, this.class];
   }
 }

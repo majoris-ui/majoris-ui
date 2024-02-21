@@ -1,17 +1,18 @@
-<label [class]="classes.join(' ')" for="checkbox">
+<label [class]="classes.join(' ')" [for]="name">
   <input
     [(ngModel)]="checked"
     [disabled]="disabled"
     [required]="required"
+    [checked]="checked"
+    [name]="name"
+    [id]="name"
     (change)="onChange()"
     (input)="onChange()"
     (blur)="onBlur()"
-    [ngModelOptions]="{ standalone: true }"
     type="checkbox"
-    id="checkbox"
   />
-  <div class="checkmark">
-    <mjs-icon icon="check"></mjs-icon>
+  <div [ngClass]="[this.getRoundClass]" class="checkmark">
+    <mjs-icon class="text-[14px]" icon="check"></mjs-icon>
   </div>
-  <span>{{ label }}</span>
+  <span class="label">{{ label }}</span>
 </label>

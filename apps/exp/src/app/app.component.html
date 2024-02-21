@@ -3,28 +3,33 @@
     <li><a routerLink="/">Home</a></li>
   </ul> -->
 
-  <div [formGroup]="data" class="w-[400px] flex flex-col gap-2">
-    <mjs-button expanded theme="danger"> Me clica </mjs-button>
-
-    <mjs-text-field
-      leftIcon="lock"
-      placeholder="digite o seu nome"
-      [required]="true"
-      formControlName="title"
-      name="title"
-      label="nome"
-    >
-      <mjs-icon leftIcon fontSet="round" icon="lock" />
-    </mjs-text-field>
-
-    <mjs-checkbox
-      name="checkbox"
-      size="lg"
-      label="checkbox"
-      formControlName="checked"
-    ></mjs-checkbox>
-
-    <mjs-icon fontSet="round" icon="lock" size="lg" theme="danger" />
+  <div [formGroup]="data" class="w-[720px] flex gap-4">
+    <div>
+      <mjs-text-field
+        leftIcon="lock"
+        placeholder="digite o seu nome"
+        [required]="true"
+        formControlName="title"
+        name="title"
+        label="nome"
+      >
+        <mjs-icon leftIcon fontSet="round" icon="lock" />
+      </mjs-text-field>
+    </div>
+    <div>
+      <mjs-checkbox
+        name="checked"
+        label="something"
+        round="full"
+      ></mjs-checkbox>
+    </div>
+    <div>
+      <mjs-checkbox
+        name="checked2"
+        label="checkbox"
+        round="full"
+      ></mjs-checkbox>
+    </div>
   </div>
 
   <router-outlet></router-outlet>

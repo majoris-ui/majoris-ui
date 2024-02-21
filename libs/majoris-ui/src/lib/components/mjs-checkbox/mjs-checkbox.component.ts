@@ -7,6 +7,7 @@ import {
   Optional,
   Output,
   Self,
+  booleanAttribute,
 } from '@angular/core';
 import {
   ControlValueAccessor,
@@ -22,6 +23,8 @@ type Position = 'left' | 'right' | 'top' | 'bottom';
 
 type Size = 'sm' | 'md' | 'lg';
 
+type Round = 'sm' | 'md' | 'lg' | 'full' | 'none';
+
 @Component({
   selector: 'mjs-checkbox',
   standalone: true,
@@ -31,23 +34,21 @@ type Size = 'sm' | 'md' | 'lg';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MjsCheckboxComponent implements ControlValueAccessor {
+  @Input({ transform: booleanAttribute }) required: boolean = false;
+
   @Input() label: string = '';
 
   @Input() name: string = '';
-
-  @Input() id: string = '';
 
   @Input() checked: boolean = false;
 
   @Input() disabled: boolean = false;
 
-  @Input() required: boolean = false;
-
-  @Input() theme: Theme = 'default';
-
   @Input() labelPosition: Position = 'left';
 
   @Input() size: Size = 'md';
+
+  @Input() round: Round = 'md';
 
   @Output() blur: EventEmitter<boolean> = new EventEmitter();
 
@@ -61,6 +62,10 @@ export class MjsCheckboxComponent implements ControlValueAccessor {
 
   get themeClass(): string {
     return `mjs-checkbox-theme`;
+  }
+
+  get getRoundClass(): string {
+    return `mjs-checkbox-round--${this.round}`;
   }
 
   get heightClass(): string {

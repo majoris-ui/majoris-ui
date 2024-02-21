@@ -1,12 +1,9 @@
 label {
+  @apply gap-[12px];
   position: relative;
-  display: flex;
+  display: inline-flex;
   cursor: pointer;
-  width: fit;
   align-items: center;
-  @apply bg-highlight;
-  @apply px-md;
-  @apply gap-2;
 
   & input {
     opacity: 0;
@@ -17,12 +14,16 @@ label {
   }
 
   & .checkmark {
-    height: 26px;
-    width: 26px;
-    background-color: #eee;
+    height: 24px;
+    width: 24px;
+    @apply text-base;
   }
 
-  & span {
+  & span .label {
+    @apply text-sm;
+  }
+
+  & span .label:empty {
     @apply text-sm;
   }
 }
@@ -30,7 +31,8 @@ label {
 .mjs-checkbox-theme .checkmark {
   @apply bg-base;
   @apply border border-accent;
-  display: flex;
+  @apply text-[10px];
+  display: inline-flex;
   justify-content: center;
   align-items: center;
 }
@@ -45,10 +47,11 @@ label {
 
 .mjs-checkbox-theme input:checked ~ .checkmark {
   @apply bg-highlight;
+  @apply border border-highlight;
 
   & mjs-icon {
-    display: block;
     @apply text-base;
+    display: flex;
   }
 }
 
@@ -75,4 +78,25 @@ label {
   input {
     @apply h-lg;
   }
+}
+
+/* FIELD ROUND SCHEMA */
+.mjs-checkbox-round--sm {
+  @apply rounded-sm;
+}
+
+.mjs-checkbox-round--md {
+  @apply rounded-md;
+}
+
+.mjs-checkbox-round--lg {
+  @apply rounded-lg;
+}
+
+.mjs-checkbox-round--full {
+  @apply rounded-full;
+}
+
+.mjs-checkbox-round--none {
+  @apply rounded-none;
 }
