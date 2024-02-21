@@ -1,10 +1,29 @@
 label {
-  @apply gap-[12px];
   position: relative;
   display: inline-flex;
   cursor: pointer;
   align-items: center;
+  @apply gap-[12px];
   @apply px-md;
+
+  & .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    @apply bg-highlight;
+    @apply opacity-0;
+    @apply transition-all ease-in-out duration-300;
+  }
+
+  &:hover .background {
+    @apply opacity-5;
+  }
+
+  & .mjs-checkbox-round--sm::before {
+    @apply rounded-sm;
+  }
 
   & input {
     opacity: 0;
@@ -18,10 +37,13 @@ label {
     height: 24px;
     width: 24px;
     @apply text-base;
+    z-index: 2;
+    @apply transition-all ease-in-out duration-300;
   }
 
-  & span .label {
+  & span {
     @apply text-sm;
+    z-index: 2;
   }
 
   & span .label:empty {
@@ -106,4 +128,7 @@ label {
 .mjs-checkbox--disabled {
   @apply opacity-50;
   pointer-events: none;
+}
+
+.background {
 }

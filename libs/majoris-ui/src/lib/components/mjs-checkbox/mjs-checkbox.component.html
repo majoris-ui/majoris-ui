@@ -1,4 +1,5 @@
 <label [class]="classes.join(' ')" [for]="id || name">
+  <div class="background" [ngClass]="[getRoundClass]"></div>
   <input
     [(ngModel)]="checked"
     [disabled]="disabled"
@@ -12,7 +13,7 @@
     (click)="onClickEvent()"
     type="checkbox"
   />
-  <div [ngClass]="[this.getRoundClass]" class="checkmark">
+  <div [ngClass]="[getRoundClass]" class="checkmark">
     <mjs-icon class="text-[14px]" icon="check"></mjs-icon>
   </div>
   <span class="label">{{ label }}</span>

@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
+  HostBinding,
   Input,
   Optional,
   Output,
@@ -57,7 +58,9 @@ export class MjsCheckboxComponent implements ControlValueAccessor {
 
   @Input() size: Size = 'md';
 
-  @Input() round: Round = 'md';
+  @HostBinding('style.--round')
+  @Input()
+  round: Round = 'md';
 
   @Output() blurEvent: EventEmitter<null> = new EventEmitter();
 

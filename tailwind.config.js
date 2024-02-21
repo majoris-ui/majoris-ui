@@ -7,6 +7,11 @@ module.exports = {
     join(__dirname, 'src/**/!(*.stories|*.spec).{ts,html}'),
     ...createGlobPatternsForDependencies(__dirname),
   ],
+  variants: {
+    extend: {
+      backgroundOpacity: ['active'],
+    }
+  },
   theme: {
     extend: {
       textColor: {
