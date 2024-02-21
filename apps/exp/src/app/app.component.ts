@@ -13,9 +13,15 @@ export class AppComponent {
     checked2: [{ value: false, disabled: false }],
   });
 
+  lp: 'left' | 'right' = 'right';
+
   constructor(private fb: FormBuilder) {}
 
   a() {
     console.log('clicked');
+  }
+
+  changeLp() {
+    this.lp = this.lp === 'left' ? 'right' : 'left';
   }
 }

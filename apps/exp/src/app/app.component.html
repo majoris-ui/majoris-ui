@@ -20,13 +20,13 @@
         label="something"
         round="md"
         formControlName="checked"
-        (clickEvent)="a()"
+        (clickEvent)="changeLp()"
+        [labelPosition]="lp"
       ></mjs-checkbox>
     </div>
     <div>
       <mjs-checkbox
         name="checked2"
-        label="checkbox"
         round="none"
         formControlName="checked2"
       ></mjs-checkbox>

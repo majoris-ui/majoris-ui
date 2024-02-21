@@ -2,12 +2,13 @@ import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  ElementRef,
   EventEmitter,
-  HostBinding,
   Input,
   Optional,
   Output,
   Self,
+  ViewChild,
   booleanAttribute,
 } from '@angular/core';
 import {
@@ -18,7 +19,7 @@ import {
 } from '@angular/forms';
 import { IconComponent } from '../icon/icon.component';
 
-type Position = 'left' | 'right' | 'top' | 'bottom';
+type Position = 'left' | 'right';
 
 type Size = 'sm' | 'md' | 'lg';
 
@@ -54,19 +55,19 @@ export class MjsCheckboxComponent implements ControlValueAccessor {
 
   @Input() checked: boolean = false;
 
-  @Input() labelPosition: Position = 'left';
+  @Input() labelPosition: Position = 'right';
 
   @Input() size: Size = 'md';
 
-  @HostBinding('style.--round')
-  @Input()
-  round: Round = 'md';
+  @Input() round: Round = 'md';
 
   @Output() blurEvent: EventEmitter<null> = new EventEmitter();
 
   @Output() clickEvent: EventEmitter<null> = new EventEmitter();
 
   @Output() changeEvent: EventEmitter<CheckboxEvent> = new EventEmitter();
+
+  @ViewChild('checkbox') checkboxRef: ElementRef<HTMLLabelElement>;
 
   onChangeFn = (_: any) => {};
 
@@ -92,8 +93,17 @@ export class MjsCheckboxComponent implements ControlValueAccessor {
     return `mjs-checkbox-height--${this.size}`;
   }
 
+  get labelPositionClass(): string {
+    return `mjs-checkbox-label-position--${this.labelPosition}`;
+  }
+
   get classes(): string[] {
-    return [this.themeClass, this.heightClass, this.getDisabledClass];
+    return [
+      this.themeClass,
+      this.heightClass,
+      this.getDisabledClass,
+      this.labelPositionClass,
+    ];
   }
 
   writeValue(value: boolean): void {
