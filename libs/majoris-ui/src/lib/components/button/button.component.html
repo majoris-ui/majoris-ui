@@ -2,9 +2,9 @@
   class="button-default"
   [class]="classes.join(' ')"
   [disabled]="disabled"
-  #button
   mjsContrastTextColor
   [color]="theme"
+  (click)="onClick()"
 >
   <span
     class="truncate"

@@ -155,8 +155,6 @@
   @apply justify-center;
   @apply relative;
   @apply outline-none;
-  @apply font-bold;
-
   @apply transition-all ease-in-out duration-300;
 }
 
@@ -298,4 +296,18 @@
 
 .button--disabled {
   @apply opacity-50;
+}
+
+/* BUTTON FONT STYLES */
+
+.button-font-style--bold {
+  @apply font-bold;
+}
+
+.button-font-style--normal {
+  @apply font-normal;
+}
+
+.button-font-style--italic {
+  @apply italic;
 }

@@ -2,8 +2,9 @@ import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
-  ElementRef,
+  EventEmitter,
   Input,
+  Output,
   TemplateRef,
   ViewChild,
   booleanAttribute,
@@ -22,13 +23,13 @@ export type Theme =
   | 'light'
   | 'dark';
 
-export type Style = 'solid' | 'outline' | 'link';
+type Style = 'solid' | 'outline' | 'link';
 
-export type Rounded = 'sm' | 'md' | 'lg' | 'full' | 'none';
+type Rounded = 'sm' | 'md' | 'lg' | 'full' | 'none';
 
-export type Height = 'sm' | 'md' | 'lg';
+type Height = 'sm' | 'md' | 'lg';
 
-export type BorderSize = 'sm' | 'md' | 'lg';
+type FontStyle = 'italic' | 'bold' | 'normal' | 'bold-italic';
 
 @Component({
   selector: 'mjs-button',
@@ -56,8 +57,9 @@ export class ButtonComponent {
 
   @Input() size: Height = 'md';
 
-  @ViewChild('button')
-  button: ElementRef<HTMLButtonElement>;
+  @Input() fontStyle: FontStyle = 'normal';
+
+  @Output() clickEvent: EventEmitter<any> = new EventEmitter();
 
   @ViewChild(ButtonLoadingTemplateDirective, { read: TemplateRef })
   loadingTemplate: TemplateRef<any>;
@@ -94,6 +96,16 @@ export class ButtonComponent {
     return `${!this.disabled ? `button-theme-hover--${this.fill}` : ''}`;
   }
 
+  get getFontStyleClass(): string {
+    let fontStyles: string[] = [];
+
+    fontStyles = this.fontStyle.split('-').map((style) => {
+      return `button-font-style--${style}`;
+    });
+
+    return fontStyles.join(' ');
+  }
+
   get classes(): string[] {
     return [
       this.getRoundedClass,
@@ -102,6 +114,11 @@ export class ButtonComponent {
       this.getHeightClass,
       this.getThemeClass,
       this.getHoverClass,
+      this.getFontStyleClass,
     ];
+  }
+
+  onClick(): void {
+    this.clickEvent.emit();
   }
 }
