@@ -18,6 +18,7 @@ import {
   NgControl,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { MjsContrastTextColorDirective } from '../../directives';
 import { getContrastingTextColor } from '../../helpers';
 
 type Height = 'sm' | 'md' | 'lg';
@@ -27,7 +28,12 @@ type Rounded = 'sm' | 'md' | 'lg' | 'full' | 'none';
 @Component({
   selector: 'mjs-text-field',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MjsContrastTextColorDirective,
+  ],
   templateUrl: './text-field.component.html',
   styleUrl: './text-field.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

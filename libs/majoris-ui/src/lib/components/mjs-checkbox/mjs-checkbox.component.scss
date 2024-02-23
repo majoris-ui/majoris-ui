@@ -46,8 +46,8 @@ label {
     @apply z-20;
   }
 
-  & span .label:empty {
-    @apply text-sm;
+  & .label:empty {
+    display: none;
   }
 }
 

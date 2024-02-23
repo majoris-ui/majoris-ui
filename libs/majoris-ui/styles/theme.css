@@ -1,17 +1,19 @@
 :root {
   --base: #fdfffc;
-  --accent: #f5f6fa;
+  --accent: #dddee0;
   --highlight: #ff7a00;
-  --text: #fdfffc;
-  --text-alt: #000;
-  --shadow: #ff7a0080 0px 0px 0px 1px, #ff7a0030 0px 0px 0px 6px;
+
   --danger: #ed1c24;
-  --danger-shadow: #ed1c2480 0px 0px 0px 1px, #ed1c2430 0px 0px 0px 6px;
   --warning: #f9c22e;
-  --warning-shadow: #f9c22e80 0px 0px 0px 1px, #f9c22e30 0px 0px 0px 6px;
   --info: #23c9ff;
-  --info-shadow: #23c9ff80 0px 0px 0px 1px, #23c9ff30 0px 0px 0px 6px;
   --success: #058c42;
+  --light: #f0f7f4;
+  --dark: #221d23;
+
+  --shadow: #ff7a0080 0px 0px 0px 1px, #ff7a0030 0px 0px 0px 6px;
+  --danger-shadow: #ed1c2480 0px 0px 0px 1px, #ed1c2430 0px 0px 0px 6px;
+  --warning-shadow: #f9c22e80 0px 0px 0px 1px, #f9c22e30 0px 0px 0px 6px;
+  --info-shadow: #23c9ff80 0px 0px 0px 1px, #23c9ff30 0px 0px 0px 6px;
   --success-shadow: #058c4280 0px 0px 0px 1px, #058c4230 0px 0px 0px 6px;
 
   --border-radius-sm: 0.25rem;

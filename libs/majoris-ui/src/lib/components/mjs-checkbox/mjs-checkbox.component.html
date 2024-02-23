@@ -1,6 +1,8 @@
 <label #checkbox [class]="classes.join(' ')" [for]="id || name">
   <div class="background" [ngClass]="[getRoundClass]"></div>
-  <span *ngIf="labelPosition === 'left'" class="label">{{ label }}</span>
+  <span mjsContrastTextColor *ngIf="labelPosition === 'left'" class="label">{{
+    label
+  }}</span>
   <input
     [(ngModel)]="checked"
     [disabled]="disabled"
@@ -17,5 +19,7 @@
   <div [ngClass]="[getRoundClass]" class="checkmark">
     <mjs-icon class="text-[14px]" icon="check"></mjs-icon>
   </div>
-  <span *ngIf="labelPosition === 'right'" class="label">{{ label }}</span>
+  <span mjsContrastTextColor *ngIf="labelPosition === 'right'" class="label">{{
+    label
+  }}</span>
 </label>

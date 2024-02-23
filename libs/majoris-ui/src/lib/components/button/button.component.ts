@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import {
-  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
   ElementRef,
@@ -10,7 +9,6 @@ import {
   booleanAttribute,
 } from '@angular/core';
 import { ButtonLoadingTemplateDirective } from '../../directives';
-import { getContrastingTextColor } from '../../helpers';
 
 export type Theme = 'default' | 'success' | 'warning' | 'danger' | 'info';
 
@@ -22,11 +20,6 @@ export type Height = 'sm' | 'md' | 'lg';
 
 export type BorderSize = 'sm' | 'md' | 'lg';
 
-const TextColor = {
-  dark: 'text-alt',
-  light: 'text-default',
-};
-
 @Component({
   selector: 'mjs-button',
   standalone: true,
@@ -35,7 +28,7 @@ const TextColor = {
   styleUrl: './button.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ButtonComponent implements AfterViewInit {
+export class ButtonComponent {
   @Input({ transform: booleanAttribute })
   loading: boolean = false;
 
@@ -62,18 +55,6 @@ export class ButtonComponent implements AfterViewInit {
   constructor() {}
 
   ngOnInit(): void {}
-
-  ngAfterViewInit(): void {
-    this.getComputedTextClass();
-  }
-
-  getComputedTextClass(): void {
-    const buttonElement = this.button.nativeElement;
-    const buttonStyle = getComputedStyle(buttonElement);
-    const brackgroundColor = buttonStyle.backgroundColor;
-    const textColor = getContrastingTextColor(brackgroundColor);
-    buttonElement.classList.add(TextColor[textColor]);
-  }
 
   get getThemeClass(): string {
     return `button-theme--${this.fill}--${this.theme}`;

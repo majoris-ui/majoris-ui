@@ -127,31 +127,7 @@
     @apply shadow-none;
 
     .field__icon {
-      @apply text-alt;
-    }
-  }
-}
-
-/* TEXT COLOR SCHEMA */
-
-.text-color--light {
-  @apply text-default;
-
-  input {
-    &::placeholder {
-      @apply text-default;
-      @apply opacity-50;
-    }
-  }
-}
-
-.text-color--dark {
-  @apply text-alt;
-
-  input {
-    &::placeholder {
-      @apply text-alt;
-      @apply opacity-50;
+      @apply text-dark;
     }
   }
 }

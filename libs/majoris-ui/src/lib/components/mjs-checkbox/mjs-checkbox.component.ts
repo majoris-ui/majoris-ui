@@ -17,6 +17,7 @@ import {
   NgControl,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { MjsContrastTextColorDirective } from '../../directives';
 import { IconComponent } from '../icon/icon.component';
 
 type Position = 'left' | 'right';
@@ -32,7 +33,13 @@ interface CheckboxEvent {
 @Component({
   selector: 'mjs-checkbox',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, IconComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    IconComponent,
+    MjsContrastTextColorDirective,
+  ],
   templateUrl: './mjs-checkbox.component.html',
   styleUrl: './mjs-checkbox.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -11,7 +11,13 @@
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
         "project": "libs/majoris-ui/ng-package.json",
-        "tailwindConfig": "libs/majoris-ui/tailwind.config.js"
+        "tailwindConfig": "libs/majoris-ui/tailwind.config.js",
+        "styles": [
+          "libs/majoris-ui/styles/tailwind.css",
+          "libs/majoris-ui/styles/theme.css",
+          "libs/majoris-ui/styles/external.css",
+          "libs/majoris-ui/styles/internal.css"
+        ]
       },
       "configurations": {
         "production": {
@@ -41,7 +47,12 @@
         "configDir": "libs/majoris-ui/.storybook",
         "browserTarget": "majoris-ui:build-storybook",
         "compodoc": false,
-        "styles": ["libs/majoris-ui/.storybook/tailwind-imports.css", "libs/majoris-ui/theme.css", "libs/majoris-ui/libs.css"]
+        "styles": [
+          "libs/majoris-ui/styles/tailwind.css",
+          "libs/majoris-ui/styles/theme.css",
+          "libs/majoris-ui/styles/external.css",
+          "libs/majoris-ui/styles/internal.css"
+        ]
       },
       "configurations": {
         "ci": {
@@ -57,7 +68,12 @@
         "configDir": "libs/majoris-ui/.storybook",
         "browserTarget": "majoris-ui:build-storybook",
         "compodoc": false,
-         "styles": ["libs/majoris-ui/.storybook/tailwind-imports.css", "libs/majoris-ui/theme.css", "libs/majoris-ui/libs.css"]
+         "styles": [
+          "libs/majoris-ui/styles/tailwind.css",
+          "libs/majoris-ui/styles/theme.css",
+          "libs/majoris-ui/styles/external.css",
+          "libs/majoris-ui/styles/internal.css"
+        ]
       },
       "configurations": {
         "ci": {

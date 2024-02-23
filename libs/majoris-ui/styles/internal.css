@@ -1,0 +1,21 @@
+.text-contrast-color--light:not([style*='background-color: transparent']) {
+  @apply text-dark;
+}
+
+.text-contrast-color--dark,
+.text-contrast-color--dark[style*='background-color: transparent'] {
+  @apply text-dark;
+}
+
+.text-contrast-color--light:not([style*='background-color: transparent'])
+  input::placeholder {
+  @apply text-dark;
+  @apply opacity-30;
+}
+
+.text-contrast-color--dark input::placeholder,
+.text-contrast-color--dark[style*='background-color: transparent']
+  input::placeholder {
+  @apply text-dark;
+  @apply opacity-30;
+}

@@ -14,10 +14,6 @@ module.exports = {
   },
   theme: {
     extend: {
-      textColor: {
-        default: 'var(--text)',
-        alt: 'var(--text-alt)',
-      },
       colors: {
         base: 'var(--base)',
         accent: 'var(--accent)',
@@ -26,6 +22,8 @@ module.exports = {
         warning: 'var(--warning)',
         info: 'var(--info)',
         success: 'var(--success)',
+        light: 'var(--light)',
+        dark: 'var(--dark)',
       },
       borderRadius: {
         sm: 'var(--border-radius-sm)',
@@ -46,7 +44,6 @@ module.exports = {
       },
 
       fontSize: {
-
         sm: 'var(--font-size-sm)',
         md: 'var(--font-size-md)',
         lg: 'var(--font-size-lg)',
