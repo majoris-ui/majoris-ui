@@ -62,7 +62,7 @@ export class MjsCheckboxComponent implements ControlValueAccessor {
 
   @Input() checked: boolean = false;
 
-  @Input() labelPosition: Position = 'right';
+  @Input() placement: Position = 'right';
 
   @Input() size: Size = 'md';
 
@@ -101,7 +101,7 @@ export class MjsCheckboxComponent implements ControlValueAccessor {
   }
 
   get labelPositionClass(): string {
-    return `mjs-checkbox-label-position--${this.labelPosition}`;
+    return `mjs-checkbox-label-position--${this.placement}`;
   }
 
   get classes(): string[] {

@@ -4,9 +4,9 @@
   </ul> -->
 
   <div [formGroup]="data" class="w-[1200px] flex gap-4">
-    <!-- <mjs-button fill="solid">test</mjs-button> -->
+    <mjs-button theme="default" fill="outline">test</mjs-button>
 
-    <mjs-text-field
+    <!-- <mjs-text-field
       leftIcon="lock"
       placeholder="digite o seu nome"
       [required]="true"
@@ -15,18 +15,17 @@
       label="nome"
     >
       <mjs-icon leftIcon fontSet="round" icon="lock" />
-    </mjs-text-field>
+    </mjs-text-field> -->
     <!-- <div>
       <mjs-checkbox
         name="checked"
         label="something"
         round="md"
         formControlName="checked"
-        (clickEvent)="changeLp()"
-        [labelPosition]="lp"
+        labelPosition="left"
       ></mjs-checkbox>
-    </div> -->
-    <!-- <div>
+    </div>
+    <div>
       <mjs-checkbox
         name="checked2"
         round="none"

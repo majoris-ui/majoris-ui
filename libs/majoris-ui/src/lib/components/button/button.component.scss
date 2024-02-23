@@ -1,6 +1,6 @@
 @mixin colorTheme($theme, $fill) {
   @if $fill == 'solid' {
-    @if $theme == 'default' {
+    @if $theme == 'main' {
       @apply bg-highlight;
       @apply border border-highlight;
 
@@ -40,20 +40,33 @@
     @if $theme == 'main' {
       @apply bg-transparent;
       @apply border border-highlight;
+      @apply text-highlight;
 
       &:focus-within {
         @apply shadow-default;
       }
+
+      &:hover {
+        @apply bg-highlight;
+        @apply text-light;
+      }
     } @else if $theme == 'danger' {
       @apply bg-transparent;
       @apply border border-danger;
+      @apply text-danger;
 
       &:focus-within {
         @apply shadow-danger;
       }
+
+      &:hover {
+        @apply bg-danger;
+        @apply text-light;
+      }
     } @else if $theme == 'success' {
       @apply bg-transparent;
       @apply border border-success;
+      @apply text-success;
 
       &:focus-within {
         @apply shadow-success;
@@ -61,16 +74,28 @@
     } @else if $theme == 'warning' {
       @apply bg-transparent;
       @apply border border-warning;
+      @apply text-warning;
 
       &:focus-within {
         @apply shadow-warning;
       }
+
+      &:hover {
+        @apply bg-warning;
+        @apply text-light;
+      }
     } @else if $theme == 'info' {
       @apply bg-transparent;
       @apply border border-info;
+      @apply text-info;
 
       &:focus-within {
         @apply shadow-info;
+      }
+
+      &:hover {
+        @apply bg-info;
+        @apply text-light;
       }
     }
   } @else if $fill == 'link' {
@@ -78,6 +103,7 @@
       @apply bg-transparent;
       @apply border-none;
       @apply outline-none;
+      @apply text-highlight;
 
       &:focus-within {
         @apply shadow-default;
@@ -129,21 +155,22 @@
   @apply justify-center;
   @apply relative;
   @apply outline-none;
+  @apply font-bold;
 
   @apply transition-all ease-in-out duration-300;
 }
 
 /* BUTTON THEMES */
 
-.button-theme--solid--main {
+.button-theme--solid--default {
   @include colorTheme('main', 'solid');
 }
 
-.button-theme--outline--main {
+.button-theme--outline--default {
   @include colorTheme('main', 'outline');
 }
 
-.button-theme--link--main {
+.button-theme--link--default {
   @include colorTheme('main', 'link');
 }
 

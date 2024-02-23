@@ -8,9 +8,19 @@ import {
   ViewChild,
   booleanAttribute,
 } from '@angular/core';
-import { ButtonLoadingTemplateDirective } from '../../directives';
+import {
+  ButtonLoadingTemplateDirective,
+  MjsContrastTextColorDirective,
+} from '../../directives';
 
-export type Theme = 'default' | 'success' | 'warning' | 'danger' | 'info';
+export type Theme =
+  | 'default'
+  | 'success'
+  | 'warning'
+  | 'danger'
+  | 'info'
+  | 'light'
+  | 'dark';
 
 export type Style = 'solid' | 'outline' | 'link';
 
@@ -23,7 +33,7 @@ export type BorderSize = 'sm' | 'md' | 'lg';
 @Component({
   selector: 'mjs-button',
   standalone: true,
-  imports: [CommonModule, ButtonLoadingTemplateDirective],
+  imports: [CommonModule, MjsContrastTextColorDirective],
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
