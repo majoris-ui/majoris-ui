@@ -311,3 +311,17 @@
 .button-font-style--italic {
   @apply italic;
 }
+
+/* BUTTON FONT TRANSFORM */
+
+.button-font-transform--uppercase {
+  @apply uppercase;
+}
+
+.button-font-transform--lowercase {
+  @apply lowercase;
+}
+
+.button-font-transform--capitalize {
+  @apply capitalize;
+}

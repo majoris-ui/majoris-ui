@@ -31,6 +31,8 @@ type Height = 'sm' | 'md' | 'lg';
 
 type FontStyle = 'italic' | 'bold' | 'normal' | 'bold-italic';
 
+type TextTransform = 'uppercase' | 'lowercase' | 'capitalize' | 'none';
+
 @Component({
   selector: 'mjs-button',
   standalone: true,
@@ -58,6 +60,8 @@ export class ButtonComponent {
   @Input() size: Height = 'md';
 
   @Input() fontStyle: FontStyle = 'normal';
+
+  @Input() fontTransform: TextTransform = 'none';
 
   @Output() clickEvent: EventEmitter<any> = new EventEmitter();
 
@@ -106,6 +110,10 @@ export class ButtonComponent {
     return fontStyles.join(' ');
   }
 
+  get getTransformClass(): string {
+    return `button-font-transform--${this.fontTransform}`;
+  }
+
   get classes(): string[] {
     return [
       this.getRoundedClass,
@@ -115,6 +123,7 @@ export class ButtonComponent {
       this.getThemeClass,
       this.getHoverClass,
       this.getFontStyleClass,
+      this.getTransformClass,
     ];
   }
 
