@@ -67,11 +67,66 @@ export const Field = ({ ...args }) => ({
     placeholder="${args['placeholder']}"
     rounded="${args['rounded']}"
     size="${args['size']}"
-    [labelStacked]="${args['labelStacked']}"
     [readonly]="${args['readonly']}"
     [disabled]="${args['disabled']}"
     [required]="${args['required']}">
-    <mjs-icon #leftIcon icon="lock" />
+  </mjs-text-field>`,
+  props: {
+    ...args,
+  },
+});
+
+export const FieldLeftIcon = ({ ...args }) => ({
+  template: `
+  <mjs-text-field
+    label="${args['label']}"
+    leftIcon="${args['leftIcon']}"
+    rightIcon="${args['rightIcon']}"
+    placeholder="${args['placeholder']}"
+    rounded="${args['rounded']}"
+    size="${args['size']}"
+    [readonly]="${args['readonly']}"
+    [disabled]="${args['disabled']}"
+    [required]="${args['required']}">
+    <mjs-icon leftIcon icon="person" />
+  </mjs-text-field>`,
+  props: {
+    ...args,
+  },
+});
+
+export const FieldRightIcon = ({ ...args }) => ({
+  template: `
+  <mjs-text-field
+    label="${args['label']}"
+    leftIcon="${args['leftIcon']}"
+    rightIcon="${args['rightIcon']}"
+    placeholder="${args['placeholder']}"
+    rounded="${args['rounded']}"
+    size="${args['size']}"
+    [readonly]="${args['readonly']}"
+    [disabled]="${args['disabled']}"
+    [required]="${args['required']}">
+    <mjs-icon rightIcon icon="person" />
+  </mjs-text-field>`,
+  props: {
+    ...args,
+  },
+});
+
+export const FieldDisabled = ({ ...args }) => ({
+  template: `
+  <mjs-text-field
+    label="${args['label']}"
+    leftIcon="${args['leftIcon']}"
+    rightIcon="${args['rightIcon']}"
+    placeholder="${args['placeholder']}"
+    rounded="${args['rounded']}"
+    size="${args['size']}"
+    [readonly]="${args['readonly']}"
+    [disabled]="true"
+    [required]="${args['required']}">
+    <mjs-icon rightIcon icon="person" />
   </mjs-text-field>`,
   props: {
     ...args,

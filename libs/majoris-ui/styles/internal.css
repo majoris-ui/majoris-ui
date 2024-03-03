@@ -7,38 +7,13 @@
   @apply text-dark;
 }
 
-.text-contrast-color--danger,
-.text-contrast-color--danger[style*='background-color: transparent'] {
-  @apply text-danger;
-}
-
-.text-contrast-color--default,
-.text-contrast-color--default[style*='background-color: transparent'] {
-  @apply text-highlight;
-}
-
-.text-contrast-color--warning,
-.text-contrast-color--warning[style*='background-color: transparent'] {
-  @apply text-warning;
-}
-
-.text-contrast-color--info,
-.text-contrast-color--info[style*='background-color: transparent'] {
-  @apply text-info;
-}
-
-.text-contrast-color--success,
-.text-contrast-color--success[style*='background-color: transparent'] {
-  @apply text-success;
-}
-
 .text-contrast-color--light:not([style*='background-color: transparent'])
   input::placeholder {
-  @apply opacity-30;
+  @apply opacity-70;
 }
 
 .text-contrast-color--dark input::placeholder,
 .text-contrast-color--dark[style*='background-color: transparent']
   input::placeholder {
-  @apply opacity-30;
+  @apply opacity-70;
 }

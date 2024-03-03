@@ -112,6 +112,7 @@
       @apply bg-transparent;
       @apply border-none;
       @apply outline-none;
+      @apply text-danger;
 
       &:focus-within {
         @apply shadow-danger;
@@ -120,6 +121,7 @@
       @apply bg-transparent;
       @apply border-none;
       @apply outline-none;
+      @apply text-success;
 
       &:focus-within {
         @apply shadow-success;
@@ -128,6 +130,7 @@
       @apply bg-transparent;
       @apply border-none;
       @apply outline-none;
+      @apply text-warning;
 
       &:focus-within {
         @apply shadow-warning;
@@ -136,6 +139,7 @@
       @apply bg-transparent;
       @apply border-none;
       @apply outline-none;
+      @apply text-info;
 
       &:focus-within {
         @apply shadow-info;
@@ -325,5 +329,3 @@
 .button-font-transform--capitalize {
   @apply capitalize;
 }
-
-// one

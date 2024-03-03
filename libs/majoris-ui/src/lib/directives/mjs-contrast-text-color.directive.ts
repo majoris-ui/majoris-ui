@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostBinding, Input } from '@angular/core';
+import { Directive, ElementRef, HostBinding } from '@angular/core';
 import { getContrastingTextColor } from '../helpers';
 
 type Theme =
@@ -15,10 +15,6 @@ type Theme =
   standalone: true,
 })
 export class MjsContrastTextColorDirective {
-  @Input() color: Theme = 'dark';
-
-  previousTextColor: string = '';
-
   @HostBinding('class')
   get textContrastColor() {
     const backgroundColor = getComputedStyle(
@@ -26,15 +22,10 @@ export class MjsContrastTextColorDirective {
     ).backgroundColor;
 
     if (backgroundColor !== 'rgba(0, 0, 0, 0)') {
-      this.previousTextColor = `text-contrast-color--${getContrastingTextColor(
-        backgroundColor,
-        this.color
-      )}`;
+      return `text-contrast-color--${getContrastingTextColor(backgroundColor)}`;
     } else {
-      this.previousTextColor = `text-contrast-color--${this.color}`;
+      return `text-contrast-color--dark`;
     }
-
-    return this.previousTextColor;
   }
 
   constructor(private el: ElementRef<any>) {}

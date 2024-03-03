@@ -11,39 +11,11 @@ export default {
       control: 'text',
       description: 'Control the button text content',
     },
-    textColor: {
+    theme: {
       control: 'select',
-      options: [
-        'default',
-        'alternative',
-        'highlight',
-        'danger',
-        'success',
-        'warning',
-        'info',
-        'light',
-        'dark',
-        'gray',
-      ],
-      description: 'Control the button text color theme',
+      options: ['default', 'danger', 'success', 'warning', 'info'],
     },
-    backgroundColor: {
-      control: 'select',
-      options: [
-        'default',
-        'alternative',
-        'highlight',
-        'danger',
-        'success',
-        'warning',
-        'info',
-        'light',
-        'dark',
-        'gray',
-      ],
-      description: 'Control the button color theme',
-    },
-    rounded: {
+    round: {
       control: 'select',
       options: ['sm', 'md', 'lg', 'full', 'none'],
       description: 'Control the button roundedness',
@@ -57,7 +29,7 @@ export default {
       options: ['solid', 'outline', 'link'],
       description: 'Control the button style',
     },
-    expand: {
+    expanded: {
       control: 'boolean',
       description: 'Control the button width between [100%] or [fit]',
     },
@@ -73,12 +45,11 @@ export default {
   },
   args: {
     text: 'text',
-    textColor: 'light',
-    backgroundColor: 'default',
-    rounded: 'sm',
+    theme: 'default',
+    round: 'md',
     disabled: false,
     fill: 'solid',
-    expand: false,
+    expanded: false,
     size: 'md',
     loading: false,
   },
@@ -91,17 +62,77 @@ export default {
 export const Button = ({ ...args }) => {
   return {
     template: `
+      <div class="flex items-center justify-center w-screen h-screen">
+        <mjs-button
+        theme="${args['theme']}"
+        [loading]="${args['loading']}"
+        size="${args['size']}"
+        [expanded]="${args['expanded']}"
+        fill="${args['fill']}"
+        [disabled]="${args['disabled']}"
+        round="${args['rounded']}"
+      >
+        ${args['text'] ? args['text'] : ''}
+      </mjs-button>
+      </div>
+    `,
+    props: { ...args },
+  };
+};
+
+export const ButtonOutline = ({ ...args }) => {
+  return {
+    template: `
     <mjs-button
-      textColor="${args['textColor']}"
+      theme="${args['theme']}"
       [loading]="${args['loading']}"
       size="${args['size']}"
-      [expand]="${args['expand']}"
-      fill="${args['fill']}"
+      [expanded]="${args['expanded']}"
+      fill="outline"
       [disabled]="${args['disabled']}"
-      rounded="${args['rounded']}"
-      backgroundColor="${args['backgroundColor']}">${
-      args['text'] ? args['text'] : ''
-    }</mjs-button>`,
+      round="${args['rounded']}"
+    >
+      ${args['text'] ? args['text'] : ''}
+    </mjs-button>
+    `,
+    props: { ...args },
+  };
+};
+
+export const ButtonLink = ({ ...args }) => {
+  return {
+    template: `
+    <mjs-button
+      theme="${args['theme']}"
+      [loading]="${args['loading']}"
+      size="${args['size']}"
+      [expanded]="${args['expanded']}"
+      fill="link"
+      [disabled]="${args['disabled']}"
+      round="${args['rounded']}"
+    >
+      ${args['text'] ? args['text'] : ''}
+    </mjs-button>
+    `,
+    props: { ...args },
+  };
+};
+
+export const ButtonDisabled = ({ ...args }) => {
+  return {
+    template: `
+    <mjs-button
+      theme="${args['theme']}"
+      [loading]="${args['loading']}"
+      size="${args['size']}"
+      [expanded]="${args['expanded']}"
+      fill="${args['fill']}"
+      round="${args['rounded']}"
+      disabled
+    >
+      ${args['text'] ? args['text'] : ''}
+    </mjs-button>
+    `,
     props: { ...args },
   };
 };

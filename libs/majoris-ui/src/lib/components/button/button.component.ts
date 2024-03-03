@@ -53,7 +53,7 @@ export class ButtonComponent {
 
   @Input() theme: Theme = 'default';
 
-  @Input() rounded: Rounded = 'md';
+  @Input() round: Rounded = 'md';
 
   @Input() fill: Style = 'solid';
 
@@ -77,7 +77,7 @@ export class ButtonComponent {
   }
 
   get getRoundedClass(): string {
-    return `button-rounded--${this.rounded}`;
+    return `button-rounded--${this.round}`;
   }
 
   get getDisabledClass(): string {
