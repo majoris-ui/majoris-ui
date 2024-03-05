@@ -3,8 +3,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 type FontSet = 'outlined' | 'round' | 'sharp';
 
-type Size = 'sm' | 'md' | 'lg';
-
 @Component({
   selector: 'mjs-icon',
   standalone: true,

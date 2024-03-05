@@ -1,4 +1,4 @@
-<label #checkbox [class]="classes.join(' ')" [for]="id || name">
+<label #checkbox [class]="classes.join(' ')" [for]="'input-' + id">
   <div class="background" [ngClass]="[getRoundClass]"></div>
   <span mjsContrastTextColor *ngIf="placement === 'left'" class="label">{{
     label
@@ -10,7 +10,7 @@
     [required]="required"
     [checked]="checked"
     [name]="name"
-    [id]="id || name"
+    [id]="'input-' + id"
     (change)="onChangeEvent()"
     (blur)="onBlur()"
     (click)="onClickEvent()"
