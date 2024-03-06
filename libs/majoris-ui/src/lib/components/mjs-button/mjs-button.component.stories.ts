@@ -1,9 +1,9 @@
 import { type Meta } from '@storybook/angular';
-import { ButtonComponent } from './button.component';
+import { MjsButtonComponent } from './mjs-button.component';
 
 export default {
   title: 'Forms/Button',
-  component: ButtonComponent,
+  component: MjsButtonComponent,
   tags: ['autodocs'],
   argTypes: {
     onClick: { action: 'clicked', description: 'Click event' },
@@ -57,7 +57,7 @@ export default {
   parameters: {
     controls: { expanded: true },
   },
-} as Meta<ButtonComponent>;
+} as Meta<MjsButtonComponent>;
 
 export const Button = ({ ...args }) => {
   return {

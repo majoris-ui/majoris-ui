@@ -32,11 +32,11 @@ type Rounded = 'sm' | 'md' | 'lg' | 'full' | 'none';
     ReactiveFormsModule,
     MjsContrastTextColorDirective,
   ],
-  templateUrl: './text-field.component.html',
-  styleUrl: './text-field.component.scss',
+  templateUrl: './mjs-text-field.component.html',
+  styleUrl: './mjs-text-field.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TextFieldComponent implements ControlValueAccessor {
+export class MjsTextFieldComponent implements ControlValueAccessor {
   @Input({ transform: booleanAttribute }) required = false;
 
   @Input({ transform: booleanAttribute }) readonly = false;

@@ -37,11 +37,11 @@ type TextTransform = 'uppercase' | 'lowercase' | 'capitalize' | 'none';
   selector: 'mjs-button',
   standalone: true,
   imports: [CommonModule, MjsContrastTextColorDirective],
-  templateUrl: './button.component.html',
-  styleUrl: './button.component.scss',
+  templateUrl: './mjs-button.component.html',
+  styleUrl: './mjs-button.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ButtonComponent {
+export class MjsButtonComponent {
   @Input({ transform: booleanAttribute })
   loading: boolean = false;
 

@@ -1,12 +1,12 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Meta, moduleMetadata } from '@storybook/angular';
 import { IconComponent } from '../icon/icon.component';
-import { TextFieldComponent } from './text-field.component';
+import { MjsTextFieldComponent } from './mjs-text-field.component';
 
 export default {
   title: 'Forms/Field',
   tags: ['autodocs'],
-  component: TextFieldComponent,
+  component: MjsTextFieldComponent,
   argTypes: {
     label: {
       control: 'text',
@@ -56,7 +56,7 @@ export default {
   parameters: {
     controls: { expanded: true },
   },
-} as Meta<TextFieldComponent>;
+} as Meta<MjsTextFieldComponent>;
 
 export const Field = ({ ...args }) => ({
   template: `
