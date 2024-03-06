@@ -18,7 +18,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { MjsContrastTextColorDirective } from '../../directives';
-import { IconComponent } from '../icon/icon.component';
+import { MjsIconComponent } from '../mjs-icon/mjs-icon.component';
 
 type Position = 'left' | 'right';
 
@@ -37,7 +37,7 @@ interface CheckboxEvent {
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    IconComponent,
+    MjsIconComponent,
     MjsContrastTextColorDirective,
   ],
   templateUrl: './mjs-checkbox.component.html',
@@ -54,7 +54,7 @@ export class MjsCheckboxComponent implements ControlValueAccessor {
   @Input({ transform: booleanAttribute })
   readonly: boolean = false;
 
-  @Input() id: string = '';
+  @Input({ required: true }) id: string = '';
 
   @Input() label: string = '';
 

@@ -1,6 +1,6 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Meta, moduleMetadata } from '@storybook/angular';
-import { IconComponent } from '../icon/icon.component';
+import { MjsIconComponent } from '../mjs-icon/mjs-icon.component';
 import { MjsTextFieldComponent } from './mjs-text-field.component';
 
 export default {
@@ -50,7 +50,7 @@ export default {
   },
   decorators: [
     moduleMetadata({
-      imports: [FormsModule, ReactiveFormsModule, IconComponent],
+      imports: [FormsModule, ReactiveFormsModule, MjsIconComponent],
     }),
   ],
   parameters: {

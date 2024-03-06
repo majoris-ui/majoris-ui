@@ -6,10 +6,10 @@ import {
 } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import {
-  ButtonComponent,
-  IconComponent,
+  MjsButtonComponent,
   MjsCheckboxComponent,
-  TextFieldComponent,
+  MjsIconComponent,
+  MjsTextFieldComponent,
 } from '@majoris-org/majoris-ui';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
@@ -18,9 +18,9 @@ import { appRoutes } from './app.routes';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    TextFieldComponent,
-    ButtonComponent,
-    IconComponent,
+    MjsTextFieldComponent,
+    MjsButtonComponent,
+    MjsIconComponent,
     MjsCheckboxComponent,
     RouterModule.forRoot(appRoutes),
     FormsModule,
