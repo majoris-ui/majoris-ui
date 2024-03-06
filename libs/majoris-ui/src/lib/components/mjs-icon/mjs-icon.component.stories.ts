@@ -1,9 +1,9 @@
 import type { Meta } from '@storybook/angular';
-import { IconComponent } from './icon.component';
+import { MjsIconComponent } from './mjs-icon.component';
 
 export default {
   title: 'Misc/Icon',
-  component: IconComponent,
+  component: MjsIconComponent,
   tags: ['autodocs'],
   argTypes: {
     icon: {
@@ -21,7 +21,7 @@ export default {
   parameters: {
     controls: { expanded: true },
   },
-} as Meta<IconComponent>;
+} as Meta<MjsIconComponent>;
 
 export const Button = ({ ...args }) => {
   return {

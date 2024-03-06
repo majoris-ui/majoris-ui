@@ -7,11 +7,11 @@ type FontSet = 'outlined' | 'round' | 'sharp';
   selector: 'mjs-icon',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './icon.component.html',
-  styleUrl: './icon.component.scss',
+  templateUrl: './mjs-icon.component.html',
+  styleUrl: './mjs-icon.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class IconComponent {
+export class MjsIconComponent {
   @Input() fontSet: FontSet = 'round';
 
   @Input() icon: string = '';
