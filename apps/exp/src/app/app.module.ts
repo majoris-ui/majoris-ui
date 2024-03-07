@@ -9,6 +9,7 @@ import {
   MjsButtonComponent,
   MjsCheckboxComponent,
   MjsIconComponent,
+  MjsRadioComponent,
   MjsTextFieldComponent,
 } from '@majoris-org/majoris-ui';
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { appRoutes } from './app.routes';
     MjsButtonComponent,
     MjsIconComponent,
     MjsCheckboxComponent,
+    MjsRadioComponent,
     RouterModule.forRoot(appRoutes),
     FormsModule,
     ReactiveFormsModule,

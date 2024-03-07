@@ -1,0 +1,154 @@
+label {
+  @apply relative;
+  @apply inline-flex;
+  @apply cursor-pointer;
+  @apply items-center;
+  @apply gap-[12px];
+  @apply px-md;
+
+  & .background {
+    @apply absolute;
+    @apply top-0;
+    @apply left-0;
+    @apply h-full;
+    @apply w-full;
+    @apply bg-highlight;
+    @apply opacity-0;
+    @apply transition-all ease-in-out duration-300;
+  }
+
+  &:hover .background {
+    @apply opacity-5;
+  }
+
+  & .mjs-checkbox-round--sm::before {
+    @apply rounded-sm;
+  }
+
+  & input {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    cursor: pointer;
+    position: absolute;
+  }
+
+  & .checkmark {
+    @apply w-[24px];
+    @apply h-[24px];
+    @apply z-20;
+    @apply transition-all ease-in-out duration-300;
+    @apply rounded-full;
+  }
+
+  & span {
+    @apply text-sm;
+    @apply z-20;
+  }
+
+  & .label:empty {
+    display: none;
+  }
+}
+
+.mjs-checkbox-theme .checkmark {
+  @apply bg-base;
+  @apply border border-accent;
+  @apply text-[10px];
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mjs-checkbox-theme .checkmark mjs-icon {
+  display: none;
+}
+
+.mjs-checkbox-theme:hover input ~ .checkmark {
+  @apply border border-highlight;
+}
+
+.mjs-checkbox-theme input:checked ~ .checkmark {
+  @apply bg-highlight;
+  @apply border border-highlight;
+
+  & mjs-icon {
+    @apply text-base;
+    display: flex;
+  }
+}
+
+/* FIELD HEIGHT SCHEMA  */
+.mjs-checkbox-height--sm {
+  @apply h-sm;
+
+  input {
+    @apply h-sm;
+  }
+}
+
+.mjs-checkbox-height--md {
+  @apply h-md;
+
+  input {
+    @apply h-md;
+  }
+}
+
+.mjs-checkbox-height--lg {
+  @apply h-lg;
+
+  input {
+    @apply h-lg;
+  }
+}
+
+/* FIELD ROUND SCHEMA */
+.mjs-checkbox-round--sm {
+  @apply rounded-sm;
+}
+
+.mjs-checkbox-round--md {
+  @apply rounded-md;
+}
+
+.mjs-checkbox-round--lg {
+  @apply rounded-lg;
+}
+
+.mjs-checkbox-round--full {
+  @apply rounded-full;
+}
+
+.mjs-checkbox-round--none {
+  @apply rounded-none;
+}
+
+/* FIELD DISABLED SCHEMA */
+.mjs-checkbox--disabled {
+  @apply opacity-50;
+  pointer-events: none;
+}
+
+.mjs-checkbox-label-position--top {
+  @apply flex;
+  @apply flex-col;
+
+  span {
+    @apply text-[10px];
+  }
+}
+
+.mjs-checkbox-label-position--bottom {
+  @apply flex;
+  @apply flex-col;
+
+  span {
+    @apply text-[10px];
+  }
+
+  .checkmark {
+    @apply w-[18px];
+    @apply h-[18px];
+  }
+}
