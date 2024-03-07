@@ -10,7 +10,7 @@
     [checked]="value"
     [name]="name"
     [id]="'input-' + id"
-    (change)="onChangeEvent()"
+    (change)="onChangeEvent($event.target)"
     (blur)="onBlur()"
     (click)="onClickEvent()"
     type="checkbox"

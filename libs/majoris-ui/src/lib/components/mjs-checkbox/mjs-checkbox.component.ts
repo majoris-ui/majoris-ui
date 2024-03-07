@@ -28,6 +28,7 @@ type Round = 'sm' | 'md' | 'lg' | 'full' | 'none';
 
 interface CheckboxEvent {
   checked: boolean;
+  elem: EventTarget | null;
 }
 
 @Component({
@@ -129,10 +130,11 @@ export class MjsCheckboxComponent implements ControlValueAccessor {
     this.onTouchedFn = fn;
   }
 
-  public onChangeEvent() {
+  public onChangeEvent(elem: EventTarget | null) {
     this.onChangeFn(this.value);
     this.changeEvent.emit({
       checked: this.value,
+      elem: elem,
     });
   }
 
