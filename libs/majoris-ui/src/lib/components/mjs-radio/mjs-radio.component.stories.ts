@@ -61,12 +61,12 @@ export const Checkbox = ({ ...args }) => {
       <mjs-radio
         size="${args['size']}"
         round="${args['round']}"
-        [disabled]="${args['disabled']}"
-        [checked]="${args['checked']}"
         label="${args['label']}"
         name="${args['name']}"
         id="${args['id']}"
         placement="${args['placement']}"
+         [disabled]="${args['disabled']}"
+        [checked]="${args['checked']}"
         [required]="${args['required']}"
       ></mjs-radio>
     `,
