@@ -37,7 +37,6 @@ label {
     @apply w-[24px];
     @apply h-[24px];
     @apply z-20;
-    @apply transition-all ease-in-out duration-300;
     @apply rounded-full;
     @apply bg-base;
     @apply border border-accent;
@@ -45,6 +44,7 @@ label {
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    @apply transition-all ease-in-out duration-300;
   }
 
   & span {
@@ -57,7 +57,7 @@ label {
   }
 }
 
-.mjs-checkbox-theme:hover input ~ .checkmark {
+label:hover input ~ .checkmark {
   @apply border border-highlight;
 }
 
@@ -70,10 +70,11 @@ label input:checked ~ .checkmark {
 }
 
 label input:checked ~ .checkmark .checkmark-fill {
+  @apply transition-colors ease-in-out duration-300;
   @apply bg-highlight;
+  @apply rounded-full;
   @apply w-[18px];
   @apply h-[18px];
-  @apply rounded-full;
 }
 
 /* FIELD HEIGHT SCHEMA  */

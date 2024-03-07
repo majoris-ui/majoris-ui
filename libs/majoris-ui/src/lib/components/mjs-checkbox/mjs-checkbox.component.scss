@@ -38,6 +38,12 @@ label {
     @apply h-[24px];
     @apply text-base;
     @apply z-20;
+    @apply bg-base;
+    @apply border border-accent;
+    @apply text-[10px];
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     @apply transition-all ease-in-out duration-300;
   }
 
@@ -49,15 +55,6 @@ label {
   & .label:empty {
     display: none;
   }
-}
-
-.mjs-checkbox-theme .checkmark {
-  @apply bg-base;
-  @apply border border-accent;
-  @apply text-[10px];
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .mjs-checkbox-theme .checkmark mjs-icon {
