@@ -8,9 +8,10 @@ import { FormBuilder } from '@angular/forms';
 })
 export class AppComponent {
   data = this.fb.group({
-    title: [''],
-    checked: [{ value: true, disabled: false }],
+    title: ['teste'],
+    checked: [{ value: true, disabled: true }],
     checked2: [{ value: false, disabled: false }],
+    radio: [{ value: false, disabled: false }],
   });
 
   lp: 'left' | 'right' = 'right';

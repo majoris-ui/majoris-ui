@@ -39,6 +39,12 @@ label {
     @apply z-20;
     @apply transition-all ease-in-out duration-300;
     @apply rounded-full;
+    @apply bg-base;
+    @apply border border-accent;
+    @apply text-[10px];
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
   }
 
   & span {
@@ -51,31 +57,23 @@ label {
   }
 }
 
-.mjs-checkbox-theme .checkmark {
-  @apply bg-base;
-  @apply border border-accent;
-  @apply text-[10px];
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.mjs-checkbox-theme .checkmark mjs-icon {
-  display: none;
-}
-
 .mjs-checkbox-theme:hover input ~ .checkmark {
   @apply border border-highlight;
 }
 
-.mjs-checkbox-theme input:checked ~ .checkmark {
-  @apply bg-highlight;
+label input:checked ~ .checkmark {
   @apply border border-highlight;
 
-  & mjs-icon {
-    @apply text-base;
-    display: flex;
+  & {
+    user-select: none;
   }
+}
+
+label input:checked ~ .checkmark .checkmark-fill {
+  @apply bg-highlight;
+  @apply w-[18px];
+  @apply h-[18px];
+  @apply rounded-full;
 }
 
 /* FIELD HEIGHT SCHEMA  */

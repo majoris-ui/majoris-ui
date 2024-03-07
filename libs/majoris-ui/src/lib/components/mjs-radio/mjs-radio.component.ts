@@ -11,7 +11,12 @@ import {
   ViewChild,
   booleanAttribute,
 } from '@angular/core';
-import { FormsModule, NgControl, ReactiveFormsModule } from '@angular/forms';
+import {
+  ControlValueAccessor,
+  FormsModule,
+  NgControl,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { MjsIconComponent } from '../mjs-icon/mjs-icon.component';
 
 type Position = 'left' | 'right';
@@ -22,17 +27,18 @@ type Round = 'sm' | 'md' | 'lg' | 'full' | 'none';
 
 interface CheckboxEvent {
   checked: boolean;
+  elem: EventTarget | null;
 }
 
 @Component({
   selector: 'mjs-radio',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, MjsIconComponent],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, MjsIconComponent],
   templateUrl: './mjs-radio.component.html',
   styleUrl: './mjs-radio.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MjsRadioComponent {
+export class MjsRadioComponent implements ControlValueAccessor {
   @Input({ transform: booleanAttribute })
   required: boolean = false;
 
@@ -44,11 +50,11 @@ export class MjsRadioComponent {
 
   @Input({ required: true }) id: string = '';
 
+  @Input({ required: true }) name: string = '';
+
   @Input() label: string = '';
 
-  @Input() name: string = '';
-
-  @Input() checked: boolean = false;
+  @Input() value: boolean = false;
 
   @Input() placement: Position = 'right';
 
@@ -102,7 +108,7 @@ export class MjsRadioComponent {
   }
 
   writeValue(value: boolean): void {
-    this.checked = value;
+    this.value = value;
   }
 
   setDisabledState?(isDisabled: boolean): void {
@@ -117,14 +123,15 @@ export class MjsRadioComponent {
     this.onTouchedFn = fn;
   }
 
-  public onChangeEvent() {
-    this.onChangeFn(this.checked);
+  public onChangeEvent(elem: EventTarget | null) {
+    this.onChangeFn(this.value);
     this.changeEvent.emit({
-      checked: this.checked,
+      checked: this.value,
+      elem: elem,
     });
   }
 
-  public onBlur() {
+  public onBlurEvent() {
     this.onTouchedFn();
     this.blurEvent.emit();
   }

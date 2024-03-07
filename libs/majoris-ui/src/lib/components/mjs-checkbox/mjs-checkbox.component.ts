@@ -56,11 +56,11 @@ export class MjsCheckboxComponent implements ControlValueAccessor {
 
   @Input({ required: true }) id: string = '';
 
+  @Input({ required: true }) name: string = '';
+
   @Input() label: string = '';
 
-  @Input() name: string = '';
-
-  @Input() checked: boolean = false;
+  @Input() value: boolean = false;
 
   @Input() placement: Position = 'right';
 
@@ -114,7 +114,7 @@ export class MjsCheckboxComponent implements ControlValueAccessor {
   }
 
   writeValue(value: boolean): void {
-    this.checked = value;
+    this.value = value;
   }
 
   setDisabledState?(isDisabled: boolean): void {
@@ -130,9 +130,9 @@ export class MjsCheckboxComponent implements ControlValueAccessor {
   }
 
   public onChangeEvent() {
-    this.onChangeFn(this.checked);
+    this.onChangeFn(this.value);
     this.changeEvent.emit({
-      checked: this.checked,
+      checked: this.value,
     });
   }
 

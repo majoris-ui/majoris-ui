@@ -4,11 +4,10 @@
     label
   }}</span>
   <input
-    [(ngModel)]="checked"
     [disabled]="disabled"
     [readonly]="readonly"
     [required]="required"
-    [checked]="checked"
+    [checked]="value"
     [name]="name"
     [id]="'input-' + id"
     (change)="onChangeEvent()"
@@ -17,7 +16,7 @@
     type="checkbox"
   />
   <div [ngClass]="[getRoundClass]" class="checkmark">
-    <mjs-icon class="text-[14px]" icon="check"></mjs-icon>
+    <mjs-icon class="text-[12px]" icon="check"></mjs-icon>
   </div>
   <span mjsContrastTextColor *ngIf="placement === 'right'" class="label">{{
     label

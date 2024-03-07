@@ -72,9 +72,13 @@ label {
   @apply bg-highlight;
   @apply border border-highlight;
 
+  & {
+    user-select: none;
+  }
+
   & mjs-icon {
     @apply text-base;
-    display: flex;
+    @apply flex;
   }
 }
 

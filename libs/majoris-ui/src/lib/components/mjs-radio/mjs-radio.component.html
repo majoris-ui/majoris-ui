@@ -4,19 +4,20 @@
     label
   }}</span>
   <input
-    [(ngModel)]="checked"
     [disabled]="disabled"
     [readonly]="readonly"
     [required]="required"
-    [checked]="checked"
+    [checked]="value"
     [name]="name"
     [id]="'input-' + id"
-    (change)="onChangeEvent()"
-    (blur)="onBlur()"
+    (change)="onChangeEvent($event.target)"
+    (blur)="onBlurEvent()"
     (click)="onClickEvent()"
     type="radio"
   />
-  <div class="checkmark"></div>
+  <div class="checkmark">
+    <div class="checkmark-fill"></div>
+  </div>
   <span mjsContrastTextColor *ngIf="placement === 'right'" class="label">{{
     label
   }}</span>
