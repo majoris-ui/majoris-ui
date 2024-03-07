@@ -11,12 +11,7 @@ import {
   ViewChild,
   booleanAttribute,
 } from '@angular/core';
-import {
-  ControlValueAccessor,
-  FormsModule,
-  NgControl,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { ControlValueAccessor, NgControl } from '@angular/forms';
 import { MjsContrastTextColorDirective } from '../../directives';
 
 type Height = 'sm' | 'md' | 'lg';
@@ -26,12 +21,7 @@ type Rounded = 'sm' | 'md' | 'lg' | 'full' | 'none';
 @Component({
   selector: 'mjs-text-field',
   standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MjsContrastTextColorDirective,
-  ],
+  imports: [CommonModule, MjsContrastTextColorDirective],
   templateUrl: './mjs-text-field.component.html',
   styleUrl: './mjs-text-field.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

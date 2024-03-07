@@ -8,7 +8,7 @@ import { FormBuilder } from '@angular/forms';
 })
 export class AppComponent {
   data = this.fb.group({
-    title: ['teste'],
+    title: ['asd'],
     checked: [{ value: true, disabled: true }],
     checked2: [{ value: false, disabled: false }],
     radio: [{ value: false, disabled: false }],
