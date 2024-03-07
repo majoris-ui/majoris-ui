@@ -26,7 +26,7 @@ export default {
 export const Button = ({ ...args }) => {
   return {
     template: `
-      <mjs-icon icon="${args['icon']}" fontSet="${args['fontSet']}" style="color: white;" />
+      <mjs-icon icon="${args['icon']}" fontSet="${args['fontSet']}" s/>
     `,
     props: { ...args },
   };
