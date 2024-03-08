@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-
-type FontSet = 'outlined' | 'round' | 'sharp';
+import { IconFontSet } from '../../interfaces/icon';
 
 @Component({
   selector: 'mjs-icon',
@@ -12,11 +11,13 @@ type FontSet = 'outlined' | 'round' | 'sharp';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MjsIconComponent {
-  @Input() fontSet: FontSet = 'round';
+  @Input({ required: true }) icon: string;
 
-  @Input() icon: string = '';
+  @Input() fontSet: IconFontSet = 'round';
 
-  @Input() class: string = '';
+  @Input() class: string;
+
+  @Input() style: string;
 
   get getFontSetClass(): string {
     return this.fontSet ? `material-icons-${this.fontSet}` : 'material-icons';

@@ -1,3 +1,5 @@
 <div class="flex items-center">
-  <span [class]="classes">{{ icon }}</span>
+  <span [class]="class" [style]="style" [ngClass]="classes.join(' ')">{{
+    icon
+  }}</span>
 </div>
