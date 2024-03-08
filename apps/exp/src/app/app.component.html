@@ -8,8 +8,7 @@
       fontTransform="uppercase"
       fontStyle="bold"
       theme="default"
-      fill="solid"
-      disabled
+      fill="outline"
       >test</mjs-button
     >
 
@@ -19,6 +18,7 @@
       formControlName="title"
       name="title"
       label="nome"
+      rounded="lg"
     >
       <mjs-icon leftIcon fontSet="round" icon="lock" />
     </mjs-text-field>
@@ -44,9 +44,20 @@
     <div>
       <mjs-radio
         name="field"
-        label="something"
+        label="male"
         round="md"
-        id="6"
+        id="male"
+        labelPosition="left"
+        formControlName="radio"
+      ></mjs-radio>
+    </div>
+
+    <div>
+      <mjs-radio
+        name="field"
+        label="female"
+        round="md"
+        id="female"
         labelPosition="left"
         formControlName="radio"
       ></mjs-radio>

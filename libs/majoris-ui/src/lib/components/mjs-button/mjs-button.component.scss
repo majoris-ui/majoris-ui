@@ -3,6 +3,7 @@
     @if $theme == 'main' {
       @apply bg-highlight;
       @apply border border-highlight;
+      @apply text-white;
 
       &:focus-within {
         @apply shadow-default;
@@ -10,6 +11,7 @@
     } @else if $theme == 'danger' {
       @apply bg-danger;
       @apply border border-danger;
+      @apply text-white;
 
       &:focus-within {
         @apply shadow-danger;
@@ -17,6 +19,7 @@
     } @else if $theme == 'success' {
       @apply bg-success;
       @apply border border-success;
+      @apply text-white;
 
       &:focus-within {
         @apply shadow-success;
@@ -24,6 +27,7 @@
     } @else if $theme == 'warning' {
       @apply bg-warning;
       @apply border border-warning;
+      @apply text-white;
 
       &:focus-within {
         @apply shadow-warning;
@@ -31,6 +35,7 @@
     } @else if $theme == 'info' {
       @apply bg-info;
       @apply border border-info;
+      @apply text-white;
 
       &:focus-within {
         @apply shadow-info;
