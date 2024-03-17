@@ -29,10 +29,6 @@ export default {
       options: ['solid', 'outline', 'link'],
       description: 'Control the button style',
     },
-    expanded: {
-      control: 'boolean',
-      description: 'Control the button width between [100%] or [fit]',
-    },
     size: {
       control: 'select',
       options: ['sm', 'md', 'lg'],
@@ -42,15 +38,19 @@ export default {
       control: 'boolean',
       description: 'Control the button loading state',
     },
+    expand: {
+      control: 'boolean',
+      description: 'Control the button expand state',
+    },
   },
   args: {
     text: 'text',
     theme: 'default',
-    round: 'md',
-    disabled: false,
     fill: 'solid',
-    expanded: false,
+    round: 'md',
     size: 'md',
+    disabled: false,
+    expand: false,
     loading: false,
   },
 
@@ -62,19 +62,17 @@ export default {
 export const Button = ({ ...args }) => {
   return {
     template: `
-      <div class="flex items-center justify-center w-screen h-screen">
-        <mjs-button
-        theme="${args['theme']}"
+      <mjs-button
         [loading]="${args['loading']}"
-        size="${args['size']}"
-        [expanded]="${args['expanded']}"
-        fill="${args['fill']}"
+        [expand]="${args['expand']}"
         [disabled]="${args['disabled']}"
+        theme="${args['theme']}"
+        size="${args['size']}"
+        fill="${args['fill']}"
         round="${args['rounded']}"
       >
         ${args['text'] ? args['text'] : ''}
       </mjs-button>
-      </div>
     `,
     props: { ...args },
   };

@@ -46,7 +46,7 @@ export class MjsButtonComponent {
   loading: boolean = false;
 
   @Input({ transform: booleanAttribute })
-  expanded: boolean = false;
+  expand: boolean = false;
 
   @Input({ transform: booleanAttribute })
   disabled: boolean = false;
@@ -85,7 +85,7 @@ export class MjsButtonComponent {
   }
 
   get getExpandClass(): string {
-    return this.expanded ? `button--expanded` : 'button--collapsed';
+    return this.expand ? `button--expanded` : 'button--collapsed';
   }
 
   get getHeightClass(): string {
